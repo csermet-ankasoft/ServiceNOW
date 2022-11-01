@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_880077_crossplan.crsdb_catitem_user" name="x_880077_crossplan.crsdb_catitem_user">b202978f473e11504b6fcc88f36d43f0</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-01 07:46:21</sys_created_on>
+        <sys_id>36021f8f473e11504b6fcc88f36d43c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>b202978f473e11504b6fcc88f36d43f0</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_embedded_help_role_36021f8f473e11504b6fcc88f36d43c8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-01 07:46:21</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_880077_crossplan.Catalog_Item_Script</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Catalog_Item_Script</name>
+        <script><![CDATA[var Catalog_Item_Script = Class.create();
+Catalog_Item_Script.prototype = {
+    initialize: function() {
+    },
+
+    type: 'Catalog_Item_Script'
+};
+
+var scope = "bdc0bd6847ba19104b6fcc88f36d43bd"; //CrossplaneV2 App
+
+Catalog_Item_Script.Init = function Init() {
+	CRSDB_CatItem.deletAll(title,categoryID);
+};
+   
+Catalog_Item_Script.create = function createCatalogItem(name,desc,catalogIds,categoryId, price) {
+    var catalogItem = new sn_sc.CatItem();
+	
+    catalogItem.setAttributes({
+        "name": name,
+        "short_description": desc,
+		"price":price,
+		"sys_scope": scope,
+		"sc_catalogs": catalogIds,
+		"category":categoryId 
+    });
+	
+    var catalogItemID = catalogItem.create(); // create new catalog item
+	CRSDB_CatItem.write(name,catalogItemID);
+	return catalogItemID;
+	
+};
+
+Catalog_Item_Script.deleteByName = function createCatalogItem(name) {
+	var gr = new GlideRecord("sc_cat_item");
+	gr.query();
+	while(gr.next()){
+		if (gr.name == name){
+				var catalogItem = new sn_sc.CatItem(gr.getUniqueValue());
+				catalogItem.deleteRecord(true);
+				gr.deleteRecord();
+			}		
+	}	
+};
+	
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-24 10:36:50</sys_created_on>
+        <sys_id>b0ea622c477e19104b6fcc88f36d434c</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>Catalog_Item_Script</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_script_include_b0ea622c477e19104b6fcc88f36d434c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-31 14:35:14</sys_updated_on>
+    </sys_script_include>
+</record_update>

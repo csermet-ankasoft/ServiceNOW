@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="CRSDB_CatItem" max_length="40" name="x_880077_crossplan_crsdb_catitem" sizeclass="0" type="collection">
+        <element label="id" max_length="40" name="id" type="string"/>
+        <element label="name" max_length="40" name="name" type="string"/>
+    </element>
+</database>

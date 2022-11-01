@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_880077_crossplan.Category_Script</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Category_Script</name>
+        <script><![CDATA[var Category_Script = Class.create();
+Category_Script.prototype = {
+    initialize: function() {
+    },
+ 
+    type: 'Category_Script'
+};
+
+var Init_Crossplane_Title = "CrossplaneV2";
+var Init_Provider_Title = "CRS_Provider";
+
+var service_CatalogID = "e0d08b13c3330100c8b837659bba8fb4"; //Service Catalog
+var CRS_CatalogID = "c3e2848947be59104b6fcc88f36d432b"; //CrossplaneV2 Catalog
+
+var scope = "bdc0bd6847ba19104b6fcc88f36d43bd"; //CrossplaneV2 App
+var sc_catalog = "";
+Category_Script.InitCatalog = function create() {	
+	sc_catalog = CRS_CatalogID;
+	var provider_CategoryID = Category_Script.create(Init_Provider_Title,"Provider DESC");
+	CRS_Log.debug("Provider Category ID :" + provider_CategoryID);
+	
+	var AWS_CategoryID = Category_Script.create("AWS",provider_CategoryID,"AWS DESC");
+	CRS_Log.debug("AWS Category ID :" + AWS_CategoryID);
+
+	return provider_CategoryID;
+};
+
+
+Category_Script.InitCategory = function create() {	
+	sc_catalog = service_CatalogID;
+	var crossplaneV2_CategoryID = Category_Script.create(Init_Crossplane_Title,"CRS V2 Desc");
+	CRS_Log.debug("CRS Category ID :" + crossplaneV2_CategoryID);
+	
+	var provider_CategoryID = Category_Script.createWithParent(Init_Provider_Title,"Provider Desc",crossplaneV2_CategoryID);
+	CRS_Log.debug("Provider Category ID :" + provider_CategoryID);
+	
+	var AWS_CategoryID = Category_Script.createWithParent("AWS","AWS Desc",provider_CategoryID);
+	CRS_Log.debug("AWS Category ID :" + AWS_CategoryID);
+
+	return provider_CategoryID;
+};
+
+
+Category_Script.createWithParent = function create(title,desc,parentID) {
+	sc_catalog = service_CatalogID;
+    var category = new sn_sc.CatCategory();	
+	category.setAttributes({
+		"title" : title, 
+		"sc_catalog" : sc_catalog, 
+		"sys_scope": scope,
+		"parent": parentID,
+		"description": desc
+	});	
+	var categoryID = category.create();
+	CRSDB_Category.write(title,categoryID);	
+	return categoryID;
+};
+
+Category_Script.create = function create(title,desc) {
+	sc_catalog = service_CatalogID;
+    var category = new sn_sc.CatCategory();	
+	category.setAttributes({
+		"title" : title, 
+		"sc_catalog" : sc_catalog, 
+		"sys_scope": scope,
+		"description": desc
+	});
+	var categoryID = category.create();
+	CRSDB_Category.write(title,categoryID);	
+	return categoryID;
+};
+
+
+
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-24 11:35:36</sys_created_on>
+        <sys_id>175c626c477e19104b6fcc88f36d4324</sys_id>
+        <sys_mod_count>65</sys_mod_count>
+        <sys_name>Category_Script</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_script_include_175c626c477e19104b6fcc88f36d4324</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-01 09:59:35</sys_updated_on>
+    </sys_script_include>
+</record_update>

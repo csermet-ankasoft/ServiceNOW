@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_catalog">
+    <sc_catalog action="DELETE">
+        <active>true</active>
+        <background_color>white</background_color>
+        <description/>
+        <desktop_continue_shopping/>
+        <desktop_home_page/>
+        <desktop_image/>
+        <editors/>
+        <enable_wish_list>false</enable_wish_list>
+        <manager/>
+        <sys_class_name>sc_catalog</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-25 12:18:13</sys_created_on>
+        <sys_id>c01dc00547fe59104b6fcc88f36d4367</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CNRCROSS</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sc_catalog_c01dc00547fe59104b6fcc88f36d4367</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-25 12:18:13</sys_updated_on>
+        <title>CNRCROSS</title>
+    </sc_catalog>
+    <sys_translated_text action="DELETE" query="documentkey=c01dc00547fe59104b6fcc88f36d4367"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>8e0892191bb5411032182f8dee4bcb37</instance_id>
+        <instance_name>dev125776</instance_name>
+        <name>sc_catalog_c01dc00547fe59104b6fcc88f36d4367</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_catalog"><sc_catalog action="INSERT_OR_UPDATE"><active>true</active><background_color>white</background_color><description/><desktop_continue_shopping/><desktop_home_page/><desktop_image/><editors/><enable_wish_list>false</enable_wish_list><manager/><sys_class_name>sc_catalog</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-10-25 12:18:13</sys_created_on><sys_id>c01dc00547fe59104b6fcc88f36d4367</sys_id><sys_mod_count>0</sys_mod_count><sys_name>CNRCROSS</sys_name><sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package><sys_policy/><sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope><sys_update_name>sc_catalog_c01dc00547fe59104b6fcc88f36d4367</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-10-25 12:18:13</sys_updated_on><title>CNRCROSS</title></sc_catalog><sys_translated_text action="delete_multiple" query="documentkey=c01dc00547fe59104b6fcc88f36d4367"/></record_update>]]></payload>
+        <payload_hash>649863125</payload_hash>
+        <record_name>CNRCROSS</record_name>
+        <reverted_from/>
+        <source>79c0bd6847ba19104b6fcc88f36d43c0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-25 12:18:13</sys_created_on>
+        <sys_id>382d040547fe59104b6fcc88f36d430f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1840f1435240000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-25 12:18:13</sys_updated_on>
+        <type>Catalog</type>
+        <update_guid>302d040559fe591074fca5b696f4380f</update_guid>
+        <update_guid_history>302d040559fe591074fca5b696f4380f:649863125</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="CNRCROSS">350f448547fe59104b6fcc88f36d4324</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-25 12:26:28</sys_created_on>
+        <sys_db_object display_value="" name="sc_catalog">sc_catalog</sys_db_object>
+        <sys_id>bfd553ec4dca45a993c41ec47ee428e9</sys_id>
+        <sys_metadata>c01dc00547fe59104b6fcc88f36d4367</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CNRCROSS</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sc_catalog_c01dc00547fe59104b6fcc88f36d4367</sys_update_name>
+        <sys_update_version display_value="sc_catalog_c01dc00547fe59104b6fcc88f36d4367">382d040547fe59104b6fcc88f36d430f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-25 12:26:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

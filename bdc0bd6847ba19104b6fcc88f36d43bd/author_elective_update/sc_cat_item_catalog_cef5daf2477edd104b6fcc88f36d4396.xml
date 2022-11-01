@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="DELETE">
+        <sc_cat_item display_value="TESTCatalogItem001">73377afd473e1d104b6fcc88f36d43d3</sc_cat_item>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-31 08:45:24</sys_created_on>
+        <sys_id>cef5daf2477edd104b6fcc88f36d4396</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.TESTCatalogItem001</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_cef5daf2477edd104b6fcc88f36d4396</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-31 08:45:24</sys_updated_on>
+    </sc_cat_item_catalog>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>8e0892191bb5411032182f8dee4bcb37</instance_id>
+        <instance_name>dev125776</instance_name>
+        <name>sc_cat_item_catalog_cef5daf2477edd104b6fcc88f36d4396</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog"><sc_cat_item_catalog action="INSERT_OR_UPDATE"><sc_cat_item display_value="TESTCatalogItem001">73377afd473e1d104b6fcc88f36d43d3</sc_cat_item><sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog><sys_class_name>sc_cat_item_catalog</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-10-31 08:45:24</sys_created_on><sys_id>cef5daf2477edd104b6fcc88f36d4396</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Service Catalog.TESTCatalogItem001</sys_name><sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package><sys_policy/><sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope><sys_update_name>sc_cat_item_catalog_cef5daf2477edd104b6fcc88f36d4396</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-10-31 08:45:24</sys_updated_on></sc_cat_item_catalog></record_update>]]></payload>
+        <payload_hash>-1226089681</payload_hash>
+        <record_name>Service Catalog.TESTCatalogItem001</record_name>
+        <reverted_from/>
+        <source>79c0bd6847ba19104b6fcc88f36d43c0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-31 08:45:24</sys_created_on>
+        <sys_id>42f55ef2477edd104b6fcc88f36d43a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1842d3788090000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-31 08:45:24</sys_updated_on>
+        <type>Catalog Items Catalog</type>
+        <update_guid>4af55ef21c7edd10c731d657d6b6dfa4</update_guid>
+        <update_guid_history>4af55ef21c7edd10c731d657d6b6dfa4:-1226089681</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Service Catalog.TESTCatalogItem001">3ca79276477edd104b6fcc88f36d431d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-31 08:52:41</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_catalog">sc_cat_item_catalog</sys_db_object>
+        <sys_id>00e5b6c9dd1245d086ff58fd5c238d64</sys_id>
+        <sys_metadata>cef5daf2477edd104b6fcc88f36d4396</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.TESTCatalogItem001</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent display_value="">73377afd473e1d104b6fcc88f36d43d3</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sc_cat_item_catalog_cef5daf2477edd104b6fcc88f36d4396</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_catalog_cef5daf2477edd104b6fcc88f36d4396">42f55ef2477edd104b6fcc88f36d43a5</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-31 08:52:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
