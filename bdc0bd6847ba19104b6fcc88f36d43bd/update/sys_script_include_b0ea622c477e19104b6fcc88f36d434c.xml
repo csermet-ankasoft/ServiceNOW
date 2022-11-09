@@ -17,18 +17,22 @@ Catalog_Item_Script.prototype = {
 
 
    
-Catalog_Item_Script.create = function createCatalogItem(scope,catalogID,name,desc,categoryId,type) {
-    var catalogItem = new sn_sc.CatItem();
-    catalogItem.setAttributes({
-        "name": name,
-        "short_description": desc,
-		"price": 20,
-		"sys_scope": scope,
-		"sc_catalogs": catalogID,
-		"category":categoryId 
-    });	
+Catalog_Item_Script.create = function createCatalogItem(current) {
+    CRSLog.debug("Run -> Catalog_Item_Script.create");
+	var catalogItem = new sn_sc.CatItem();
+    var attributes = {
+        "name": current.name,
+        "short_description": current.desc,
+		"sys_scope": current.scope,
+		"sc_catalogs": current.catalogID,
+		"category": current.categoryId 
+    };	
+	if (current.price) {
+		attributes["price"] = current.price;
+	}
+	catalogItem.setAttributes(attributes);
     var catalogItemID = catalogItem.create();
-	//CRSDB_CatItem.write(name,catalogItemID,type);
+	CRSLog.debug("Completed -> Catalog_Item_Script.create");
 	return catalogItemID;	
 };
 
@@ -77,13 +81,13 @@ Catalog_Item_Script.create_provider_catItem = function create_provider_catItem()
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-24 10:36:50</sys_created_on>
         <sys_id>b0ea622c477e19104b6fcc88f36d434c</sys_id>
-        <sys_mod_count>87</sys_mod_count>
+        <sys_mod_count>89</sys_mod_count>
         <sys_name>Catalog_Item_Script</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_b0ea622c477e19104b6fcc88f36d434c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-04 16:23:59</sys_updated_on>
+        <sys_updated_on>2022-11-09 13:35:23</sys_updated_on>
     </sys_script_include>
 </record_update>
