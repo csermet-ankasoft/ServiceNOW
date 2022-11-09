@@ -15,68 +15,136 @@ Category_Script.prototype = {
     type: 'Category_Script'
 };
 
-var Init_Crossplane_Title = "CrossplaneV2";
-var Init_Provider_Title = "CRS_Provider";
-
-var service_CatalogID = "e0d08b13c3330100c8b837659bba8fb4"; //Service Catalog
-var CRS_CatalogID = "c3e2848947be59104b6fcc88f36d432b"; //CrossplaneV2 Catalog
-
-var scope = "bdc0bd6847ba19104b6fcc88f36d43bd"; //CrossplaneV2 App
-var sc_catalog = "";
 Category_Script.InitCatalog = function create() {	
 	sc_catalog = CRS_CatalogID;
+	CRSDB.deleteByName(Init_Provider_Title);
 	var provider_CategoryID = Category_Script.create(Init_Provider_Title,"Provider DESC");
-	CRS_Log.debug("Provider Category ID :" + provider_CategoryID);
-	
+	CRSDB.write(Init_Provider_Title,provider_CategoryID);
+	CRSLog.debug("Provider Category ID :" + provider_CategoryID);
+	/*
 	var AWS_CategoryID = Category_Script.create("AWS",provider_CategoryID,"AWS DESC");
-	CRS_Log.debug("AWS Category ID :" + AWS_CategoryID);
+	CRSLog.debug("AWS Category ID :" + AWS_CategoryID);
+*/
+};   
 
-	return provider_CategoryID;
+Category_Script.InitCategoryOld = function create() {	
+	CRSDB_Category.deleteByType("Category Init");
+	var category_title = CRSDB.getValue("category_title");
+	var provider_title = CRSDB.getValue("provider_Title");
+	var scope = CRSDB.getValue("scope");
+	var catalogID = CRSDB.getValue("CatalogID");
+	CRSLog.debug("category_title" + category_title + " provider_title" + provider_title + " scope" + scope + " ssssss" + catalogID + " catalogID" + catalogID);
+	var crossplaneV2_CategoryID = Category_Script.create(scope,catalogID,category_title,"CRS V2 Desc","Category Init");
+	var provider_CategoryID = Category_Script.createWithParent(scope,catalogID,provider_title,"Provider Desc","Category Init",crossplaneV2_CategoryID);
+	CRSLog.debug("Category Init Completed");
+};
+
+Category_Script.write_InitCategory = function create() {		
+	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
+	
+	var category = {};
+	category.name = gs.getProperty('x_880077_crossplan.main_category_title');
+	category.type = "Init";
+	category.status = "Waiting For Create";
+	category.catalog = catalogID;
+	CRSDB_Category.write(category);
+	
+	var provider = {};
+	provider.name = gs.getProperty('x_880077_crossplan.main_provider_title');
+	provider.type = "Init";
+	provider.status = "Waiting For Create";
+	provider.catalog = catalogID;
+	CRSDB_Category.write(provider);
+	
+	CRSLog.debug("Write Category Init Completed");
 };
 
 
-Category_Script.InitCategory = function create() {	
-	sc_catalog = service_CatalogID;
-	var crossplaneV2_CategoryID = Category_Script.create(Init_Crossplane_Title,"CRS V2 Desc");
-	CRS_Log.debug("CRS Category ID :" + crossplaneV2_CategoryID);
-	
-	var provider_CategoryID = Category_Script.createWithParent(Init_Provider_Title,"Provider Desc",crossplaneV2_CategoryID);
-	CRS_Log.debug("Provider Category ID :" + provider_CategoryID);
-	
-	var AWS_CategoryID = Category_Script.createWithParent("AWS","AWS Desc",provider_CategoryID);
-	CRS_Log.debug("AWS Category ID :" + AWS_CategoryID);
-
-	return provider_CategoryID;
-};
 
 
-Category_Script.createWithParent = function create(title,desc,parentID) {
-	sc_catalog = service_CatalogID;
+
+Category_Script.createWithParent = function create(scope,catalogID,name,desc,type,parentID) {
     var category = new sn_sc.CatCategory();	
 	category.setAttributes({
-		"title" : title, 
-		"sc_catalog" : sc_catalog, 
+		"title" : name, 
+		"sc_catalog" : catalogID, 
 		"sys_scope": scope,
 		"parent": parentID,
 		"description": desc
 	});	
-	var categoryID = category.create();
-	CRSDB_Category.write(title,categoryID);	
+	var categoryID = category.create();	
+	CRSDB_Category.write(name,categoryID,type);
 	return categoryID;
 };
 
-Category_Script.create = function create(title,desc) {
-	sc_catalog = service_CatalogID;
+Category_Script.create = function create(current) {
     var category = new sn_sc.CatCategory();	
 	category.setAttributes({
-		"title" : title, 
-		"sc_catalog" : sc_catalog, 
-		"sys_scope": scope,
-		"description": desc
+		"title" : current.name, 
+		"sc_catalog" : current.catalog, 
+		"sys_scope": current.scope,
+		"description": current.description
 	});
-	var categoryID = category.create();
-	CRSDB_Category.write(title,categoryID);	
-	return categoryID;
+	current.categoryID = category.create();	
+	return current.categoryID;
+};
+
+Category_Script.create_providers = function create_providers(){
+	var scope = CRSDB.getValue("scope");
+	var catalogID = CRSDB.getValue("CatalogID");
+	var providerID = CRSDB_Category.getID(CRSDB.getValue("provider_Title"));
+	var Token = CRSDB.getValue("Token");	
+	var baseurl = CRSDB.getValue("baseurl");
+	var provider_endpoint = CRSDB.getValue("provider_endpoint");
+	var url = baseurl + provider_endpoint;
+	var response = CRS_API.requestGetJson(url,Token);	
+	
+	providers = response["items"];
+	CRSDB_Category.deleteByType("provider");
+	for (i in providers){
+		provider = providers[i];
+		Category_Script.createWithParent(scope,catalogID,provider["metadata"]["name"],provider["spec"]["package"],"provider",providerID);
+	}
+};
+
+Category_Script.write_provider_category_toDB = function write_provider_category_toDB(){
+	CRSLog.debug("Run -> write_provider_category_toDB");
+	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
+	var providerID = CRSDB_Category.getID(gs.getProperty('x_880077_crossplan.main_provider_title'));
+	var Token = gs.getProperty('x_880077_crossplan.Tokens');	
+	var baseurl = gs.getProperty('x_880077_crossplan.base_urls');
+	var provider_endpoint = gs.getProperty('x_880077_crossplan.provider_endpoint');
+	var url = baseurl + provider_endpoint;
+	var response = CRS_API.requestGetJson(url,Token);		
+	providers = response["items"];
+	for (i in providers){
+		var current = {};
+		provider = providers[i];
+		current.name = provider["metadata"]["name"];
+		current.type = "Provider";
+		current.status = "Waiting For Create";
+		current.catalog = catalogID;
+		current.description = provider["spec"]["package"];
+		current.parent = providerID;
+		CRSDB_Category.write(current);		
+	}
+	CRSLog.debug("Completed -> write_provider_category_toDB");
+};
+
+Category_Script.create_waiting_provider_category = function create_waiting_provider_category(){
+	CRSLog.debug("Run -> create_waiting_provider_category");
+	var scope = gs.getProperty('x_880077_crossplan.scope_id');	
+	gr = CRSDB_Category.getByFilter("status","Waiting For Create");
+	while(gr.next()){
+		var current = gr;
+		CRSLog.debug("fff"+current.scope);
+		current.scope = scope;
+		//CRSLog.debug("created: " + Category_Script.create(current));
+		//gr.update();
+		//return gr;
+	}	
+	
+	CRSLog.debug("Completed -> create_waiting_provider_category");
 };
 
 
@@ -86,13 +154,13 @@ Category_Script.create = function create(title,desc) {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-24 11:35:36</sys_created_on>
         <sys_id>175c626c477e19104b6fcc88f36d4324</sys_id>
-        <sys_mod_count>65</sys_mod_count>
+        <sys_mod_count>118</sys_mod_count>
         <sys_name>Category_Script</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_175c626c477e19104b6fcc88f36d4324</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 09:59:35</sys_updated_on>
+        <sys_updated_on>2022-11-08 12:59:49</sys_updated_on>
     </sys_script_include>
 </record_update>

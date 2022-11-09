@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_880077_crossplan.main_category_title</name>
+        <read_roles/>
+        <suffix>main_category_title</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-08 09:10:18</sys_created_on>
+        <sys_id>8648af1d470315104b6fcc88f36d431b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_880077_crossplan.main_category_title</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_properties_8648af1d470315104b6fcc88f36d431b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-08 09:10:18</sys_updated_on>
+        <type>string</type>
+        <value>CrossplaneV2</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=8648af1d470315104b6fcc88f36d431b"/>
+</record_update>

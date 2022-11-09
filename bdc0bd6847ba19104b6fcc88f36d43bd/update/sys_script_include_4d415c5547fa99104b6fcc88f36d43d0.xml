@@ -17,47 +17,43 @@ CRSDB.prototype = {
 
 var IDTable = "x_880077_crossplan_db"; //DB Table
 
-CRSDB.write = function write(name,id) {	
+CRSDB.write = function write(name,value) {	
 	var old_data = CRSDB.find(name);
 	if ( old_data != -1){
 		old_data.deleteRecord();
 	}
 	var gr = new GlideRecord(IDTable);
-	gr.id= id;
-	gr.name =  name;		
+	gr.value= value;
+	gr.name =  name;			
 	gr.insert();				
 };
 
 
-CRSDB.find = function find(name){
+CRSDB.getValue = function getValue(name){
 	var gr = new GlideRecord(IDTable);
 	gr.query();
 	while(gr.next()){
 		if( gr.name == name){
-			CRS_Log.debug("Find: " + gr.name);
-			return gr.id;
+			return gr.value;
 		}		
 	}
 	return -1;
 };
 
-CRSDB.deleteAll = function find(IDTable){
+function deleteRecord(gr){
+	var category = new sn_sc.CatCategory(gr.value);
+	category.deleteRecord(true);
+	gr.deleteRecord();
+}
+
+CRSDB.deleteByName = function deleteByName(name){
 	var gr = new GlideRecord(IDTable);
 	gr.query();
 	while(gr.next()){
-		var catalogItem = new sn_sc.CatItem(gr.id);
-		catalogItem.deleteRecord(true);
-		gr.deleteRecord();
-	}
-	
-	gr.query();
-	while(gr.next()){
-		if( gr.name == name){
-			CRS_Log.debug("Find: " + gr.name);
-			return gr;
+		if (gr.name == name){
+			deleteRecord(gr);
 		}		
 	}
-	return -1;
 };
 
 
@@ -66,13 +62,13 @@ CRSDB.deleteAll = function find(IDTable){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-26 07:19:44</sys_created_on>
         <sys_id>4d415c5547fa99104b6fcc88f36d43d0</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>CRSDB</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_4d415c5547fa99104b6fcc88f36d43d0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 09:12:16</sys_updated_on>
+        <sys_updated_on>2022-11-04 09:45:41</sys_updated_on>
     </sys_script_include>
 </record_update>

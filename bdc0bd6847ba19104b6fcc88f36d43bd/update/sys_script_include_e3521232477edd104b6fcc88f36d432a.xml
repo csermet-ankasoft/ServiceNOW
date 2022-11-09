@@ -17,70 +17,73 @@ CRSDB_CatItem.prototype = {
 
 var IDTable = "x_880077_crossplan_crsdb_catitem"; //DB Table
 
-
-CRSDB_CatItem.write = function write(name,id) {	
+CRSDB_CatItem.write = function write(name,id,type) {	
 	var gr = new GlideRecord(IDTable);
+	gr.initialize();
 	gr.id= id;
-	gr.name =  name;		
-	CRS_Log.debug("insert "+ gr.id);
-	gr.insert();				
+	gr.name =  name;
+	gr.type = type;
+	gr.insert();	
 };
 
 
-CRSDB_CatItem.find = function find(name){
+CRSDB_CatItem.getID = function getID(name){
 	var gr = new GlideRecord(IDTable);
 	gr.query();
 	while(gr.next()){
 		if( gr.name == name){
-			CRS_Log.debug("CRSDB_CatItem Found: " + gr.name);
-			return gr;
+			return gr.id;
 		}		
 	}
 	return -1;
 };
 
-CRSDB_CatItem.deleteWithID = function deleteAllWithID(){
+function deleteCatItem(id){
+	var variableSetM2M = new GlideRecord('io_set_item'); // M2M table linking variable set and catalog item
+	variableSetM2M.addQuery('sc_cat_item',id); // get M2M records for the catalog item
+	variableSetM2M.query();
+	while (variableSetM2M.next()) {
+		var varset = new sn_sc.CatalogItemVariableSetM2M(variableSetM2M.getUniqueValue()); // M2M record sys_id
+		varset.deleteRecord(true); // delete M2M record
+	}
+	var catalogItem = new sn_sc.CatItem(id);
+	catalogItem.deleteRecord(true);		
+	
+}
+
+
+CRSDB_CatItem.deleteWithID = function deleteAllWithID(id){
 	var gr = new GlideRecord(IDTable);
 	gr.query();
 	while(gr.next()){
-		//gr.deleteRecord();
+		if( gr.id == id){
+			deleteCatItem(gr.id);
+			gr.deleteRecord();
+		}	
 	}
 };
 
-CRSDB_CatItem.deleteAll = function deleteAll(){
-	var gr = new GlideRecord(IDTable);
-	gr.query();
-	while(gr.next()){				
-		var variableSetM2M = new GlideRecord('io_set_item'); // M2M table linking variable set and catalog item
-		variableSetM2M.addQuery('sc_cat_item', gr.id); // get M2M records for the catalog item
-		variableSetM2M.query();
-		while (variableSetM2M.next()) {
-			var varset = new sn_sc.CatalogItemVariableSetM2M(variableSetM2M.getUniqueValue()); // M2M record sys_id
-			varset.deleteRecord(true); // delete M2M record
-		}
-		var catalogItem = new sn_sc.CatItem(gr.id);
-		catalogItem.deleteRecord(true);		
-		gr.deleteRecord();
-	}	
-};
-
 CRSDB_CatItem.deleteByName = function deleteAll(name){
-	var gr = new GlideRecord("sc_cat_item");
+	var gr = new GlideRecord(IDTable);
 	gr.query();
 	while(gr.next()){	
 		if(gr.name == name){
-			var variableSetM2M = new GlideRecord('io_set_item'); // M2M table linking variable set and catalog item
-			variableSetM2M.addQuery('sc_cat_item', gr.getUniqueValue()); // get M2M records for the catalog item
-			variableSetM2M.query();
-			while (variableSetM2M.next()) {
-				var varset = new sn_sc.CatalogItemVariableSetM2M(variableSetM2M.getUniqueValue()); // M2M record sys_id
-				varset.deleteRecord(true); // delete M2M record
-			}
-			var catalogItem = new sn_sc.CatItem(gr.getUniqueValue());
-			catalogItem.deleteRecord(true);		
-			CRS_Log.debug("DELETE ID:" + gr.name + "  Instance:" + catalogItem);
+			deleteCatItem(gr.id);
+			gr.deleteRecord();
 		}
 	}	
+};
+
+CRSDB_CatItem.deleteByType = function deleteByType(type){
+	var gr = new GlideRecord(IDTable);
+	gr.query();
+	while(gr.next()){	
+		if(gr.type == type){
+			deleteCatItem(gr.id);
+			gr.deleteRecord();
+		}
+	}	
+	return "Completed";
 };
 
 
@@ -90,13 +93,13 @@ CRSDB_CatItem.deleteByName = function deleteAll(name){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-31 08:34:02</sys_created_on>
         <sys_id>e3521232477edd104b6fcc88f36d432a</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>52</sys_mod_count>
         <sys_name>CRSDB_CatItem</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_e3521232477edd104b6fcc88f36d432a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 10:05:22</sys_updated_on>
+        <sys_updated_on>2022-11-08 07:33:13</sys_updated_on>
     </sys_script_include>
 </record_update>

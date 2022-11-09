@@ -15,54 +15,75 @@ Catalog_Item_Script.prototype = {
     type: 'Catalog_Item_Script'
 };
 
-var scope = "bdc0bd6847ba19104b6fcc88f36d43bd"; //CrossplaneV2 App
 
-Catalog_Item_Script.Init = function Init() {
-	CRSDB_CatItem.deletAll(title,categoryID);
-};
    
-Catalog_Item_Script.create = function createCatalogItem(name,desc,catalogIds,categoryId, price) {
+Catalog_Item_Script.create = function createCatalogItem(scope,catalogID,name,desc,categoryId,type) {
     var catalogItem = new sn_sc.CatItem();
-	
     catalogItem.setAttributes({
         "name": name,
         "short_description": desc,
-		"price":price,
+		"price": 20,
 		"sys_scope": scope,
-		"sc_catalogs": catalogIds,
+		"sc_catalogs": catalogID,
 		"category":categoryId 
-    });
-	
-    var catalogItemID = catalogItem.create(); // create new catalog item
-	CRSDB_CatItem.write(name,catalogItemID);
-	return catalogItemID;
-	
+    });	
+    var catalogItemID = catalogItem.create();
+	//CRSDB_CatItem.write(name,catalogItemID,type);
+	return catalogItemID;	
 };
 
-Catalog_Item_Script.deleteByName = function createCatalogItem(name) {
-	var gr = new GlideRecord("sc_cat_item");
+Catalog_Item_Script.create_provider_DB = function create_provider_catItem(){
+	CRSLog.debug("ID: " + CRSDB.getValue("CatalogID") + " SCOPE: " + CRSDB.getValue("sys_scope"));
+	var Token = CRSDB.getValue("Token");	
+	var baseurl = CRSDB.getValue("baseurl");
+	var provider_endpoint = CRSDB.getValue("CRD_endpoint");
+	var url = baseurl + provider_endpoint;
+	var response = CRS_API.requestGetJson(url,Token);
+	var CRD_items = response["items"];
+	CRSDB_Provider.deleteAll();
+	for (i in CRD_items){	
+		var provider_name = "";
+		var apiversion = "";
+		var CRD_item = CRD_items[i];	
+		for (j in CRD_item["metadata"]["ownerReferences"]){
+			var CRD_item_ref = CRD_item["metadata"]["ownerReferences"][j];
+			if (CRD_item_ref["kind"] == "Provider"){				
+				provider_name = CRD_item_ref["name"];	
+				apiversion = CRD_item_ref["apiVersion"];	
+			}			
+		}		
+		CRSDB_Provider.write(CRD_item["metadata"]["name"],CRD_item["spec"]["group"],provider_name,apiversion,"-1","Waiting For Create CatItem");
+	}
+};
+Catalog_Item_Script.create_provider_catItem = function create_provider_catItem(){
+	var scope = CRSDB.getValue("scope");
+	var catalogID = CRSDB.getValue("CatalogID");
+	var gr = CRSDB_Provider.getDB();
 	gr.query();
 	while(gr.next()){
-		if (gr.name == name){
-				var catalogItem = new sn_sc.CatItem(gr.getUniqueValue());
-				catalogItem.deleteRecord(true);
-				gr.deleteRecord();
-			}		
-	}	
+		if(gr.status == "Waiting For Create CatItem"){
+			Catalog_Item_Script.create(scope,catalogID,gr.name,"description", CRSDB_Category.getID(gr.provider_name), "provider_catItem");
+		}		
+	}
+	//CRSLog.debug("Item : " + CRD_item_metadata["name"] + "category: " + categoryID);
+	//CRSDB_CatItem.deleteByName(CRD_item_metadata["name"]);										
+	//Catalog_Item_Script.create(CRD_item_metadata["name"],"description", categoryID, "provider_catItem");
+	CRSLog.debug("Finish");
 };
-	
+
+
 ]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-24 10:36:50</sys_created_on>
         <sys_id>b0ea622c477e19104b6fcc88f36d434c</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>87</sys_mod_count>
         <sys_name>Catalog_Item_Script</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_b0ea622c477e19104b6fcc88f36d434c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-31 14:35:14</sys_updated_on>
+        <sys_updated_on>2022-11-04 16:23:59</sys_updated_on>
     </sys_script_include>
 </record_update>

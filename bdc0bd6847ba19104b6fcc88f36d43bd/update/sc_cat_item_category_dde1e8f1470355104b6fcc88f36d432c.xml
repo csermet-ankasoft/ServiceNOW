@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="NEWTest002">f4e1a8f1470355104b6fcc88f36d43e3</sc_cat_item>
+        <sc_category display_value="NEWTestcatalog002">f8e1a8f1470355104b6fcc88f36d4394</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-09 08:00:03</sys_created_on>
+        <sys_id>dde1e8f1470355104b6fcc88f36d432c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NEWTestcatalog002.NEWTest002</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sc_cat_item_category_dde1e8f1470355104b6fcc88f36d432c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-09 08:00:03</sys_updated_on>
+    </sc_cat_item_category>
+</record_update>

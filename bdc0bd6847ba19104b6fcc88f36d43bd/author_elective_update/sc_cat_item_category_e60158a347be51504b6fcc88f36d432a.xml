@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="DELETE">
+        <sc_cat_item display_value="NEWTest002">9a0158a347be51504b6fcc88f36d431e</sc_cat_item>
+        <sc_category display_value="NEWTestcatalog002">c60118a347be51504b6fcc88f36d43b3</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-02 07:00:04</sys_created_on>
+        <sys_id>e60158a347be51504b6fcc88f36d432a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NEWTestcatalog002.NEWTest002</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sc_cat_item_category_e60158a347be51504b6fcc88f36d432a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-02 07:00:04</sys_updated_on>
+    </sc_cat_item_category>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>8e0892191bb5411032182f8dee4bcb37</instance_id>
+        <instance_name>dev125776</instance_name>
+        <name>sc_cat_item_category_e60158a347be51504b6fcc88f36d432a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category"><sc_cat_item_category action="INSERT_OR_UPDATE"><sc_cat_item display_value="NEWTest002">9a0158a347be51504b6fcc88f36d431e</sc_cat_item><sc_category display_value="NEWTestcatalog002">c60118a347be51504b6fcc88f36d43b3</sc_category><sys_class_name>sc_cat_item_category</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-11-02 07:00:04</sys_created_on><sys_id>e60158a347be51504b6fcc88f36d432a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>NEWTestcatalog002.NEWTest002</sys_name><sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package><sys_policy/><sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope><sys_update_name>sc_cat_item_category_e60158a347be51504b6fcc88f36d432a</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-11-02 07:00:04</sys_updated_on></sc_cat_item_category></record_update>]]></payload>
+        <payload_hash>1334261619</payload_hash>
+        <record_name>NEWTestcatalog002.NEWTest002</record_name>
+        <reverted_from/>
+        <source>26fcf38747fe11504b6fcc88f36d431e</source>
+        <source_table>sys_update_set</source_table>
+        <state>current</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-02 07:00:05</sys_created_on>
+        <sys_id>fa0158a347be51504b6fcc88f36d4372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1843723d3d00000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-02 07:00:05</sys_updated_on>
+        <type>Catalog Item Category</type>
+        <update_guid>f20158a300be5150c76f30c43408ac72</update_guid>
+        <update_guid_history>f20158a300be5150c76f30c43408ac72:1334261619</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="NEWTestcatalog002.NEWTest002">b1458b40470315504b6fcc88f36d433f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-04 09:24:31</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_category">sc_cat_item_category</sys_db_object>
+        <sys_id>187678fe199949b7848bc0e8e7aa2b49</sys_id>
+        <sys_metadata>e60158a347be51504b6fcc88f36d432a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NEWTestcatalog002.NEWTest002</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sc_cat_item_category_e60158a347be51504b6fcc88f36d432a</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_category_e60158a347be51504b6fcc88f36d432a">fa0158a347be51504b6fcc88f36d4372</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-04 09:24:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

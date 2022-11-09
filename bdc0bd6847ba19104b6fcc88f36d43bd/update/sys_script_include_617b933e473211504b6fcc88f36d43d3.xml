@@ -16,48 +16,104 @@ CRSDB_Category.prototype = {
 };
 
 
-var IDTable = "x_880077_crossplan_crsdb_categorylist"; //DB Table
+var TableID = "x_880077_crossplan_crsdb_category"; //DB Table
 
-CRSDB_Category.write = function write(name,id) {	
-	var gr = new GlideRecord(IDTable);
-	gr.id= id;
-	gr.name =  name;		
+CRSDB_Category.write = function write(current) {	
+	var gr = new GlideRecord(TableID);
+	gr.id = current.id;
+	gr.name = current.name;	
+	gr.type = current.type;
+	gr.status = current.status;
+	gr.variable = current.variable;
+	gr.workflow = current.workflow;
+	gr.catalog = current.catalog;
+	gr.description = current.description;
+	gr.parent = current.parent;
 	gr.insert();				
 };
 
-
-CRSDB_Category.find = function find(name){
-	var gr = new GlideRecord(IDTable);
+CRSDB_Category.getID = function getID(name){
+	var gr = new GlideRecord(TableID);
 	gr.query();
 	while(gr.next()){
 		if( gr.name == name){
-			CRS_Log.debug("CRSDB_CatItem_List Found: " + gr.name);
-			return gr;
+			return gr.id;
 		}		
 	}
 	return -1;
 };
 
+function deleteCategory(id){
+	var category = new sn_sc.CatCategory(id);
+	category.deleteRecord();
+}
+
 CRSDB_Category.deleteAll = function deleteAll(){
-	var gr = new GlideRecord(IDTable);
+	var gr = new GlideRecord(TableID);
 	gr.query();
 	while(gr.next()){
-		var category = new sn_sc.CatCategory(gr.id);
-		category.deleteRecord(true);
-		gr.deleteRecord();
+		deleteCategory(gr.id);			
+		gr.deleteRecord();	
 	}		
-};]]></script>
+};
+
+CRSDB_Category.deleteByType = function deleteByType(type){
+	var gr = new GlideRecord(TableID);
+	gr.query();
+	while(gr.next()){
+		if (gr.type == type){
+			deleteCategory(gr.id);			
+			gr.deleteRecord();	
+		}		
+	}		
+};
+
+CRSDB_Category.deleteByID = function deleteByID(id){
+
+	var gr = new GlideRecord(TableID);
+	gr.query();
+	while(gr.next()){
+		if (gr.id == id){			
+			deleteCategory(gr.id);			
+			gr.deleteRecord();	
+		}		
+	}		
+};
+
+
+CRSDB_Category.deleteByName = function deleteByName(name){
+	var gr = new GlideRecord("sc_category");
+	gr.query();	
+	while(gr.next()){
+		if (gr.title == name){
+			deleteCategory(gr.getUniqueValue());			
+			gr.deleteRecord();	
+		}		
+	}
+};
+
+CRSDB_Category.getByFilter = function getByFilter(key,value){
+	var gr = new GlideRecord(TableID);
+	gr.query();
+	gr.addQuery(key,value);
+	return gr;
+};
+
+
+
+
+]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-31 13:53:38</sys_created_on>
         <sys_id>617b933e473211504b6fcc88f36d43d3</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>56</sys_mod_count>
         <sys_name>CRSDB_Category</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_617b933e473211504b6fcc88f36d43d3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-31 14:32:41</sys_updated_on>
+        <sys_updated_on>2022-11-08 12:36:12</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="CRSDB" max_length="40" name="x_880077_crossplan_db" sizeclass="16" type="collection">
-        <element label="ID" max_length="400" name="id" type="string"/>
-        <element default="NOPE" label="Name" max_length="40" name="name" type="string"/>
+    <element label="CRSDB" max_length="40" name="x_880077_crossplan_db" sizeclass="9" type="collection">
+        <element label="description" max_length="120" name="description" type="string"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element default="-1" label="Value" max_length="400" name="value" type="string"/>
     </element>
 </database>

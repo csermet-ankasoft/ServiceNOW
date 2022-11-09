@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="catitemid" label="CatItemID" language="en" table="x_880077_crossplan_crsdb_provider">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>catitemid</element>
+            <help/>
+            <hint/>
+            <label>CatItemID</label>
+            <language>en</language>
+            <name>x_880077_crossplan_crsdb_provider</name>
+            <plural>CatItemIDs</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-11-04 12:54:56</sys_created_on>
+            <sys_id>94753f4c470311104b6fcc88f36d4317</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>CatItemID</sys_name>
+            <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+            <sys_update_name>sys_documentation_x_880077_crossplan_crsdb_provider_catitemid_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-11-04 12:54:56</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

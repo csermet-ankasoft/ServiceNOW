@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_category">
+    <sc_category action="DELETE">
+        <active>true</active>
+        <description>CRS V2 Desc</description>
+        <entitlement_script/>
+        <header_icon/>
+        <homepage_image/>
+        <homepage_renderer display_value="Category Items">47ebe8aa3742300054b6a3549dbe5dfa</homepage_renderer>
+        <icon/>
+        <image/>
+        <location/>
+        <mobile_hide_description>false</mobile_hide_description>
+        <mobile_picture/>
+        <mobile_subcategory_render_type>list</mobile_subcategory_render_type>
+        <module/>
+        <order>0</order>
+        <parent/>
+        <roles/>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>sc_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-01 13:12:13</sys_created_on>
+        <sys_id>84acdcd7477251504b6fcc88f36d4326</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CrossplaneV2</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sc_category_84acdcd7477251504b6fcc88f36d4326</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-01 13:12:13</sys_updated_on>
+        <title>CrossplaneV2</title>
+    </sc_category>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>8e0892191bb5411032182f8dee4bcb37</instance_id>
+        <instance_name>dev125776</instance_name>
+        <name>sc_category_84acdcd7477251504b6fcc88f36d4326</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_category"><sc_category action="INSERT_OR_UPDATE"><active>true</active><description>CRS V2 Desc</description><entitlement_script/><header_icon/><homepage_image/><homepage_renderer display_value="Category Items">47ebe8aa3742300054b6a3549dbe5dfa</homepage_renderer><icon/><image/><location/><mobile_hide_description>false</mobile_hide_description><mobile_picture/><mobile_subcategory_render_type>list</mobile_subcategory_render_type><module/><order>0</order><parent/><roles/><sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog><sys_class_name>sc_category</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-11-01 13:12:13</sys_created_on><sys_id>84acdcd7477251504b6fcc88f36d4326</sys_id><sys_mod_count>0</sys_mod_count><sys_name>CrossplaneV2</sys_name><sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package><sys_policy/><sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope><sys_update_name>sc_category_84acdcd7477251504b6fcc88f36d4326</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-11-01 13:12:13</sys_updated_on><title>CrossplaneV2</title></sc_category></record_update>]]></payload>
+        <payload_hash>1695219748</payload_hash>
+        <record_name>CrossplaneV2</record_name>
+        <reverted_from/>
+        <source>df98b8b0472111104b6fcc88f36d43f6</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2022-08-23 17:31:11</sys_created_on>
+        <sys_id>59acdcd7477251504b6fcc88f36d4314</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>182cbc217180000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>Category</type>
+        <update_guid>19acdcd7e67251507a97d1478ba12b14</update_guid>
+        <update_guid_history>19acdcd7e67251507a97d1478ba12b14:1695219748</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="CrossplaneV2">11acdcd7477251504b6fcc88f36d43de</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-01 13:12:18</sys_created_on>
+        <sys_db_object display_value="" name="sc_category">sc_category</sys_db_object>
+        <sys_id>00a7dc99734a470e8520c1a624591ea4</sys_id>
+        <sys_metadata>84acdcd7477251504b6fcc88f36d4326</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CrossplaneV2</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sc_category_84acdcd7477251504b6fcc88f36d4326</sys_update_name>
+        <sys_update_version display_value="sc_category_84acdcd7477251504b6fcc88f36d4326">59acdcd7477251504b6fcc88f36d4314</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-01 13:12:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
