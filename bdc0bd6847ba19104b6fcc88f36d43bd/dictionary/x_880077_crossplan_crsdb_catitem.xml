@@ -4,6 +4,7 @@
         <element label="Category" max_length="40" name="category" type="string"/>
         <element label="id" max_length="40" name="id" type="string"/>
         <element label="name" max_length="40" name="name" type="string"/>
+        <element label="price" max_length="100" name="price" type="string"/>
         <element label="Status" max_length="40" name="status" type="string"/>
         <element label="type" max_length="40" name="type" type="string"/>
         <element label="variable" max_length="40" name="variable" type="string"/>

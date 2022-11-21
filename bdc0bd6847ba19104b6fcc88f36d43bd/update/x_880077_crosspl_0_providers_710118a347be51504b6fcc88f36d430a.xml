@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_880077_crosspl_0_providers">
+    <x_880077_crosspl_0_providers action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <entitlement_script/>
+        <header_icon/>
+        <homepage_image/>
+        <homepage_renderer display_value="Category Items">47ebe8aa3742300054b6a3549dbe5dfa</homepage_renderer>
+        <icon/>
+        <image/>
+        <location/>
+        <mobile_hide_description>false</mobile_hide_description>
+        <mobile_picture/>
+        <mobile_subcategory_render_type>list</mobile_subcategory_render_type>
+        <module/>
+        <order>0</order>
+        <parent display_value="">173e79f847e511104b6fcc88f36d436f</parent>
+        <roles/>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>x_880077_crosspl_0_providers</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-02 07:00:01</sys_created_on>
+        <sys_id>710118a347be51504b6fcc88f36d430a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>caner6565</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>x_880077_crosspl_0_providers_710118a347be51504b6fcc88f36d430a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-02 07:00:01</sys_updated_on>
+        <title>caner6565</title>
+    </x_880077_crosspl_0_providers>
+    <sys_translated_text action="delete_multiple" query="documentkey=710118a347be51504b6fcc88f36d430a"/>
+</record_update>

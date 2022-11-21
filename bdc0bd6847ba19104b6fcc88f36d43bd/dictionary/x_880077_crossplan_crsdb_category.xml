@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="CRSDB_Category" max_length="40" name="x_880077_crossplan_crsdb_category" sizeclass="2" type="collection">
+    <element label="CRSDB_Category" max_length="40" name="x_880077_crossplan_crsdb_category" sizeclass="0" type="collection">
         <element label="catalog" max_length="40" name="catalog" type="string"/>
         <element label="description" max_length="40" name="description" type="string"/>
         <element label="id" max_length="40" name="id" type="string"/>
         <element label="name" max_length="40" name="name" type="string"/>
         <element label="parent" max_length="40" name="parent" type="string"/>
         <element label="status" max_length="40" name="status" type="string"/>
+        <element label="Type" max_length="40" name="type" type="string"/>
     </element>
 </database>

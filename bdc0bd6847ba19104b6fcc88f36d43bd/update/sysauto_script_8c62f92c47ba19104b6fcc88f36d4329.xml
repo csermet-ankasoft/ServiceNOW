@@ -16,64 +16,64 @@
         <run_start>2022-10-24 06:23:34</run_start>
         <run_time>1970-01-01 08:00:00</run_time>
         <run_type>weekly</run_type>
-        <script><![CDATA[var Provider_Title = "CRS_Provider";
-var CatalogID = "e0d08b13c3330100c8b837659bba8fb4"; //Service
-
-
-function create_provider_category(providerID){
-	GCP_Api_Token = CRSDB.find("GCP_API_TOKEN");	
-	var response = CRS_API.requestGet("https://35.222.73.205/apis/pkg.crossplane.io/v1/providers",GCP_Api_Token);
-	response_Json = JSON.parse(response.getBody());
-	providers = response_Json["items"];
-	CRSDB_Category.deleteAll();
-	for (count in providers){
-		provider = providers[count];
-		categoryID = Category_Script.createWithParent(provider["metadata"]["name"],provider["spec"]["package"],providerID);
-		create_provider_catalogItem(provider["metadata"]["name"],providerID,categoryID,GCP_Api_Token);
-	}
-}
-
-function create_provider_catalogItem(name,providerID,categoryID,GCP_Api_Token){
-	var response = CRS_API.requestGet("https://35.222.73.205/apis/apiextensions.k8s.io/v1/customresourcedefinitions",GCP_Api_Token);
-	response_json = JSON.parse(response.getBody());
-	response_json_items = response_json["items"];	
-	for (i in response_json_items){
-		response_json_ownerreferances = response_json_items[i]["metadata"]["ownerReferences"];
-		for (j in response_json_ownerreferances){
-			response_json_ownerreferance = response_json_ownerreferances[j];
-			if (name == response_json_ownerreferance["name"]){
-				CRS_Log.debug("Res: " + JSON.stringify(response_json_items[i]["metadata"]["name"]));
-				Catalog_Item_Script.create(response_json_items[i]["metadata"]["name"],"description", CatalogID, categoryID, "25");
-			}
-			
-		}
-	}
-}
-
-
-
-(function() {	
-	//Category_Script.InitCategory();
-	CRSDB_CatItem.deleteAll();
-	var providerID = CRSDB.find(Provider_Title);
-	create_provider_category(providerID);
-	//var azureCategoryID = CRSDB.find("AWS").id;		
-	//Catalog_Item_Script.create("TESTCatalogItem010","description_CRS", CatalogID, azureCategoryID, "25");	
+        <script><![CDATA[(function() {	
+	// INIT PROVIDER CATEGORY
+	//Category_Script.deleteByKeyFilter("status","Created");
+	//Catalog_Item_Script.deleteByKeyFilter("status","Waiting For Create");
 	
+	
+	//Category_Script.write_InitMainCategory();
+	//Category_Script.create_waiting_category();
+	//Category_Script.write_InitProviderCategory();
+	//Category_Script.create_waiting_category();	
+	//Category_Script.write_provider_category_toDB();    //Create Providers aws/gcp
+	//Category_Script.create_waiting_category();	
+	//Catalog_Item_Script.write_CRD();
+	//Catalog_Item_Script.create_waiting_catItem();
+	
+	
+	
+	Catalog_Item_Script.write_Job();
+	
+	
+	
+	//Catalog_Item_Script.create_waiting_catItem();
+	
+	
+	
+	
+	
+	
+	
+	//Catalog_Item_Script.write_CRD();
+	
+	
+	
+	//Catalog_Item_Script.create_provider_catItem();
+	//Catalog_Item_Script.create_provider_DB();
+	
+	
+	
+	
+	//Catalog_Item_Script.create("TEST00","description", CRSDB_Category.getID("crossplane-provider-aws"), "provider_catItem");
+	
+	//CRSDB_CatItem.deleteByName();
+	
+	//create_provider_category(providerID);
 	
 })();]]></script>
         <sys_class_name>sysauto_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-24 06:25:35</sys_created_on>
         <sys_id>8c62f92c47ba19104b6fcc88f36d4329</sys_id>
-        <sys_mod_count>133</sys_mod_count>
+        <sys_mod_count>338</sys_mod_count>
         <sys_name>CRS_Category/Catalog</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sysauto_script_8c62f92c47ba19104b6fcc88f36d4329</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 10:05:49</sys_updated_on>
+        <sys_updated_on>2022-11-21 13:03:54</sys_updated_on>
         <time_zone/>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>

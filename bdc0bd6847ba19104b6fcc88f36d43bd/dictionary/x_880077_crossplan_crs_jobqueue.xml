@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="CRS_JobQueue" max_length="40" name="x_880077_crossplan_crs_jobqueue" type="collection">
+        <element label="Body" max_length="9940" name="body" type="string"/>
+        <element label="Created" max_length="40" name="created" type="glide_date_time"/>
+        <element label="Created_By" max_length="40" name="created_by" type="string"/>
+        <element label="ID" max_length="40" name="id" type="string"/>
+        <element label="Request" max_length="40" name="request" type="string"/>
+        <element label="Response" max_length="40" name="response" type="string"/>
+        <element label="Retry" max_length="40" name="retry" type="string"/>
+        <element label="State" max_length="40" name="state" type="string"/>
+        <element label="Topic" max_length="40" name="topic" type="string"/>
+        <element label="Url" max_length="40" name="url" type="string"/>
+    </element>
+</database>

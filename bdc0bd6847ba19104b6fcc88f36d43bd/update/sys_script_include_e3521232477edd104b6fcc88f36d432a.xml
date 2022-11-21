@@ -15,18 +15,21 @@ CRSDB_CatItem.prototype = {
     type: 'CRSDB_CatItem'
 };
 
-var IDTable = "x_880077_crossplan_crsdb_catitem"; //DB Table
+var TableID = "x_880077_crossplan_crsdb_catitem"; //DB Table
 
 CRSDB_CatItem.write = function write(current) {	
-	var gr = new GlideRecord(IDTable);
+	var gr = new GlideRecord(TableID);
 	gr.initialize();
 	gr.id= current.id;
 	gr.name =  current.name;
 	gr.type = current.type;
-	gr.short_description = current.shdescription;
+	gr.short_description = current.short_description;
 	gr.price = current.price;	
-	gr.catalog = current.catalog;
+	gr.catalogs = current.catalogs;
 	gr.category = current.category;
+	gr.value = current.value;
+	gr.status = current.status;	
+	gr.type = current.type;
 	gr.insert();	
 };
 
@@ -42,7 +45,6 @@ function deleteCatItem(id){
 	catalogItem.deleteRecord(true);		
 	
 }
-
 
 
 CRSDB_CatItem.deleteByKeyFilter = function getByFilter(key,value){
@@ -62,6 +64,16 @@ CRSDB_CatItem.getByKeyFilter = function getByFilter(key,value){
 	return gr;
 };
 
+CRSDB_CatItem.getIDByName = function getIDByName(name){
+	var gr = new GlideRecord(TableID);
+	gr.addQuery("name",name);
+	gr.query();
+	while(gr.next()){
+		return gr.id;
+	}
+	return -1;
+};
+
 
 
 
@@ -70,13 +82,13 @@ CRSDB_CatItem.getByKeyFilter = function getByFilter(key,value){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-31 08:34:02</sys_created_on>
         <sys_id>e3521232477edd104b6fcc88f36d432a</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_name>CRSDB_CatItem</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_e3521232477edd104b6fcc88f36d432a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-09 13:31:30</sys_updated_on>
+        <sys_updated_on>2022-11-21 08:30:48</sys_updated_on>
     </sys_script_include>
 </record_update>
