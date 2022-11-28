@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-25 06:33:22</sys_created_on>
+        <sys_id>dd3e32b047fa59104b6fcc88f36d4397</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_880077_crossplan_db.x_880077_crossplan.db_user</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_security_acl display_value="x_880077_crossplan_db">5d3e32b047fa59104b6fcc88f36d4394</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_dd3e32b047fa59104b6fcc88f36d4397</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-25 06:33:22</sys_updated_on>
+        <sys_user_role display_value="x_880077_crossplan.db_user" name="x_880077_crossplan.db_user">d13efa3047fa59104b6fcc88f36d430e</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>8e0892191bb5411032182f8dee4bcb37</instance_id>
+        <instance_name>dev125776</instance_name>
+        <name>sys_security_acl_role_dd3e32b047fa59104b6fcc88f36d4397</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-10-25 06:33:22</sys_created_on><sys_id>dd3e32b047fa59104b6fcc88f36d4397</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_880077_crossplan_db.x_880077_crossplan.db_user</sys_name><sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package><sys_policy/><sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope><sys_security_acl display_value="x_880077_crossplan_db">5d3e32b047fa59104b6fcc88f36d4394</sys_security_acl><sys_update_name>sys_security_acl_role_dd3e32b047fa59104b6fcc88f36d4397</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-10-25 06:33:22</sys_updated_on><sys_user_role display_value="x_880077_crossplan.db_user" name="x_880077_crossplan.db_user">d13efa3047fa59104b6fcc88f36d430e</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>1954508160</payload_hash>
+        <record_name>x_880077_crossplan_db.x_880077_crossplan.db_user</record_name>
+        <reverted_from/>
+        <source>79c0bd6847ba19104b6fcc88f36d43c0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-25 06:33:22</sys_created_on>
+        <sys_id>993e32b047fa59104b6fcc88f36d439a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1840dd87d980000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-25 06:33:22</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>913e32b07dfa59103fe4fd193c6a939a</update_guid>
+        <update_guid_history>913e32b07dfa59103fe4fd193c6a939a:1954508160</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_880077_crossplan_db.x_880077_crossplan.db_user">0e959b734753dd544b6fcc88f36d43dd</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-28 12:28:43</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>57fe60556e60425685125698a8c6b6c4</sys_id>
+        <sys_metadata>dd3e32b047fa59104b6fcc88f36d4397</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_880077_crossplan_db.x_880077_crossplan.db_user</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent display_value="">5d3e32b047fa59104b6fcc88f36d4394</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_dd3e32b047fa59104b6fcc88f36d4397</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_dd3e32b047fa59104b6fcc88f36d4397">993e32b047fa59104b6fcc88f36d439a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-28 12:28:43</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

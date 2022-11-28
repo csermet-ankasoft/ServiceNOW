@@ -29,9 +29,7 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 	var gr;
-	/*
 	try {
-	*/
 		if (current.state != "Processing"){
 			var JobTable = gs.getProperty("x_880077_crossplan.CRS_Job_Table_Name");
 			gr = new GlideRecord(JobTable);
@@ -44,22 +42,11 @@
 					gr.state = "Processing";
 					gr.update();
 				}
-			}
-			else{
-				gr = new GlideRecord(JobTable);
-				gr.orderBy('sys_created_on');
-				gr.query("state","Error");
-				if(gr.next()){
-					CRSLog.debug("Error Job: " + gr.topic + " " + gr.state + " " + gr.body);
-					gr.state = "Processing";
-					gr.update();
-				}
-			}			
+			}		
 		}
-		/*
 	}
 	catch(err) {
-		CRSLog.error("Error CRS_JobReady Business Rule --> " + err);
+		CRSLog.error("Error CRS_JobReady --> " + err);
 		if (gr.retry >= gs.getProperty("x_880077_crossplan.JobRetryCount")){
 			gr.state = "Error";
 		}
@@ -69,7 +56,6 @@
 		}		
 	}
 	gr.update();
-	*/
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -77,7 +63,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6f99cf7d475391504b6fcc88f36d4308</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>CRS_JobReady</sys_name>
         <sys_overrides/>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
@@ -85,7 +71,7 @@
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_6f99cf7d475391504b6fcc88f36d4308</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-25 10:54:46</sys_updated_on>
+        <sys_updated_on>2022-11-28 12:56:18</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
