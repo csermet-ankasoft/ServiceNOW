@@ -30,35 +30,65 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 	if (current.state=="Processing"){
 		try {
-			if (current.topic == "Add CatItem to CRSDB_CatItem"){
+			if (current.topic == "Write CatItem"){
 				this.addCatItemtoCRSDB_CatItem(current);				
 			}
 			else if (current.topic == "Create CatItem"){
-				this.createCatItem(current);	
+				this.createCatItemJOB(current);	
 			}
+			current.state == "Completed";
 		}
 		catch(err) {
-			CRSLog.debug("Error CRS_JobProcessing Business Rule" + err);
-			if (current.retry >= gs.getProperty("x_880077_crossplan.JobRetryCount")){
+			CRSLog.debug("Error CRS_JobProcessing Business Rule " + err);
+			//if (current.retry >= gs.getProperty("x_880077_crossplan.JobRetryCount")){
 				current.state = "Error";
+				/*
 			}
 			else{
 				current.state = "Ready";
 				current.retry += 1; 
-			}		
+			}	*/	
 		}
-		current.state == "Completed";
 		current.update();
 	}
 
 })(current, previous);
 
-function createCatItem(current) {
-	CRSLog.debug("Body: "+current.body);
-	current.state = "Completed";
+function createCatItemJOB(current) {
+	CRSLog.debug("Run -> createCatItem JOB");
+	
+	var catItems = new GlideRecord("x_880077_crossplan_crsdb_catitem");
+	catItems.query("name",current.body);
+	catItems.next();	
+	var catalogItemID = createCatItem(catItems);
+	if(catalogItemID){
+		CRSLog.debug("Completed -> Catalog_Item_Script.create");
+		current.state = "Completed";
+	}
+	else {
+		current.state = "Failed";
+	}
+	
+}
+
+function createCatItem(catItems) {
+	var catalogItem = new sn_sc.CatItem();
+	var scope = gs.getProperty('x_880077_crossplan.scope_id');
+    var attributes = {
+        "name": catItems.name,
+        "short_description": catItems.desc,
+		"sys_scope": scope,
+    };	
+	if (catItems.price) attributes["price"] = catItems.price;	
+	catalogItem.setAttributes(attributes);
+	catalogItem.setCatalogs(catItems.catalogs);
+	catalogItem.setCategories(catItems.category);
+    var catalogItemID = catalogItem.create();
+	return catalogItemID;
 }
 
 function addCatItemtoCRSDB_CatItem(current) {
+	
 	var catalogID = gs.getProperty('x_880077_crossplan.main_category_title');
 				var provider_name = "";
 				var apiversion = "";
@@ -74,22 +104,25 @@ function addCatItemtoCRSDB_CatItem(current) {
 					}			
 				}						
 				if(providerIsExist == true){
-					var providerID = CRSDB_Category.getIDByName(provider_name) + "";					
+					var providerID = CRSDB_Category.getIDByName(provider_name) + "";				
 					var catItem = new GlideRecord("x_880077_crossplan_crsdb_catitem");
+					var serviceCatalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
 					catItem.initialize();					
 					catItem.name = CRD_item["metadata"]["name"];
 					catItem.type = "CRD_CatItem";
 					catItem.group = CRD_item["spec"]["group"];
 					catItem.short_description = apiversion;
 					catItem.status = "Waiting For Create";
-					catItem.catalogs = catalogID;
-					catItem.category = "" + providerID;
+					catItem.catalogs = serviceCatalogID;
+					catItem.category = providerID;
 					catItem.type = "provider";		
 					catItem.insert();	
 					current.state = "Completed";
 				}
 				else{
 					current.state = "Not a Provider";
+					current.update();
+					current.deleteRecord();
 				}
 				/*
 				else {
@@ -120,7 +153,7 @@ function addCatItemtoCRSDB_CatItem(current) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c7bb9ba1479751504b6fcc88f36d4341</sys_id>
-        <sys_mod_count>93</sys_mod_count>
+        <sys_mod_count>123</sys_mod_count>
         <sys_name>CRS_JobProcessing</sys_name>
         <sys_overrides/>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
@@ -128,7 +161,7 @@ function addCatItemtoCRSDB_CatItem(current) {
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_c7bb9ba1479751504b6fcc88f36d4341</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-28 13:50:38</sys_updated_on>
+        <sys_updated_on>2022-12-01 06:42:13</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

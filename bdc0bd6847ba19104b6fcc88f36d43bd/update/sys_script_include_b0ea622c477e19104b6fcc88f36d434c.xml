@@ -29,7 +29,8 @@ Catalog_Item_Script.writeCatItem_Job = function write_CRD(){
 		gr.initialize();
 		gr.state= "Ready";
 		gr.body = JSON.stringify(CRD_item);
-		gr.topic = "Add CatItem to CRSDB_CatItem";
+		gr.topic = "Write CatItem";
+		gr.request = CRD_item["metadata"]["name"];
 		gr.retry = 0;
 		gr.insert();	
 	}
@@ -39,16 +40,20 @@ Catalog_Item_Script.writeCatItem_Job = function write_CRD(){
 Catalog_Item_Script.createCatItem_Job = function write_CRD(){
 	var catItems = new GlideRecord("x_880077_crossplan_crsdb_catitem");
 	catItems.orderBy('sys_created_on');
-	catItems.query("state","Waiting For Create");
-	for(var catItem in catItems.next()){
+	catItems.query("status","Waiting For Create");
+	CRSLog.debug("Start.");
+	
+	while(catItems.next()){
 		var gr = new GlideRecord("x_880077_crossplan_crs_jobqueue");
 		gr.initialize();
-		gr.state= "Ready";
-		gr.body = catItem.name;
+		gr.state = "Ready";
+		gr.body = catItems.name;
 		gr.topic = "Create CatItem";
 		gr.retry = 0;
-		gr.insert();		
+		gr.insert();	
+		break;
 	}	
+	
 };
 
 
@@ -163,13 +168,13 @@ Catalog_Item_Script.deleteByKeyFilter = function deleteByKeyFilter(key,value){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-24 10:36:50</sys_created_on>
         <sys_id>b0ea622c477e19104b6fcc88f36d434c</sys_id>
-        <sys_mod_count>137</sys_mod_count>
+        <sys_mod_count>152</sys_mod_count>
         <sys_name>Catalog_Item_Script</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_b0ea622c477e19104b6fcc88f36d434c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-28 13:48:19</sys_updated_on>
+        <sys_updated_on>2022-12-01 06:43:45</sys_updated_on>
     </sys_script_include>
 </record_update>
