@@ -126,14 +126,13 @@
         <update_guid_history>0adce89006071110af4c9be381f0f510:-923306432</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="transitgateways.ec2.aws.crossplane.io">ab80fc1c474711104b6fcc88f36d43d7</sys_audit_delete>
+        <sys_audit_delete display_value="">ab80fc1c474711104b6fcc88f36d43d7</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-04 17:13:13</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>573336d3392247bca643eb9f0ce6cc10</sys_id>
         <sys_metadata>fb6bac10470711104b6fcc88f36d43eb</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>transitgateways.ec2.aws.crossplane.io</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -142,7 +141,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_fb6bac10470711104b6fcc88f36d43eb</sys_update_name>
         <sys_update_version display_value="sc_cat_item_fb6bac10470711104b6fcc88f36d43eb">4adce890470711104b6fcc88f36d4310</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-04 17:13:13</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

@@ -41,14 +41,13 @@
         <update_guid_history>a9f0cc49a6be5910ffe19d175a44da26:1787739891</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="CRS_Provider.Test000001">2304080d47be59104b6fcc88f36d436e</sys_audit_delete>
+        <sys_audit_delete display_value="">2304080d47be59104b6fcc88f36d436e</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-25 11:38:32</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item_category">sc_cat_item_category</sys_db_object>
         <sys_id>00a06152637f4bc0807e6ddcca1d5b09</sys_id>
         <sys_metadata>25f0cc4947be59104b6fcc88f36d4324</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>CRS_Provider.Test000001</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -57,7 +56,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_category_25f0cc4947be59104b6fcc88f36d4324</sys_update_name>
         <sys_update_version display_value="sc_cat_item_category_25f0cc4947be59104b6fcc88f36d4324">a1f0cc4947be59104b6fcc88f36d4327</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-25 11:38:32</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

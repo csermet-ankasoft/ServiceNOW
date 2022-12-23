@@ -11,14 +11,11 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-08 09:11:30</sys_created_on>
         <sys_id>58a8239d470315104b6fcc88f36d433f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>x_880077_crossplan.Tokens</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_properties_58a8239d470315104b6fcc88f36d433f</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-08 09:11:30</sys_updated_on>
         <type>string</type>
         <value>Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik1xWmpyS05BOVhwNzE0anJHc1A2ajNJbHZFeVRqT3A0WHJERVB5WTEyLWMifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImRlZmF1bHQtdG9rZW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVmYXVsdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjExZmQ0Njc5LTQ2YWQtNDFkYi1iMmJlLWQ2MWY4ZjIyYWY1NiIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZmF1bHQifQ.bwxZNbX7ZstsDVj-2XyA6YxAxfTkBo4vO6aDYwmWJUupw6NCPkfD4IlMkoexaxc-U_5aQ75J5STDF0MjR5D1NzjXt8FLfejVqnubexZVLDaIEKv6d7iXdENVKbzqHWEVzEvOiBYNDjEZTYL-KgubluCdvw4RMkRmDNZnZgsL5zLQvU4nP5ioSk9v1DSEFWKXJ0ksOdDbuyacdOHlUiwAZOFd9Jd67dBGNu-FaQe-Sk1Q79ch7Iq3D6c4paPl_jMV3c-DLRBDGUdw6WHs6GtpnUIHGFXKE5_JIgWO4uwbx19pqMnSHh4nTIj377XyXIdNYCvuMviYHnKSDWQxrrb2qQ</value>
         <write_roles/>

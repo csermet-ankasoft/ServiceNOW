@@ -5,7 +5,7 @@
         <condition/>
         <conditional>false</conditional>
         <entered_time/>
-        <name>CRS_Category/Catalog</name>
+        <name>-1 Init Category</name>
         <offset/>
         <offset_type>0</offset_type>
         <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
@@ -17,23 +17,18 @@
         <run_time>1970-01-01 08:00:00</run_time>
         <run_type>weekly</run_type>
         <script><![CDATA[(function() {	
-	// INIT PROVIDER CATEGORY
-	//Category_Script.deleteByKeyFilter("status","Created");
-	//Catalog_Item_Script.deleteByKeyFilter("status","Waiting For Create");
-	
-	
+	// INIT Run OneByOne
+	//Category_Script.deleteByKeyFilter("status","Created");	
 	//Category_Script.write_InitMainCategory();
 	//Category_Script.create_waiting_category();
 	//Category_Script.write_InitProviderCategory();
 	//Category_Script.create_waiting_category();	
-	//Category_Script.write_provider_category_toDB();    //Create Providers aws/gcp
-	//Category_Script.create_waiting_category();	
-	//Catalog_Item_Script.write_CRD();
+	
+		
+	
 	//Catalog_Item_Script.create_waiting_catItem();
 	
-	
-	
-	Catalog_Item_Script.write_Job();
+
 	
 	
 	
@@ -66,14 +61,11 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-24 06:25:35</sys_created_on>
         <sys_id>8c62f92c47ba19104b6fcc88f36d4329</sys_id>
-        <sys_mod_count>338</sys_mod_count>
-        <sys_name>CRS_Category/Catalog</sys_name>
+        <sys_name>-1 Init Category</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sysauto_script_8c62f92c47ba19104b6fcc88f36d4329</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-21 13:03:54</sys_updated_on>
         <time_zone/>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>

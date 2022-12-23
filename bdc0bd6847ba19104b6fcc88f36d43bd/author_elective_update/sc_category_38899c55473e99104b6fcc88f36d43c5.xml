@@ -58,23 +58,20 @@
         <update_guid_history>45e954951c3e9910e7320b2e439fd21b:561727133,c9e9dc55263e9910922f8b0419ec72bd:-1239497430</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="AZURE">f02bd4d5473e99104b6fcc88f36d4317</sys_audit_delete>
+        <sys_audit_delete display_value="">f02bd4d5473e99104b6fcc88f36d4317</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-26 07:57:52</sys_created_on>
         <sys_db_object display_value="" name="sc_category">sc_category</sys_db_object>
         <sys_id>3f8976da60324db4b0445ddd7c758609</sys_id>
         <sys_metadata>38899c55473e99104b6fcc88f36d43c5</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>AZURE</sys_name>
-        <sys_package display_value="CROSSPLANE" source="x_880077_crosspl_0">6d2a353847e511104b6fcc88f36d43b2</sys_package>
+        <sys_package display_value="">6d2a353847e511104b6fcc88f36d43b2</sys_package>
         <sys_parent/>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_category_38899c55473e99104b6fcc88f36d43c5</sys_update_name>
         <sys_update_version display_value="sc_category_38899c55473e99104b6fcc88f36d43c5">05e95495473e99104b6fcc88f36d4328</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-26 07:57:52</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

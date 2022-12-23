@@ -95,26 +95,25 @@
         <source>df98b8b0472111104b6fcc88f36d43f6</source>
         <source_table>sys_upgrade_history</source_table>
         <state>previous</state>
-        <sys_created_by/>
+        <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-23 17:31:11</sys_created_on>
         <sys_id>2068d75d47cfd1104b6fcc88f36d435c</sys_id>
-        <sys_mod_count/>
+        <sys_mod_count>0</sys_mod_count>
         <sys_recorded_at>182cbc217180000000</sys_recorded_at>
-        <sys_updated_by/>
-        <sys_updated_on/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-22 10:58:55</sys_updated_on>
         <type>Catalog Item</type>
         <update_guid>ec68d75d4ecfd1101226f1203ad6675b</update_guid>
         <update_guid_history>ec68d75d4ecfd1101226f1203ad6675b:-289630365</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="multidimpodautoscalers.autoscaling.gke.io">2468d75d47cfd1104b6fcc88f36d436c</sys_audit_delete>
+        <sys_audit_delete display_value="">2468d75d47cfd1104b6fcc88f36d436c</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-08 08:00:23</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>3afb2d7cdea54e80aa8dc24844da0210</sys_id>
         <sys_metadata>0cdec20d47cf91104b6fcc88f36d43ee</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>multidimpodautoscalers.autoscaling.gke.io</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -123,7 +122,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_0cdec20d47cf91104b6fcc88f36d43ee</sys_update_name>
         <sys_update_version display_value="sc_cat_item_0cdec20d47cf91104b6fcc88f36d43ee">2068d75d47cfd1104b6fcc88f36d435c</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-08 08:00:23</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

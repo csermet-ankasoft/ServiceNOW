@@ -44,27 +44,26 @@
         <reverted_from/>
         <source>df98b8b0472111104b6fcc88f36d43f6</source>
         <source_table>sys_upgrade_history</source_table>
-        <state>current</state>
-        <sys_created_by/>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-23 17:31:11</sys_created_on>
         <sys_id>ce21a748474315504b6fcc88f36d435a</sys_id>
-        <sys_mod_count/>
+        <sys_mod_count>0</sys_mod_count>
         <sys_recorded_at>182cbc217180000000</sys_recorded_at>
-        <sys_updated_by/>
-        <sys_updated_on/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-22 11:05:41</sys_updated_on>
         <type>Category</type>
         <update_guid>8e21a74803431550ff0c6bf7e8ff6d5a</update_guid>
         <update_guid_history>8e21a74803431550ff0c6bf7e8ff6d5a:714090475</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="CRS_Provider">8621a748474315504b6fcc88f36d436e</sys_audit_delete>
+        <sys_audit_delete display_value="">8621a748474315504b6fcc88f36d436e</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-04 11:26:19</sys_created_on>
         <sys_db_object display_value="" name="sc_category">sc_category</sys_db_object>
         <sys_id>3f173d7a329c42a0975226175054f410</sys_id>
         <sys_metadata>43c02348474315504b6fcc88f36d4382</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>CRS_Provider</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -73,7 +72,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_category_43c02348474315504b6fcc88f36d4382</sys_update_name>
         <sys_update_version display_value="sc_category_43c02348474315504b6fcc88f36d4382">ce21a748474315504b6fcc88f36d435a</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-04 11:26:19</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

@@ -42,14 +42,13 @@
         <update_guid_history>a8e984418afe59104cbace000db5f4fe:19411418</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="CrossplaneV2Catalog.catalog_crossplanev2catalog">464a4c4147fe59104b6fcc88f36d437e</sys_audit_delete>
+        <sys_audit_delete display_value="">464a4c4147fe59104b6fcc88f36d437e</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-25 12:05:44</sys_created_on>
         <sys_db_object display_value="" name="sc_catalog_view_mtom">sc_catalog_view_mtom</sys_db_object>
         <sys_id>0e2a01cfd7fc40deb2184815c398ae84</sys_id>
         <sys_metadata>20e9844147fe59104b6fcc88f36d43fd</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>CrossplaneV2Catalog.catalog_crossplanev2catalog</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent display_value="">85d9404147fe59104b6fcc88f36d43b5</sys_parent>
@@ -58,7 +57,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_catalog_view_mtom_20e9844147fe59104b6fcc88f36d43fd</sys_update_name>
         <sys_update_version display_value="sc_catalog_view_mtom_20e9844147fe59104b6fcc88f36d43fd">a0e9844147fe59104b6fcc88f36d43ff</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-25 12:05:44</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

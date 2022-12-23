@@ -111,16 +111,13 @@
         <sys_db_object display_value="" name="sys_dictionary">sys_dictionary</sys_db_object>
         <sys_id>53898c6844204e349de0405403cdbf10</sys_id>
         <sys_metadata>263a5895473e99104b6fcc88f36d43e3</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>value</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
-        <sys_parent display_value="CRSDB">151e367047fa59104b6fcc88f36d432d</sys_parent>
+        <sys_parent display_value="">151e367047fa59104b6fcc88f36d432d</sys_parent>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sys_dictionary_x_880077_crossplan_db_id</sys_update_name>
         <sys_update_version display_value="sys_dictionary_x_880077_crossplan_db_id">ccf8c8eb477e51504b6fcc88f36d4324</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-02 06:25:28</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

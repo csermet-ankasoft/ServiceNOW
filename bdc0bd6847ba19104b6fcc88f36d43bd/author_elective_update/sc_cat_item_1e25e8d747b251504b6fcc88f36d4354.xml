@@ -95,26 +95,25 @@
         <source>df98b8b0472111104b6fcc88f36d43f6</source>
         <source_table>sys_upgrade_history</source_table>
         <state>previous</state>
-        <sys_created_by/>
+        <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-23 17:31:11</sys_created_on>
         <sys_id>2dd5acdb47b251504b6fcc88f36d4393</sys_id>
-        <sys_mod_count/>
+        <sys_mod_count>0</sys_mod_count>
         <sys_recorded_at>182cbc217180000000</sys_recorded_at>
-        <sys_updated_by/>
-        <sys_updated_on/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-22 10:59:37</sys_updated_on>
         <type>Catalog Item</type>
         <update_guid>e9d5acdbb1b251506a0832280bb02993</update_guid>
         <update_guid_history>e9d5acdbb1b251506a0832280bb02993:-195947310</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="sourceentitlements.catalogsourceentitlement.vra.jet.crossplane.io">69d5acdb47b251504b6fcc88f36d43bd</sys_audit_delete>
+        <sys_audit_delete display_value="">69d5acdb47b251504b6fcc88f36d43bd</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 13:52:27</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>3739bfcc440848a298cbc66da0d6b084</sys_id>
         <sys_metadata>1e25e8d747b251504b6fcc88f36d4354</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>sourceentitlements.catalogsourceentitlement.vra.jet.crossplane.io</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -123,7 +122,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_1e25e8d747b251504b6fcc88f36d4354</sys_update_name>
         <sys_update_version display_value="sc_cat_item_1e25e8d747b251504b6fcc88f36d4354">2dd5acdb47b251504b6fcc88f36d4393</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 13:52:27</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

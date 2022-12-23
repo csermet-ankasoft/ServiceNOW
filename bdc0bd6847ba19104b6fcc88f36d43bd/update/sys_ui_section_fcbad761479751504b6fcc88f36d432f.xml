@@ -193,15 +193,12 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>fcbad761479751504b6fcc88f36d432f</sys_id>
-            <sys_mod_count>0</sys_mod_count>
             <sys_name>x_880077_crossplan_crs_jobqueue</sys_name>
             <sys_overrides/>
             <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
             <sys_policy/>
             <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
             <sys_update_name>sys_ui_section_fcbad761479751504b6fcc88f36d432f</sys_update_name>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-11-21 13:04:41</sys_updated_on>
             <sys_user/>
             <title>true</title>
             <view display_value="Default view" name="NULL">Default view</view>

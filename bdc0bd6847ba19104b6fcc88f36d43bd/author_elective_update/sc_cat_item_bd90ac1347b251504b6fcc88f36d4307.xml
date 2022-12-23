@@ -126,14 +126,13 @@
         <update_guid_history>1414a01780b251503d70dc2bb0088eff:1833088686</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="cachepolicies.cloudfront.aws.crossplane.io">b514641747b251504b6fcc88f36d43a3</sys_audit_delete>
+        <sys_audit_delete display_value="">b514641747b251504b6fcc88f36d43a3</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 13:44:49</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>040bec454598488a80700d58d05a0b04</sys_id>
         <sys_metadata>bd90ac1347b251504b6fcc88f36d4307</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>cachepolicies.cloudfront.aws.crossplane.io</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -142,7 +141,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_bd90ac1347b251504b6fcc88f36d4307</sys_update_name>
         <sys_update_version display_value="sc_cat_item_bd90ac1347b251504b6fcc88f36d4307">5414a01747b251504b6fcc88f36d43ff</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 13:44:49</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

@@ -126,14 +126,13 @@
         <update_guid_history>6865601be2b25150807cf44449b857e8:-1237271872</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="backups.dynamodb.aws.crossplane.io">6a65641b47b251504b6fcc88f36d439b</sys_audit_delete>
+        <sys_audit_delete display_value="">6a65641b47b251504b6fcc88f36d439b</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 13:50:36</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>6b0e5a2a8e3a4694af8e230eac1cba01</sys_id>
         <sys_metadata>9125e4d747b251504b6fcc88f36d433f</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>backups.dynamodb.aws.crossplane.io</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -142,7 +141,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_9125e4d747b251504b6fcc88f36d433f</sys_update_name>
         <sys_update_version display_value="sc_cat_item_9125e4d747b251504b6fcc88f36d433f">a865601b47b251504b6fcc88f36d43e8</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 13:50:36</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

@@ -42,14 +42,13 @@
         <update_guid_history>30f052fed93edd101f752c8acc687e3a:835952136</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="x_880077_crossplan_catitemslist.x_880077_crossplan.catitemslist_user">9fa1978f473e11504b6fcc88f36d431f</sys_audit_delete>
+        <sys_audit_delete display_value="">9fa1978f473e11504b6fcc88f36d431f</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 07:44:45</sys_created_on>
         <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
         <sys_id>d9bb7c8b6ae24e4d8e3bdd5ff2e18f21</sys_id>
         <sys_metadata>b4f052fe473edd104b6fcc88f36d432b</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>x_880077_crossplan_catitemslist.x_880077_crossplan.catitemslist_user</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent display_value="">34f052fe473edd104b6fcc88f36d4328</sys_parent>
@@ -58,7 +57,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sys_security_acl_role_b4f052fe473edd104b6fcc88f36d432b</sys_update_name>
         <sys_update_version display_value="sys_security_acl_role_b4f052fe473edd104b6fcc88f36d432b">38f052fe473edd104b6fcc88f36d433a</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 07:44:45</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

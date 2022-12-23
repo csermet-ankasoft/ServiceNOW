@@ -41,14 +41,13 @@
         <update_guid_history>fb7b6d0ae8039510850268a49399f9e6:-594391051</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="Service Catalog.NEWTest002">b1153e9a4703d5104b6fcc88f36d4393</sys_audit_delete>
+        <sys_audit_delete display_value="">b1153e9a4703d5104b6fcc88f36d4393</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-11 08:00:07</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item_catalog">sc_cat_item_catalog</sys_db_object>
         <sys_id>8eb20e363cfa4455b6a63703da747251</sys_id>
         <sys_metadata>fb7b6d0a470395104b6fcc88f36d43e2</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>Service Catalog.NEWTest002</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent display_value="">327b6d0a470395104b6fcc88f36d434b</sys_parent>
@@ -57,7 +56,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_catalog_fb7b6d0a470395104b6fcc88f36d43e2</sys_update_name>
         <sys_update_version display_value="sc_cat_item_catalog_fb7b6d0a470395104b6fcc88f36d43e2">f37b6d0a470395104b6fcc88f36d43e7</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-11 08:00:07</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

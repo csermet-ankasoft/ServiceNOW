@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config">
+    <ua_table_licensing_config action="DELETE">
+        <is_fulfillment>false</is_fulfillment>
+        <license_condition/>
+        <license_model>none</license_model>
+        <license_roles/>
+        <name>x_880077_crossplan_crsdb_categorylist</name>
+        <op_delete>true</op_delete>
+        <op_insert>true</op_insert>
+        <op_update>true</op_update>
+        <owner_condition/>
+        <sys_class_name>ua_table_licensing_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-22 10:58:13</sys_created_on>
+        <sys_id>6e07e2e74733111015927601e36d4399</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_880077_crossplan_crsdb_categorylist</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>ua_table_licensing_config_6e07e2e74733111015927601e36d4399</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-22 10:58:13</sys_updated_on>
+    </ua_table_licensing_config>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>34e2e56adb9b881007072f17d49619e0</instance_id>
+        <instance_name>dev102312</instance_name>
+        <name>ua_table_licensing_config_6e07e2e74733111015927601e36d4399</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config"><ua_table_licensing_config action="INSERT_OR_UPDATE"><is_fulfillment>false</is_fulfillment><license_condition/><license_model>none</license_model><license_roles/><name>x_880077_crossplan_crsdb_categorylist</name><op_delete>true</op_delete><op_insert>true</op_insert><op_update>true</op_update><owner_condition/><sys_class_name>ua_table_licensing_config</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-12-22 10:58:13</sys_created_on><sys_id>6e07e2e74733111015927601e36d4399</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_880077_crossplan_crsdb_categorylist</sys_name><sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package><sys_policy/><sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope><sys_update_name>ua_table_licensing_config_6e07e2e74733111015927601e36d4399</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-12-22 10:58:13</sys_updated_on></ua_table_licensing_config></record_update>]]></payload>
+        <payload_hash>2007284770</payload_hash>
+        <record_name>x_880077_crossplan_crsdb_categorylist</record_name>
+        <reverted_from/>
+        <source>2bac27c24733111015927601e36d435b</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2022-12-18 00:11:36</sys_created_on>
+        <sys_id>ee17aae74733111015927601e36d43a4</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>18522925ec00000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>Table Subscription Configuration</type>
+        <update_guid>ae17aae7d3331110bae65387136d17a4</update_guid>
+        <update_guid_history>ae17aae7d3331110bae65387136d17a4:2007284770</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-22 12:47:32</sys_created_on>
+        <sys_db_object display_value="" name="ua_table_licensing_config">ua_table_licensing_config</sys_db_object>
+        <sys_id>031005fa60854361800fe42056635919</sys_id>
+        <sys_metadata>6e07e2e74733111015927601e36d4399</sys_metadata>
+        <sys_name>x_880077_crossplan_crsdb_categorylist</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>ua_table_licensing_config_6e07e2e74733111015927601e36d4399</sys_update_name>
+        <sys_update_version display_value="ua_table_licensing_config_6e07e2e74733111015927601e36d4399">ee17aae74733111015927601e36d43a4</sys_update_version>
+    </sys_metadata_delete>
+</record_update>

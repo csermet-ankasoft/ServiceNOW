@@ -5,7 +5,7 @@
         <condition/>
         <conditional>false</conditional>
         <entered_time/>
-        <name>CRS_Delete_Old</name>
+        <name>00 CRS Reset</name>
         <offset/>
         <offset_type>0</offset_type>
         <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
@@ -16,41 +16,18 @@
         <run_start>2022-11-04 15:54:28</run_start>
         <run_time>1970-01-01 08:00:00</run_time>
         <run_type>daily</run_type>
-        <script><![CDATA[(function() {	
-	//CRSDB_CatItem.deleteByType("provider_catItem");
-	/*
-	var gr = new GlideRecord("sc_cat_item");
-	gr.query();	
-	gr.addQuery('sys_scope', 'bdc0bd6847ba19104b6fcc88f36d43bd');
-	while(gr.next()){
-		id = gr.getUniqueValue();
-		CRSLog.debug("id" + id);
-		var variableSetM2M = new GlideRecord('io_set_item'); // M2M table linking variable set and catalog item
-		variableSetM2M.addQuery('sc_cat_item',id); // get M2M records for the catalog item
-		variableSetM2M.query();
-		while (variableSetM2M.next()) {
-			var varset = new sn_sc.CatalogItemVariableSetM2M(variableSetM2M.getUniqueValue()); // M2M record sys_id
-			varset.deleteRecord(true); // delete M2M record
-		}
-		var catalogItem = new sn_sc.CatItem(id);
-		catalogItem.deleteRecord(true);		
-	}
-	*/
-	
+        <script><![CDATA[(function() {		
 	
 })();]]></script>
         <sys_class_name>sysauto_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-04 15:54:45</sys_created_on>
         <sys_id>ce8e189c478311104b6fcc88f36d43ad</sys_id>
-        <sys_mod_count>7</sys_mod_count>
-        <sys_name>CRS_Delete_Old</sys_name>
+        <sys_name>00 CRS Reset</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sysauto_script_ce8e189c478311104b6fcc88f36d43ad</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-12 09:43:24</sys_updated_on>
         <time_zone/>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>

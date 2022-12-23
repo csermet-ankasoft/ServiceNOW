@@ -58,14 +58,13 @@
         <update_guid_history>33a1545ffa325150bba2a45f742c3481:-1367842704</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="Random002">ccb1545f473251504b6fcc88f36d43e5</sys_audit_delete>
+        <sys_audit_delete display_value="">ccb1545f473251504b6fcc88f36d43e5</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 12:24:25</sys_created_on>
         <sys_db_object display_value="" name="sc_category">sc_category</sys_db_object>
         <sys_id>22967d3f19f0428c91c63a7fa4d14ff9</sys_id>
         <sys_metadata>b7a1145f473251504b6fcc88f36d4385</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>Random002</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -74,7 +73,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_category_b7a1145f473251504b6fcc88f36d4385</sys_update_name>
         <sys_update_version display_value="sc_category_b7a1145f473251504b6fcc88f36d4385">73a1545f473251504b6fcc88f36d4381</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 12:24:25</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

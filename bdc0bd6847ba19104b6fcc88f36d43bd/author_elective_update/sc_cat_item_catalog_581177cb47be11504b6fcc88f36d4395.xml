@@ -41,14 +41,13 @@
         <update_guid_history>1c1177cb12be1150d6c0e2a81cabe798:1973536200</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="Service Catalog.requestvalidators.apigateway.aws.crossplane.io">6ca1b34f47be11504b6fcc88f36d43cf</sys_audit_delete>
+        <sys_audit_delete display_value="">6ca1b34f47be11504b6fcc88f36d43cf</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 10:04:22</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item_catalog">sc_cat_item_catalog</sys_db_object>
         <sys_id>27908e603cc04cae9741c4d998263904</sys_id>
         <sys_metadata>581177cb47be11504b6fcc88f36d4395</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>Service Catalog.requestvalidators.apigateway.aws.crossplane.io</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent display_value="">eddd2bc747be11504b6fcc88f36d43ab</sys_parent>
@@ -57,7 +56,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_catalog_581177cb47be11504b6fcc88f36d4395</sys_update_name>
         <sys_update_version display_value="sc_cat_item_catalog_581177cb47be11504b6fcc88f36d4395">141177cb47be11504b6fcc88f36d4399</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 10:04:22</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

@@ -41,6 +41,7 @@
         <mask_use_encryption>false</mask_use_encryption>
         <name>objectLockEnabledForBucket</name>
         <order/>
+        <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
@@ -68,14 +69,11 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 11:25:56</sys_created_on>
         <sys_id>f834889b47fe11504b6fcc88f36d439b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>objectLockEnabledForBucket ?</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>item_option_new_f834889b47fe11504b6fcc88f36d439b</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 11:25:56</sys_updated_on>
         <table/>
         <tooltip/>
         <type>7</type>
@@ -93,25 +91,6 @@
         <visible_standalone>true</visible_standalone>
         <visible_summary>true</visible_summary>
         <write_roles/>
-        <x_vmw_cloudservice_cas_max_date/>
-        <x_vmw_cloudservice_cas_min_date/>
-        <x_vmw_cloudservice_cas_name/>
-        <x_vmw_cloudservice_cas_scale_max/>
-        <x_vmw_cloudservice_cas_scale_min/>
-        <x_vmw_cloudservice_datatype/>
-        <x_vmw_cloudservice_field_json/>
-        <x_vmw_cloudservice_field_readonly/>
-        <x_vmw_cloudservice_field_visibility/>
-        <x_vmw_cloudservice_pattern/>
-        <x_vmw_cloudservice_pattern_message/>
-        <x_vmw_cloudservice_step/>
-        <x_vmw_cloudservice_versions/>
-        <x_vmw_cloudservice_vra_action/>
-        <x_vmw_cloudservice_vra_default_value_client_script/>
-        <x_vmw_cloudservice_vra_maximum/>
-        <x_vmw_cloudservice_vra_minimum/>
-        <x_vmw_cloudservice_vra_value_client_script/>
-        <x_vmw_cloudservice_vraorginalkeyname/>
     </item_option_new>
     <sys_translated_text action="delete_multiple" query="documentkey=f834889b47fe11504b6fcc88f36d439b"/>
     <fx_price action="delete_multiple" query="id=f834889b47fe11504b6fcc88f36d439b"/>

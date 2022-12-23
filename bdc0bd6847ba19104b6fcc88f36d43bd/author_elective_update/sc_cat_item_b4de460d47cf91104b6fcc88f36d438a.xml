@@ -95,26 +95,25 @@
         <source>df98b8b0472111104b6fcc88f36d43f6</source>
         <source_table>sys_upgrade_history</source_table>
         <state>previous</state>
-        <sys_created_by/>
+        <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-23 17:31:11</sys_created_on>
         <sys_id>5e889f9d47cfd1104b6fcc88f36d43fa</sys_id>
-        <sys_mod_count/>
+        <sys_mod_count>0</sys_mod_count>
         <sys_recorded_at>182cbc217180000000</sys_recorded_at>
-        <sys_updated_by/>
-        <sys_updated_on/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-22 11:03:30</sys_updated_on>
         <type>Catalog Item</type>
         <update_guid>1e889f9d1ecfd11020d40ffe01af50fa</update_guid>
         <update_guid_history>1e889f9d1ecfd11020d40ffe01af50fa:-1740113811</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="cacheparametergroups.elasticache.aws.crossplane.io">1288df9d47cfd1104b6fcc88f36d430b</sys_audit_delete>
+        <sys_audit_delete display_value="">1288df9d47cfd1104b6fcc88f36d430b</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-08 08:01:03</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>951c886f70f144619525a4a30f09b2a9</sys_id>
         <sys_metadata>b4de460d47cf91104b6fcc88f36d438a</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>cacheparametergroups.elasticache.aws.crossplane.io</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -123,7 +122,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_b4de460d47cf91104b6fcc88f36d438a</sys_update_name>
         <sys_update_version display_value="sc_cat_item_b4de460d47cf91104b6fcc88f36d438a">5e889f9d47cfd1104b6fcc88f36d43fa</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-08 08:01:03</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

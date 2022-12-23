@@ -94,36 +94,33 @@
         <reverted_from/>
         <source>df98b8b0472111104b6fcc88f36d43f6</source>
         <source_table>sys_upgrade_history</source_table>
-        <state>current</state>
-        <sys_created_by/>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-23 17:31:11</sys_created_on>
         <sys_id>6030bc54474711104b6fcc88f36d43c9</sys_id>
-        <sys_mod_count/>
+        <sys_mod_count>0</sys_mod_count>
         <sys_recorded_at>182cbc217180000000</sys_recorded_at>
-        <sys_updated_by/>
-        <sys_updated_on/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-22 11:03:33</sys_updated_on>
         <type>Catalog Item</type>
         <update_guid>2030bc5476471110af7c61d1cf5ac1c9</update_guid>
         <update_guid_history>2030bc5476471110af7c61d1cf5ac1c9:-589255902</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="sources.contentsource.vra.jet.crossplane.io">2030bc54474711104b6fcc88f36d43f2</sys_audit_delete>
+        <sys_audit_delete display_value="">2030bc54474711104b6fcc88f36d43f2</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-04 17:11:38</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>ac7fb7a95a164d9883abcf7cf77449e1</sys_id>
         <sys_metadata>b6ec60d0470711104b6fcc88f36d432e</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>sources.contentsource.vra.jet.crossplane.io</sys_name>
-        <sys_package display_value="CROSSPLANE" source="x_880077_crosspl_0">6d2a353847e511104b6fcc88f36d43b2</sys_package>
+        <sys_package display_value="">6d2a353847e511104b6fcc88f36d43b2</sys_package>
         <sys_parent/>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_b6ec60d0470711104b6fcc88f36d432e</sys_update_name>
         <sys_update_version display_value="sc_cat_item_b6ec60d0470711104b6fcc88f36d432e">6030bc54474711104b6fcc88f36d43c9</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-04 17:11:38</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

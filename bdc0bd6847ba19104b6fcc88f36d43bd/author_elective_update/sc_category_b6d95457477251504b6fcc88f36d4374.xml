@@ -45,26 +45,25 @@
         <source>df98b8b0472111104b6fcc88f36d43f6</source>
         <source_table>sys_upgrade_history</source_table>
         <state>previous</state>
-        <sys_created_by/>
+        <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-23 17:31:11</sys_created_on>
         <sys_id>a77a5c57477251504b6fcc88f36d43b0</sys_id>
-        <sys_mod_count/>
+        <sys_mod_count>0</sys_mod_count>
         <sys_recorded_at>182cbc217180000000</sys_recorded_at>
-        <sys_updated_by/>
-        <sys_updated_on/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-22 11:06:00</sys_updated_on>
         <type>Category</type>
         <update_guid>677a5c5746725150a2d75785c686e2b0</update_guid>
         <update_guid_history>677a5c5746725150a2d75785c686e2b0:1695219748</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="CrossplaneV2">237a5c57477251504b6fcc88f36d43bd</sys_audit_delete>
+        <sys_audit_delete display_value="">237a5c57477251504b6fcc88f36d43bd</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 13:02:54</sys_created_on>
         <sys_db_object display_value="" name="sc_category">sc_category</sys_db_object>
         <sys_id>a76aba95c1b34512b983529f52a2eba4</sys_id>
         <sys_metadata>b6d95457477251504b6fcc88f36d4374</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>CrossplaneV2</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -73,7 +72,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_category_b6d95457477251504b6fcc88f36d4374</sys_update_name>
         <sys_update_version display_value="sc_category_b6d95457477251504b6fcc88f36d4374">a77a5c57477251504b6fcc88f36d43b0</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 13:02:54</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

@@ -126,14 +126,13 @@
         <update_guid_history>2d9c4c97e132515069899e1b7a7d3483:-1184598258</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="profiles.imageprofile.vra.jet.crossplane.io">773f00db473251504b6fcc88f36d437d</sys_audit_delete>
+        <sys_audit_delete display_value="">773f00db473251504b6fcc88f36d437d</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 12:13:45</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>6bf9f39d0b8f4bcdb8bfea1a073c58a9</sys_id>
         <sys_metadata>fe2c0497473251504b6fcc88f36d4384</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>profiles.imageprofile.vra.jet.crossplane.io</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -142,7 +141,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_fe2c0497473251504b6fcc88f36d4384</sys_update_name>
         <sys_update_version display_value="sc_cat_item_fe2c0497473251504b6fcc88f36d4384">6d9c4c97473251504b6fcc88f36d4383</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 12:13:45</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

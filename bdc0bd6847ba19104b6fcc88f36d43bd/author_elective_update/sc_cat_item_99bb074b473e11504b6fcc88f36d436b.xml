@@ -126,23 +126,20 @@
         <update_guid_history>fffb0b4b1e3e11501b728c4d859f65c4:0,7bfb0b4b943e1150f6780e13410b59c3:-426074803</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="crossplane-provider-azure Item">3a95d783477e11504b6fcc88f36d4301</sys_audit_delete>
+        <sys_audit_delete display_value="">3a95d783477e11504b6fcc88f36d4301</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 08:01:55</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>2f8d7434fd104fd1bb66080aa113c649</sys_id>
         <sys_metadata>99bb074b473e11504b6fcc88f36d436b</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>crossplane-provider-azure Item</sys_name>
-        <sys_package display_value="abdu-test" source="x_880077_abdu_test">4f1e79e647fe9d104b6fcc88f36d4352</sys_package>
+        <sys_package display_value="">4f1e79e647fe9d104b6fcc88f36d4352</sys_package>
         <sys_parent/>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_99bb074b473e11504b6fcc88f36d436b</sys_update_name>
         <sys_update_version display_value="sc_cat_item_99bb074b473e11504b6fcc88f36d436b">b3fb0b4b473e11504b6fcc88f36d43c5</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 08:01:55</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

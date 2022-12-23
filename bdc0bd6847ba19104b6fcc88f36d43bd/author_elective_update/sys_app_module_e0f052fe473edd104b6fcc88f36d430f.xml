@@ -65,14 +65,13 @@
         <update_guid_history>d1189a76777edd1007c68915331ebb46:648017921,bcf052fe783edd1054d29543c62f3a11:1759010695</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="CRSDB_CatItemsLists">d7a1978f473e11504b6fcc88f36d4339</sys_audit_delete>
+        <sys_audit_delete display_value="">d7a1978f473e11504b6fcc88f36d4339</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 07:44:45</sys_created_on>
         <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
         <sys_id>5f5ced3db5c64f0fad3f37e18ec23211</sys_id>
         <sys_metadata>e0f052fe473edd104b6fcc88f36d430f</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>CRSDB_CatItemsLists</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -81,7 +80,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sys_app_module_e0f052fe473edd104b6fcc88f36d430f</sys_update_name>
         <sys_update_version display_value="sys_app_module_e0f052fe473edd104b6fcc88f36d430f">1d189a76477edd104b6fcc88f36d4346</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 07:44:45</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

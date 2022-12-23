@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="CRSDB_Category" max_length="40" name="x_880077_crossplan_crsdb_category" sizeclass="0" type="collection">
+    <element db_object_id="e207e2e74733111015927601e36d43b8" label="CRSDB_Category" max_length="40" name="x_880077_crossplan_crsdb_category" type="collection">
         <element label="catalog" max_length="40" name="catalog" type="string"/>
         <element label="description" max_length="40" name="description" type="string"/>
         <element label="id" max_length="40" name="id" type="string"/>

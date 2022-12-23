@@ -126,23 +126,20 @@
         <update_guid_history>5a0e3f0b67fe11509e9a522e339e0425:27228142</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="mysqlservervirtualnetworkrules.database.azure.crossplane.io">c1abc057473251504b6fcc88f36d434a</sys_audit_delete>
+        <sys_audit_delete display_value="">c1abc057473251504b6fcc88f36d434a</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 11:58:00</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>7ac0af88ddae4e7087e1240fa74f09a4</sys_id>
         <sys_metadata>0c02bf4f47be11504b6fcc88f36d43d3</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>mysqlservervirtualnetworkrules.database.azure.crossplane.io</sys_name>
-        <sys_package display_value="abdu-test" source="x_880077_abdu_test">4f1e79e647fe9d104b6fcc88f36d4352</sys_package>
+        <sys_package display_value="">4f1e79e647fe9d104b6fcc88f36d4352</sys_package>
         <sys_parent/>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_0c02bf4f47be11504b6fcc88f36d43d3</sys_update_name>
         <sys_update_version display_value="sc_cat_item_0c02bf4f47be11504b6fcc88f36d43d3">9a0e3f0b47fe11504b6fcc88f36d4325</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 11:58:00</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

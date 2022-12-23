@@ -126,14 +126,13 @@
         <update_guid_history>4814a017d5b25150ee6f75bfabe4b74b:-123512552</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="resourcerecordsets.route53.aws.crossplane.io">4324205747b251504b6fcc88f36d43e9</sys_audit_delete>
+        <sys_audit_delete display_value="">4324205747b251504b6fcc88f36d43e9</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 13:45:11</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>1246505058884f3487c9cf8656cf1931</sys_id>
         <sys_metadata>0e90ec1347b251504b6fcc88f36d4384</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>resourcerecordsets.route53.aws.crossplane.io</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -142,7 +141,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_0e90ec1347b251504b6fcc88f36d4384</sys_update_name>
         <sys_update_version display_value="sc_cat_item_0e90ec1347b251504b6fcc88f36d4384">8814a01747b251504b6fcc88f36d434b</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 13:45:11</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

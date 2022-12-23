@@ -126,23 +126,20 @@
         <update_guid_history>710ebb0bb5fe1150fdccb5f7302acc92:-993213906</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="models.apigateway.aws.crossplane.io">c09b0817473251504b6fcc88f36d43c5</sys_audit_delete>
+        <sys_audit_delete display_value="">c09b0817473251504b6fcc88f36d43c5</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 11:57:40</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>512776fc1d7d4ea5967aaa183c247b31</sys_id>
         <sys_metadata>a3f17f4f47be11504b6fcc88f36d4362</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>models.apigateway.aws.crossplane.io</sys_name>
-        <sys_package display_value="abdu-test" source="x_880077_abdu_test">4f1e79e647fe9d104b6fcc88f36d4352</sys_package>
+        <sys_package display_value="">4f1e79e647fe9d104b6fcc88f36d4352</sys_package>
         <sys_parent/>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_a3f17f4f47be11504b6fcc88f36d4362</sys_update_name>
         <sys_update_version display_value="sc_cat_item_a3f17f4f47be11504b6fcc88f36d4362">b10ebb0b47fe11504b6fcc88f36d4392</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 11:57:40</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

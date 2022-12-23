@@ -45,35 +45,32 @@
         <source>df98b8b0472111104b6fcc88f36d43f6</source>
         <source_table>sys_upgrade_history</source_table>
         <state>previous</state>
-        <sys_created_by/>
+        <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-23 17:31:11</sys_created_on>
         <sys_id>050e3b0b47fe11504b6fcc88f36d43b7</sys_id>
-        <sys_mod_count/>
+        <sys_mod_count>0</sys_mod_count>
         <sys_recorded_at>182cbc217180000000</sys_recorded_at>
-        <sys_updated_by/>
-        <sys_updated_on/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-22 11:06:04</sys_updated_on>
         <type>Category</type>
         <update_guid>c10e3b0ba7fe1150c0abe49c405a9db7</update_guid>
         <update_guid_history>c10e3b0ba7fe1150c0abe49c405a9db7:-230589458</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="crossplane-provider-aws">fd0efb0b47fe11504b6fcc88f36d4341</sys_audit_delete>
+        <sys_audit_delete display_value="">fd0efb0b47fe11504b6fcc88f36d4341</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 10:58:32</sys_created_on>
         <sys_db_object display_value="" name="sc_category">sc_category</sys_db_object>
         <sys_id>a2973fd2fb3547e5afeba6d27ddf6091</sys_id>
         <sys_metadata>cff1fb4f47be11504b6fcc88f36d43f8</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>crossplane-provider-aws</sys_name>
-        <sys_package display_value="abdu-test" source="x_880077_abdu_test">4f1e79e647fe9d104b6fcc88f36d4352</sys_package>
+        <sys_package display_value="">4f1e79e647fe9d104b6fcc88f36d4352</sys_package>
         <sys_parent/>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_category_cff1fb4f47be11504b6fcc88f36d43f8</sys_update_name>
         <sys_update_version display_value="sc_category_cff1fb4f47be11504b6fcc88f36d43f8">050e3b0b47fe11504b6fcc88f36d43b7</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 10:58:32</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

@@ -16,32 +16,28 @@ Category_Script.prototype = {
 };
 
 Category_Script.write_InitMainCategory = function create() {		
-	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
-	
+	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');	
 	var category = {};
 	category.name = gs.getProperty('x_880077_crossplan.main_category_title');
 	category.type = "Init";
 	category.status = "Waiting For Create";
 	category.catalog = catalogID;
 	category.type = "main_category";
-	CRSDB_Category.write(category);
-	
+	CRSDB_Category.write(category);	
 	CRSLog.debug("Write Category Init Completed");
 };
+
 Category_Script.write_InitProviderCategory = function create() {		
-	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
-	
+	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');	
 	var provider = {};
+	var gr = CRSDB_Category.getByKeyFilter("name",gs.getProperty('x_880077_crossplan.main_category_title'));
+	gr.next();
 	provider.name = gs.getProperty('x_880077_crossplan.main_provider_title');
 	provider.type = "Init";
 	provider.status = "Waiting For Create";
 	provider.catalog = catalogID;
-	provider.type = "main_provider";
-	var gr = CRSDB_Category.getByKeyFilter("name",gs.getProperty('x_880077_crossplan.main_category_title'));
-	while(gr.next()){
-		provider.parent = gr.id;
-	}	
-	CRSDB_Category.write(provider);	
+	provider.type = "main_provider";	
+	provider.parent = gr.id;	
 	CRSLog.debug("Write Category Init Completed");
 };
 
@@ -118,13 +114,10 @@ Category_Script.deleteByKeyFilter = function deleteByKeyFilter(key,value){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-24 11:35:36</sys_created_on>
         <sys_id>175c626c477e19104b6fcc88f36d4324</sys_id>
-        <sys_mod_count>140</sys_mod_count>
         <sys_name>Category_Script</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_175c626c477e19104b6fcc88f36d4324</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-21 08:28:20</sys_updated_on>
     </sys_script_include>
 </record_update>

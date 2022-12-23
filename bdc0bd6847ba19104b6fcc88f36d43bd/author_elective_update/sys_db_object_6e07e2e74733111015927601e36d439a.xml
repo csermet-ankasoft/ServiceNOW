@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_db_object">
+    <sys_db_object action="DELETE">
+        <access/>
+        <actions_access>true</actions_access>
+        <alter_access>true</alter_access>
+        <caller_access/>
+        <client_scripts_access>true</client_scripts_access>
+        <configuration_access>false</configuration_access>
+        <create_access>true</create_access>
+        <create_access_controls>false</create_access_controls>
+        <delete_access>false</delete_access>
+        <is_extendable>false</is_extendable>
+        <label>CRSDB_Provider</label>
+        <live_feed_enabled>false</live_feed_enabled>
+        <name>x_880077_crossplan_crsdb_provider</name>
+        <number_ref/>
+        <provider_class/>
+        <read_access>true</read_access>
+        <scriptable_table>false</scriptable_table>
+        <super_class/>
+        <sys_class_name>sys_db_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-22 10:58:13</sys_created_on>
+        <sys_id>6e07e2e74733111015927601e36d439a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Crossplan Crsdb Provider</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_db_object_6e07e2e74733111015927601e36d439a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-22 10:58:13</sys_updated_on>
+        <update_access>true</update_access>
+        <user_role/>
+        <ws_access>true</ws_access>
+    </sys_db_object>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>34e2e56adb9b881007072f17d49619e0</instance_id>
+        <instance_name>dev102312</instance_name>
+        <name>sys_db_object_6e07e2e74733111015927601e36d439a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_db_object"><sys_db_object action="INSERT_OR_UPDATE"><access/><actions_access>true</actions_access><alter_access>true</alter_access><caller_access/><client_scripts_access>true</client_scripts_access><configuration_access>false</configuration_access><create_access>true</create_access><create_access_controls>false</create_access_controls><delete_access>false</delete_access><is_extendable>false</is_extendable><label>CRSDB_Provider</label><live_feed_enabled>false</live_feed_enabled><name>x_880077_crossplan_crsdb_provider</name><number_ref/><provider_class/><read_access>true</read_access><scriptable_table>false</scriptable_table><super_class/><sys_class_name>sys_db_object</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-12-22 10:58:13</sys_created_on><sys_id>6e07e2e74733111015927601e36d439a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Crossplan Crsdb Provider</sys_name><sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package><sys_policy/><sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope><sys_update_name>sys_db_object_6e07e2e74733111015927601e36d439a</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-12-22 10:58:13</sys_updated_on><update_access>true</update_access><user_role/><ws_access>true</ws_access></sys_db_object></record_update>]]></payload>
+        <payload_hash>166121251</payload_hash>
+        <record_name>CRSDB_Provider</record_name>
+        <reverted_from/>
+        <source>2bac27c24733111015927601e36d435b</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2022-12-18 00:11:36</sys_created_on>
+        <sys_id>3e0726e74733111015927601e36d4340</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>18522925ec00000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>Table</type>
+        <update_guid>fa0726e78d3311108a00f628aa9ef940</update_guid>
+        <update_guid_history>fa0726e78d3311108a00f628aa9ef940:166121251</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-23 07:20:30</sys_created_on>
+        <sys_db_object display_value="" name="sys_db_object">sys_db_object</sys_db_object>
+        <sys_id>40e49abe6d4d488ca9878d308be6f910</sys_id>
+        <sys_metadata>6e07e2e74733111015927601e36d439a</sys_metadata>
+        <sys_name>CRSDB_Provider</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sys_db_object_6e07e2e74733111015927601e36d439a</sys_update_name>
+        <sys_update_version display_value="sys_db_object_6e07e2e74733111015927601e36d439a">3e0726e74733111015927601e36d4340</sys_update_version>
+    </sys_metadata_delete>
+</record_update>

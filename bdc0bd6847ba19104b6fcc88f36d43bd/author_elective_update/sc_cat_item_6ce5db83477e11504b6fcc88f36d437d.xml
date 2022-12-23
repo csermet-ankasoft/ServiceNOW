@@ -95,35 +95,32 @@
         <source>df98b8b0472111104b6fcc88f36d43f6</source>
         <source_table>sys_upgrade_history</source_table>
         <state>previous</state>
-        <sys_created_by/>
+        <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-23 17:31:11</sys_created_on>
         <sys_id>bc4653c3477e11504b6fcc88f36d434f</sys_id>
-        <sys_mod_count/>
+        <sys_mod_count>0</sys_mod_count>
         <sys_recorded_at>182cbc217180000000</sys_recorded_at>
-        <sys_updated_by/>
-        <sys_updated_on/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-22 11:01:36</sys_updated_on>
         <type>Catalog Item</type>
         <update_guid>7c4653c3117e11500a7035f70960e94f</update_guid>
         <update_guid_history>7c4653c3117e11500a7035f70960e94f:95768288</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="TESTCatalogItem010">7c4653c3477e11504b6fcc88f36d4360</sys_audit_delete>
+        <sys_audit_delete display_value="">7c4653c3477e11504b6fcc88f36d4360</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-01 08:04:47</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>092c93028cfb4c74b7b438db7b29d289</sys_id>
         <sys_metadata>6ce5db83477e11504b6fcc88f36d437d</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>TESTCatalogItem010</sys_name>
-        <sys_package display_value="abdu-test" source="x_880077_abdu_test">4f1e79e647fe9d104b6fcc88f36d4352</sys_package>
+        <sys_package display_value="">4f1e79e647fe9d104b6fcc88f36d4352</sys_package>
         <sys_parent/>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_6ce5db83477e11504b6fcc88f36d437d</sys_update_name>
         <sys_update_version display_value="sc_cat_item_6ce5db83477e11504b6fcc88f36d437d">bc4653c3477e11504b6fcc88f36d434f</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-01 08:04:47</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

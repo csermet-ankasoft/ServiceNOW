@@ -40,14 +40,13 @@
 		}
 		catch(err) {
 			CRSLog.debug("Error CRS_JobProcessing Business Rule " + err);
-			//if (current.retry >= gs.getProperty("x_880077_crossplan.JobRetryCount")){
-				current.state = "Error";
-				/*
+			if (current.retry >= gs.getProperty("x_880077_crossplan.JobRetryCount")){
+				current.state = "Error";	
 			}
 			else{
 				current.state = "Ready";
 				current.retry += 1; 
-			}	*/	
+			}
 		}
 		current.update();
 	}
@@ -76,9 +75,10 @@ function createCatItem(catItems) {
 	var scope = gs.getProperty('x_880077_crossplan.scope_id');
     var attributes = {
         "name": catItems.name,
-        "short_description": catItems.desc,
 		"sys_scope": scope,
     };	
+	if (catItems.descriptions) attributes["description"] = catItems.descriptions;	
+	if (catItems.short_description) attributes["short_description"] = catItems.short_description;	
 	if (catItems.price) attributes["price"] = catItems.price;	
 	catalogItem.setAttributes(attributes);
 	catalogItem.setCatalogs(catItems.catalogs);
@@ -87,8 +87,7 @@ function createCatItem(catItems) {
 	return catalogItemID;
 }
 
-function addCatItemtoCRSDB_CatItem(current) {
-	
+function addCatItemtoCRSDB_CatItem(current) {	
 	var catalogID = gs.getProperty('x_880077_crossplan.main_category_title');
 				var provider_name = "";
 				var apiversion = "";
@@ -104,14 +103,14 @@ function addCatItemtoCRSDB_CatItem(current) {
 					}			
 				}						
 				if(providerIsExist == true){
-					var providerID = CRSDB_Category.getIDByName(provider_name) + "";				
 					var catItem = new GlideRecord("x_880077_crossplan_crsdb_catitem");
+					var providerID = CRSDB_Category.getIDByName(provider_name) + "";				
 					var serviceCatalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
 					catItem.initialize();					
-					catItem.name = CRD_item["metadata"]["name"];
+					catItem.short_description = CRD_item["metadata"]["name"] + "  " + apiversion;
+					catItem.name = CRD_item["spec"]["names"]["singular"] + " ---> " + CRD_item["spec"]["group"].split(".")[0];
 					catItem.type = "CRD_CatItem";
 					catItem.group = CRD_item["spec"]["group"];
-					catItem.short_description = apiversion;
 					catItem.status = "Waiting For Create";
 					catItem.catalogs = serviceCatalogID;
 					catItem.category = providerID;
@@ -124,25 +123,6 @@ function addCatItemtoCRSDB_CatItem(current) {
 					current.update();
 					current.deleteRecord();
 				}
-				/*
-				else {
-					var catItem2 = {};
-					catItem2.name = CRD_item["metadata"]["name"];
-					catItem2.type = "CRD_CatItem";
-					catItem2.group = CRD_item["spec"]["group"];
-					catItem2.short_description = apiversion;
-					catItem2.status = "Waiting For Create";
-					catItem2.catalogs = catalogID;
-					catItem2.category = "" + providerID;
-					catItem2.type = "provider";
-					CRSLog.debug("Can not Find Provider " + JSON.stringify(catItem2));
-				}
-				
-				if(catItem.category == "-1"){
-					CRSLog.debug(current.body);
-					//CRSLog.debug(JSON.stringify(current.body));
-				}
-				*/
 }
 
 
@@ -153,15 +133,12 @@ function addCatItemtoCRSDB_CatItem(current) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c7bb9ba1479751504b6fcc88f36d4341</sys_id>
-        <sys_mod_count>123</sys_mod_count>
         <sys_name>CRS_JobProcessing</sys_name>
         <sys_overrides/>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_c7bb9ba1479751504b6fcc88f36d4341</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-12-01 06:42:13</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

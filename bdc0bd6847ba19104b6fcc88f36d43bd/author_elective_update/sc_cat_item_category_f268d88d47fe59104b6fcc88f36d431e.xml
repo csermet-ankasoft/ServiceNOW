@@ -41,14 +41,13 @@
         <update_guid_history>1f68188d8dfe591097a384caca39c676:-2138357627</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="AWS.">0f1b94d5473e99104b6fcc88f36d438b</sys_audit_delete>
+        <sys_audit_delete display_value="">0f1b94d5473e99104b6fcc88f36d438b</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-26 07:57:45</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item_category">sc_cat_item_category</sys_db_object>
         <sys_id>bee337db1fe2411e9b3cabb3528ac0a4</sys_id>
         <sys_metadata>f268d88d47fe59104b6fcc88f36d431e</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>AWS.</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -57,7 +56,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_category_f268d88d47fe59104b6fcc88f36d431e</sys_update_name>
         <sys_update_version display_value="sc_cat_item_category_f268d88d47fe59104b6fcc88f36d431e">1768188d47fe59104b6fcc88f36d4377</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-26 07:57:45</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

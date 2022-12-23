@@ -23,7 +23,9 @@ Catalog_Item_Script.writeCatItem_Job = function write_CRD(){
 	var url = baseurl + endpoint;
 	var response = CRS_API.requestGetJson(url,Token);		
 	var CRD_items = response["items"];
+	var count = 0;
 	for (i in CRD_items){
+		if (count >5) break;
 		var CRD_item = CRD_items[i];		
 		var gr = new GlideRecord("x_880077_crossplan_crs_jobqueue");
 		gr.initialize();
@@ -56,25 +58,6 @@ Catalog_Item_Script.createCatItem_Job = function write_CRD(){
 	
 };
 
-
-   
-Catalog_Item_Script.create = function createCatalogItem(current) {
-    CRSLog.debug("Run -> Catalog_Item_Script.create");
-	var catalogItem = new sn_sc.CatItem();
-    var attributes = {
-        "name": current.name,
-        "short_description": current.desc,
-		"sys_scope": gs.getProperty('x_880077_crossplan.scope_id'),
-		"category": current.category,
-    };	
-	if (current.price) attributes["price"] = current.price;	
-	catalogItem.setAttributes(attributes);
-	catalogItem.setCatalogs(current.catalogs);
-    var catalogItemID = catalogItem.create();
-	CRSLog.debug("Completed -> Catalog_Item_Script.create");
-	return catalogItemID;	
-};
-
 Catalog_Item_Script.deleteByID = function deleteByID(id){
 	var variableSetM2M = new GlideRecord('io_set_item'); // M2M table linking variable set and catalog item
 	variableSetM2M.addQuery('sc_cat_item', id); // get M2M records for the catalog item
@@ -85,61 +68,6 @@ Catalog_Item_Script.deleteByID = function deleteByID(id){
 	}
 	var catItem = new sn_sc.CatItem(id); 
 	catItem.deleteRecord(true);
-};
-
-Catalog_Item_Script.write_CRD = function write_CRD(){
-	CRSLog.debug("Run -> write_CRD");	
-	var catalogID = gs.getProperty('x_880077_crossplan.main_category_title');
-	var providerID = CRSDB_Category.getIDByName(gs.getProperty('x_880077_crossplan.main_provider_title'));
-	var Token = gs.getProperty('x_880077_crossplan.Tokens');	
-	var baseurl = gs.getProperty('x_880077_crossplan.base_urls');
-	var endpoint = gs.getProperty('x_880077_crossplan.CRD_endpoint');
-	var url = baseurl + endpoint;
-	var response = CRS_API.requestGetJson(url,Token);		
-	var CRD_items = response["items"];
-	for (i in CRD_items){	
-		var provider_name = "";
-		var apiversion = "";
-		var CRD_item = CRD_items[i];	
-		for (j in CRD_item["metadata"]["ownerReferences"]){
-			var CRD_item_ref = CRD_item["metadata"]["ownerReferences"][j];
-			if (CRD_item_ref["kind"] == "Provider"){				
-				provider_name = CRD_item_ref["name"];	
-				apiversion = CRD_item_ref["apiVersion"];	
-				break;
-			}			
-		}		
-		var group = CRD_item["spec"]["group"];
-		var current = {};
-		current.name = CRD_item["metadata"]["name"];
-		current.type = "CRD_CatItem";
-		current.short_description = apiversion;
-		current.status = "Waiting For Create";
-		current.catalogs = catalogID;
-		current.category = CRSDB_Category.getIDByName(provider_name);
-		current.type = "provider";
-		CRSLog.debug(JSON.stringify(provider_name));
-		//CRSDB_CatItem.write(current);
-	}
-};
-
-
-
-Catalog_Item_Script.create_waiting_catItem = function create_provider_catItem(){
-	var scope = gs.getProperty('x_880077_crossplan.scope_id');	
-	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
-	var gr = CRSDB_CatItem.getByKeyFilter("status","Waiting For Create");
-	gr.query();
-	while(gr.next()){
-		gr.id = Catalog_Item_Script.create(gr);
-		CRSLog.debug("CatItem created: " + gr.id);
-		gr.status = "Created";
-		gr.update();
-	}
-	//CRSLog.debug("Item : " + CRD_item_metadata["name"] + "category: " + categoryID);
-	//CRSDB_CatItem.deleteByName(CRD_item_metadata["name"]);										
-	//Catalog_Item_Script.create(CRD_item_metadata["name"],"description", categoryID, "provider_catItem");
-	CRSLog.debug("Finish");
 };
 
 Catalog_Item_Script.deleteByKeyFilter = function deleteByKeyFilter(key,value){
@@ -168,13 +96,10 @@ Catalog_Item_Script.deleteByKeyFilter = function deleteByKeyFilter(key,value){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-24 10:36:50</sys_created_on>
         <sys_id>b0ea622c477e19104b6fcc88f36d434c</sys_id>
-        <sys_mod_count>152</sys_mod_count>
         <sys_name>Catalog_Item_Script</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_b0ea622c477e19104b6fcc88f36d434c</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-12-01 06:43:45</sys_updated_on>
     </sys_script_include>
 </record_update>

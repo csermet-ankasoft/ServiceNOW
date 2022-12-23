@@ -95,26 +95,25 @@
         <source>df98b8b0472111104b6fcc88f36d43f6</source>
         <source_table>sys_upgrade_history</source_table>
         <state>previous</state>
-        <sys_created_by/>
+        <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-23 17:31:11</sys_created_on>
         <sys_id>6578939d47cfd1104b6fcc88f36d43e5</sys_id>
-        <sys_mod_count/>
+        <sys_mod_count>0</sys_mod_count>
         <sys_recorded_at>182cbc217180000000</sys_recorded_at>
-        <sys_updated_by/>
-        <sys_updated_on/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-22 11:01:16</sys_updated_on>
         <type>Catalog Item</type>
         <update_guid>2578939d21cfd110bd72fd5dbe824fe5</update_guid>
         <update_guid_history>2578939d21cfd110bd72fd5dbe824fe5:-127422834</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="domains.cloudsearch.aws.crossplane.io">ed78d39d47cfd1104b6fcc88f36d4301</sys_audit_delete>
+        <sys_audit_delete display_value="">ed78d39d47cfd1104b6fcc88f36d4301</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-08 08:00:44</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>0ce6432919a6493c9c06458e79434d01</sys_id>
         <sys_metadata>5cde060d47cf91104b6fcc88f36d437e</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>domains.cloudsearch.aws.crossplane.io</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -123,7 +122,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_5cde060d47cf91104b6fcc88f36d437e</sys_update_name>
         <sys_update_version display_value="sc_cat_item_5cde060d47cf91104b6fcc88f36d437e">6578939d47cfd1104b6fcc88f36d43e5</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-08 08:00:44</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

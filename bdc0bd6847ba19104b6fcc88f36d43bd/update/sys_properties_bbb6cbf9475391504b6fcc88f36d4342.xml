@@ -11,14 +11,11 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-22 06:16:31</sys_created_on>
         <sys_id>bbb6cbf9475391504b6fcc88f36d4342</sys_id>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>x_880077_crossplan.JobRetryCount</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_properties_bbb6cbf9475391504b6fcc88f36d4342</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-22 06:16:31</sys_updated_on>
         <type>integer</type>
         <value>5</value>
         <write_roles/>

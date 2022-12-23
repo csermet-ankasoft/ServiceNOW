@@ -126,14 +126,13 @@
         <update_guid_history>12dce890ae071110cc6207a4419adcb7:1659123846</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="accountvmcs.cloudaccount.vra.jet.crossplane.io">c490705c474711104b6fcc88f36d4326</sys_audit_delete>
+        <sys_audit_delete display_value="">c490705c474711104b6fcc88f36d4326</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-04 17:13:14</sys_created_on>
         <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
         <sys_id>4284e28f28994e9d9dba55ae7d700681</sys_id>
         <sys_metadata>fc7ba050470711104b6fcc88f36d433a</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>accountvmcs.cloudaccount.vra.jet.crossplane.io</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_parent/>
@@ -142,7 +141,5 @@
         <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
         <sys_update_name>sc_cat_item_fc7ba050470711104b6fcc88f36d433a</sys_update_name>
         <sys_update_version display_value="sc_cat_item_fc7ba050470711104b6fcc88f36d433a">52dce890470711104b6fcc88f36d43b7</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-04 17:13:14</sys_updated_on>
     </sys_metadata_delete>
 </record_update>

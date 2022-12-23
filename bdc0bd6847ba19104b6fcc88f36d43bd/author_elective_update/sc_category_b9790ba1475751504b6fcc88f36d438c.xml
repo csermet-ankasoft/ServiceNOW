@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_category">
+    <sc_category action="DELETE">
+        <active>true</active>
+        <description>xpkg.upbound.io/ankasoftco/provider-jet-</description>
+        <entitlement_script/>
+        <header_icon/>
+        <homepage_image/>
+        <homepage_renderer display_value="Category Items">47ebe8aa3742300054b6a3549dbe5dfa</homepage_renderer>
+        <icon/>
+        <image/>
+        <location/>
+        <mobile_hide_description>false</mobile_hide_description>
+        <mobile_picture/>
+        <mobile_subcategory_render_type>list</mobile_subcategory_render_type>
+        <module/>
+        <order>0</order>
+        <parent/>
+        <roles/>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>sc_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-21 11:49:23</sys_created_on>
+        <sys_id>b9790ba1475751504b6fcc88f36d438c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>provider-jet-vra</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sc_category_b9790ba1475751504b6fcc88f36d438c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-21 11:49:23</sys_updated_on>
+        <title>provider-jet-vra</title>
+    </sc_category>
+    <sys_translated_text action="DELETE" query="documentkey=b9790ba1475751504b6fcc88f36d438c"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>34e2e56adb9b881007072f17d49619e0</instance_id>
+        <instance_name>dev102312</instance_name>
+        <name>sc_category_b9790ba1475751504b6fcc88f36d438c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_category"><sc_category action="INSERT_OR_UPDATE"><active>true</active><description>xpkg.upbound.io/ankasoftco/provider-jet-</description><entitlement_script/><header_icon/><homepage_image/><homepage_renderer display_value="Category Items">47ebe8aa3742300054b6a3549dbe5dfa</homepage_renderer><icon/><image/><location/><mobile_hide_description>false</mobile_hide_description><mobile_picture/><mobile_subcategory_render_type>list</mobile_subcategory_render_type><module/><order>0</order><parent/><roles/><sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog><sys_class_name>sc_category</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-11-21 11:49:23</sys_created_on><sys_id>b9790ba1475751504b6fcc88f36d438c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>provider-jet-vra</sys_name><sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package><sys_policy/><sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope><sys_update_name>sc_category_b9790ba1475751504b6fcc88f36d438c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-11-21 11:49:23</sys_updated_on><title>provider-jet-vra</title></sc_category><sys_translated_text action="delete_multiple" query="documentkey=b9790ba1475751504b6fcc88f36d438c"/></record_update>]]></payload>
+        <payload_hash>-696831823</payload_hash>
+        <record_name>provider-jet-vra</record_name>
+        <reverted_from/>
+        <source>7be86aa74733111015927601e36d43f4</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-23 07:21:14</sys_created_on>
+        <sys_id>71fe3a334773511015927601e36d4378</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1853ddb82410000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-23 07:21:14</sys_updated_on>
+        <type>Category</type>
+        <update_guid>bdfe3a33fe735110b06cde739bc06877</update_guid>
+        <update_guid_history>bdfe3a33fe735110b06cde739bc06877:0,7017e6e76133111031becdb8188b12a2:-1395907542</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="provider-jet-vra">c41fba334773511015927601e36d430b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-23 07:21:39</sys_created_on>
+        <sys_db_object display_value="" name="sc_category">sc_category</sys_db_object>
+        <sys_id>0531050147f44efa807dd67a85906da4</sys_id>
+        <sys_metadata>b9790ba1475751504b6fcc88f36d438c</sys_metadata>
+        <sys_name>provider-jet-vra</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sc_category_b9790ba1475751504b6fcc88f36d438c</sys_update_name>
+        <sys_update_version display_value="sc_category_b9790ba1475751504b6fcc88f36d438c">71fe3a334773511015927601e36d4378</sys_update_version>
+    </sys_metadata_delete>
+</record_update>
