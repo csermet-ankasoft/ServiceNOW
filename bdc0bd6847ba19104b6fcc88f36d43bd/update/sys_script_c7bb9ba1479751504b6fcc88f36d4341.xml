@@ -27,106 +27,116 @@
         <rest_service_text/>
         <rest_variables/>
         <role_conditions/>
-        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-	if (current.state=="Processing"){
-		try {
-			if (current.topic == "Write CatItem"){
-				this.addCatItemtoCRSDB_CatItem(current);				
-			}
-			else if (current.topic == "Create CatItem"){
-				this.createCatItemJOB(current);	
-			}
-			current.state == "Completed";
-		}
-		catch(err) {
-			CRSLog.debug("Error CRS_JobProcessing Business Rule " + err);
-			if (current.retry >= gs.getProperty("x_880077_crossplan.JobRetryCount")){
-				current.state = "Error";	
-			}
-			else{
-				current.state = "Ready";
-				current.retry += 1; 
-			}
-		}
-		current.update();
-	}
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+    if (current.state == "Processing") {
+        try {
+            if (current.topic == "Write CatItem") {
+                this.addCatItemtoCRSDB_CatItem(current);
+            } else if (current.topic == "Create CatItem") {
+                this.createCatItemJOB(current);
+            } else if (current.topic == "Delete CatItem") {
+                this.deleteCatItem(current);
+            }
+      gs.info('Geliyor mu???');
+            current.state == "Completed";
+        } catch (err) {
+            CRSLog.debug("Error CRS_JobProcessing Business Rule " + err);
+            if (current.retry >= gs.getProperty("x_880077_crossplan.JobRetryCount")) {
+                current.state = "Error";
+            } else {
+                current.state = "Ready";
+                current.retry += 1;
+            }
+        }
+        current.update();
+    }
 
 })(current, previous);
 
 function createCatItemJOB(current) {
-	CRSLog.debug("Run -> createCatItem JOB");
-	
-	var catItems = new GlideRecord("x_880077_crossplan_crsdb_catitem");
-	catItems.query("name",current.body);
-	catItems.next();	
-	var catalogItemID = createCatItem(catItems);
-	if(catalogItemID){
-		CRSLog.debug("Completed -> Catalog_Item_Script.create");
-		current.state = "Completed";
-	}
-	else {
-		current.state = "Failed";
-	}
-	
+    CRSLog.debug("Run -> createCatItem JOB");
+
+    var catItems = new GlideRecord("x_880077_crossplan_crsdb_catitem");
+    catItems.query("name", current.body);
+    catItems.next();
+    var catalogItemID = createCatItem(catItems);
+    if (catalogItemID) {
+        CRSLog.debug("Completed -> Catalog_Item_Script.create");
+        current.state = "Completed";
+    } else {
+        current.state = "Failed";
+    }
+
 }
 
 function createCatItem(catItems) {
-	var catalogItem = new sn_sc.CatItem();
-	var scope = gs.getProperty('x_880077_crossplan.scope_id');
+    var catalogItem = new sn_sc.CatItem();
+    var scope = gs.getProperty('x_880077_crossplan.scope_id');
     var attributes = {
         "name": catItems.name,
-		"sys_scope": scope,
-    };	
-	if (catItems.descriptions) attributes["description"] = catItems.descriptions;	
-	if (catItems.short_description) attributes["short_description"] = catItems.short_description;	
-	if (catItems.price) attributes["price"] = catItems.price;	
-	catalogItem.setAttributes(attributes);
-	catalogItem.setCatalogs(catItems.catalogs);
-	catalogItem.setCategories(catItems.category);
+        "sys_scope": scope,
+    };
+    if (catItems.descriptions) attributes["description"] = catItems.descriptions;
+    if (catItems.short_description) attributes["short_description"] = catItems.short_description;
+    if (catItems.price) attributes["price"] = catItems.price;
+    catalogItem.setAttributes(attributes);
+    catalogItem.setCatalogs(catItems.catalogs);
+    catalogItem.setCategories(catItems.category);
+  //to-do: item tablosundaki statusu güncellenmesi lazım (Completed)
     var catalogItemID = catalogItem.create();
-	return catalogItemID;
+    return catalogItemID;
 }
 
-function addCatItemtoCRSDB_CatItem(current) {	
-	var catalogID = gs.getProperty('x_880077_crossplan.main_category_title');
-				var provider_name = "";
-				var apiversion = "";
-				var CRD_item = JSON.parse(current.body);
-				var providerIsExist = false;
-				for (j in CRD_item["metadata"]["ownerReferences"]){
-					var CRD_item_ref = CRD_item["metadata"]["ownerReferences"][j];
-					if (CRD_item_ref["kind"] == "Provider"){				
-						provider_name = CRD_item_ref["name"];	
-						apiversion = CRD_item_ref["apiVersion"];	
-						providerIsExist = true;
-						break;
-					}			
-				}						
-				if(providerIsExist == true){
-					var catItem = new GlideRecord("x_880077_crossplan_crsdb_catitem");
-					var providerID = CRSDB_Category.getIDByName(provider_name) + "";				
-					var serviceCatalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
-					catItem.initialize();					
-					catItem.short_description = CRD_item["metadata"]["name"] + "  " + apiversion;
-					catItem.name = CRD_item["spec"]["names"]["singular"] + " ---> " + CRD_item["spec"]["group"].split(".")[0];
-					catItem.type = "CRD_CatItem";
-					catItem.group = CRD_item["spec"]["group"];
-					catItem.status = "Waiting For Create";
-					catItem.catalogs = serviceCatalogID;
-					catItem.category = providerID;
-					catItem.type = "provider";		
-					catItem.insert();	
-					current.state = "Completed";
-				}
-				else{
-					current.state = "Not a Provider";
-					current.update();
-					current.deleteRecord();
-				}
+//to-do: delete catItem
+function deleteCatItem(current) {
+    var variableSetM2M = new GlideRecord('io_set_item'); // M2M table linking variable set and catalog item
+    variableSetM2M.addQuery('sc_cat_item', current.body); // get M2M records for the catalog item
+    variableSetM2M.query();
+    while (variableSetM2M.next()) {
+        var varset = new sn_sc.CatalogItemVariableSetM2M(variableSetM2M.getUniqueValue()); // M2M record sys_id
+        varset.deleteRecord(true); // delete M2M record
+    }
+    var catItem = new sn_sc.CatItem(current.body);
+    catItem.deleteRecord(true);
+    current.state = "Completed";
 }
 
-
-]]></script>
+function addCatItemtoCRSDB_CatItem(current) {
+    var catalogID = gs.getProperty('x_880077_crossplan.main_category_title');
+    var provider_name = "";
+    var apiversion = "";
+    var CRD_item = JSON.parse(current.body);
+    var providerIsExist = false;
+    for (j in CRD_item["metadata"]["ownerReferences"]) {
+        var CRD_item_ref = CRD_item["metadata"]["ownerReferences"][j];
+        if (CRD_item_ref["kind"] == "Provider") {
+            provider_name = CRD_item_ref["name"];
+            apiversion = CRD_item_ref["apiVersion"];
+            providerIsExist = true;
+            break;
+        }
+    }
+    if (providerIsExist == true) {
+        var catItem = new GlideRecord("x_880077_crossplan_crsdb_catitem");
+        var providerID = CRSDB_Category.getIDByName(provider_name) + "";
+        var serviceCatalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
+        catItem.initialize();
+        catItem.short_description = CRD_item["metadata"]["name"] + "  " + apiversion;
+        catItem.name = CRD_item["spec"]["names"]["singular"] + " ---> " + CRD_item["spec"]["group"].split(".")[0];
+        catItem.type = "CRD_CatItem";
+        catItem.group = CRD_item["spec"]["group"];
+        catItem.status = "Waiting For Create";
+        catItem.catalogs = serviceCatalogID;
+        catItem.category = providerID;
+        catItem.type = "provider";
+        catItem.insert();
+        current.state = "Completed";
+    } else {
+        current.state = "Not a Provider";
+        current.update();
+        current.deleteRecord();
+    }
+}]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-21 13:11:43</sys_created_on>

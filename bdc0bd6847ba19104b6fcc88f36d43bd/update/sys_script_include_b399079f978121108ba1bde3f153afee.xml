@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_880077_crossplan.CRSDB_CatItemClear</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CRSDB_CatItemClear</name>
+        <script><![CDATA[var CRSDB_CatItemClear = Class.create();
+CRSDB_CatItemClear.prototype = {
+    initialize: function() {},
+
+    type: 'CRSDB_CatItemClear'
+};
+
+CRSDB_CatItemClear.Clear = function() {
+    var catalogItem = new GlideRecord('x_880077_crossplan_crsdb_catitem');
+    catalogItem.addQuery('status', 'Completed');
+    catalogItem.query();
+
+    while (catalogItem.next()) {
+        var catItem = new GlideRecord('sc_cat_item');
+        catItem.addQuery('sys_scope', 'bdc0bd6847ba19104b6fcc88f36d43bd');
+        catItem.addQuery('name', catalogItem.name);
+        catItem.query();
+        if (catItem.next()) {
+            CRSLog.debug(catItem.name);
+            CRSLog.debug('if içi');
+            var gr = new GlideRecord('x_880077_crossplan_crs_jobqueue');
+            gr.initialize();
+            gr.state = "Ready";
+            gr.body = catItem.getUniqueValue();
+            gr.topic = "Delete CatItem";
+            gr.retry = 0;
+            gr.insert();
+        }
+    }
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-21 22:10:02</sys_created_on>
+        <sys_id>b399079f978121108ba1bde3f153afee</sys_id>
+        <sys_name>CRSDB_CatItemClear</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_script_include_b399079f978121108ba1bde3f153afee</sys_update_name>
+    </sys_script_include>
+</record_update>
