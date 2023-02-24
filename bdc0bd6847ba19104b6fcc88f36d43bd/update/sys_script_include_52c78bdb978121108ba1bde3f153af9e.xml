@@ -8,15 +8,14 @@
         <description/>
         <name>CRSDB_JobQueueClear</name>
         <script><![CDATA[var CRSDB_JobQueueClear = Class.create();
-CRSDB_CRSDB_JobQueueClear.prototype = {
+CRSDB_JobQueueClear.prototype = {
     initialize: function() {
     },
 
-    type: 'CRSDB_CRSDB_JobQueueClear'
+    type: 'CRSDB_JobQueueClear'
 };
 CRSDB_JobQueueClear.Clear = function(){
   var now_GR = new GlideRecord('x_880077_crossplan_crs_jobqueue');
-  gs.info("clear ici");
   now_GR.query();
   now_GR.deleteMultiple();
 };]]></script>

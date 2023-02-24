@@ -55,7 +55,7 @@
 			gr.retry += 1; 
 		}		
 	}
-	gr.update();
+// 	gr.update();
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>

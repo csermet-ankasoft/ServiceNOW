@@ -36,8 +36,9 @@
                 this.createCatItemJOB(current);
             } else if (current.topic == "Delete CatItem") {
                 this.deleteCatItem(current);
+            } else if (current.topic == "Write Category") {
+                this.writeCategory(current);
             }
-      gs.info('Geliyor mu???');
             current.state == "Completed";
         } catch (err) {
             CRSLog.debug("Error CRS_JobProcessing Business Rule " + err);
@@ -52,6 +53,23 @@
     }
 
 })(current, previous);
+
+function writeCategory(current) {
+    CRSLog.debug('Run -> writeCatalogTable');
+
+    var cat = JSON.parse(current.body);
+    var Catalog = new GlideRecord('x_880077_crossplan_crsdb_category');
+    Catalog.name = cat["name"];
+    Catalog.type = cat["type"];
+    Catalog.status = cat["status"];
+    Catalog.variable = cat["variable"];
+    Catalog.workflow = cat["workflow"];
+    Catalog.catalog = cat["catalog"];
+    Catalog.description = cat["description"];
+    Catalog.parent = cat["parent"];
+    Catalog.insert();
+    current.state = "Completed";
+}
 
 function createCatItemJOB(current) {
     CRSLog.debug("Run -> createCatItem JOB");
@@ -82,12 +100,11 @@ function createCatItem(catItems) {
     catalogItem.setAttributes(attributes);
     catalogItem.setCatalogs(catItems.catalogs);
     catalogItem.setCategories(catItems.category);
-  //to-do: item tablosundaki statusu güncellenmesi lazım (Completed)
+    //to-do: item tablosundaki statusu güncellenmesi lazım (Completed)
     var catalogItemID = catalogItem.create();
     return catalogItemID;
 }
 
-//to-do: delete catItem
 function deleteCatItem(current) {
     var variableSetM2M = new GlideRecord('io_set_item'); // M2M table linking variable set and catalog item
     variableSetM2M.addQuery('sc_cat_item', current.body); // get M2M records for the catalog item
