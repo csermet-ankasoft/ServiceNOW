@@ -38,7 +38,11 @@
                 this.deleteCatItem(current);
             } else if (current.topic == "Write Category") {
                 this.writeCategory(current);
-            }
+            } else if (current.topic == "Create Category"){
+				this.createCategory(current);
+			} else if (current.topic == "Delete Category"){
+				this.deleteCategory(current);
+			}
             current.state == "Completed";
         } catch (err) {
             CRSLog.debug("Error CRS_JobProcessing Business Rule " + err);
@@ -55,13 +59,14 @@
 })(current, previous);
 
 function writeCategory(current) {
-    CRSLog.debug('Run -> writeCatalogTable');
+    CRSLog.debug('Run -> Write Category JOB');
 
     var cat = JSON.parse(current.body);
     var Catalog = new GlideRecord('x_880077_crossplan_crsdb_category');
     Catalog.name = cat["name"];
     Catalog.type = cat["type"];
-    Catalog.status = cat["status"];
+    //Catalog.status = cat["status"];
+	Catalog.status = "Waiting for Create";
     Catalog.variable = cat["variable"];
     Catalog.workflow = cat["workflow"];
     Catalog.catalog = cat["catalog"];
@@ -69,6 +74,39 @@ function writeCategory(current) {
     Catalog.parent = cat["parent"];
     Catalog.insert();
     current.state = "Completed";
+}
+
+function createCategory(current){
+	CRSLog.debug("Run -> Create Category JOB");
+	var scope = gs.getProperty('x_880077_crossplan.scope_id');
+	var cat = JSON.parse(current.body);
+	var category = new sn_sc.CatCategory();
+	var attr = {
+		"title" : cat.name,
+// 		"sc_catalog" : cat.catalog, 
+		"sys_scope": scope
+// 		"description": cat.description
+	};
+	category.setAttributes(attr);
+	category.create();
+	
+	var catTable = new GlideRecord('x_880077_crossplan_crsdb_category');
+	catTable.addQuery('sys_id',cat.sys_id);
+	catTable.query();
+	if(catTable.next()){
+		catTable.status = "Created";
+		catTable.update();
+	}
+	
+	current.state = "Completed";
+}
+
+function deleteCategory(current){
+	CRSLog.debug("Run -> Delete Category JOB");
+	
+	var categoryDelete = new sn_sc.CatCategory(current.body);
+	categoryDelete.deleteRecord();
+	current.state = "Completed";
 }
 
 function createCatItemJOB(current) {
@@ -88,6 +126,7 @@ function createCatItemJOB(current) {
 }
 
 function createCatItem(catItems) {
+	CRSLog.debug("Run -> createCatItem JOB");
     var catalogItem = new sn_sc.CatItem();
     var scope = gs.getProperty('x_880077_crossplan.scope_id');
     var attributes = {
@@ -160,12 +199,15 @@ function addCatItemtoCRSDB_CatItem(current) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c7bb9ba1479751504b6fcc88f36d4341</sys_id>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>CRS_JobProcessing</sys_name>
         <sys_overrides/>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy/>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_c7bb9ba1479751504b6fcc88f36d4341</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-28 18:04:18</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
