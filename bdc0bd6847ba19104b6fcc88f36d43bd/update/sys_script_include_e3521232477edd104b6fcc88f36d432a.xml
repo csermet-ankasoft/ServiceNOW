@@ -34,20 +34,6 @@ CRSDB_CatItem.write = function write(current) {
 	gr.insert();	
 };
 
-function deleteCatItem(id){
-	var variableSetM2M = new GlideRecord('io_set_item'); // M2M table linking variable set and catalog item
-	variableSetM2M.addQuery('sc_cat_item',id); // get M2M records for the catalog item
-	variableSetM2M.query();
-	while (variableSetM2M.next()) {
-		var varset = new sn_sc.CatalogItemVariableSetM2M(variableSetM2M.getUniqueValue()); // M2M record sys_id
-		varset.deleteRecord(true); // delete M2M record
-	}
-	var catalogItem = new sn_sc.CatItem(id);
-	catalogItem.deleteRecord(true);		
-	
-}
-
-
 CRSDB_CatItem.deleteByKeyFilter = function getByFilter(key,value){
 	var gr = new GlideRecord(TableID);
 	gr.addQuery(key,value);
@@ -83,10 +69,13 @@ CRSDB_CatItem.getIDByName = function getIDByName(name){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-31 08:34:02</sys_created_on>
         <sys_id>e3521232477edd104b6fcc88f36d432a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>CRSDB_CatItem</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_e3521232477edd104b6fcc88f36d432a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-01 15:05:53</sys_updated_on>
     </sys_script_include>
 </record_update>

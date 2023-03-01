@@ -16,13 +16,14 @@ Catalog_Item_Script.prototype = {
 };
 
 Catalog_Item_Script.writeCatItem_Job = function write_CRD(){
-	CRSLog.debug("Run -> writeCatItem_Job");	
-	var Token = gs.getProperty('x_880077_crossplan.Tokens');	
-	var baseurl = gs.getProperty('x_880077_crossplan.base_urls');
-	var endpoint = gs.getProperty('x_880077_crossplan.CRD_endpoint');
-	var url = baseurl + endpoint;
-	var response = CRS_API.requestGetJson(url,Token);		
+// 	var Token = gs.getProperty('x_880077_crossplan.Tokens');	
+// 	var baseurl = gs.getProperty('x_880077_crossplan.base_urls');
+// 	var endpoint = gs.getProperty('x_880077_crossplan.CRD_endpoint');
+// 	var url = baseurl + endpoint;
+// 	var response = CRS_API.requestGetJson(url,Token);
+	var response = JSON.parse(gs.getProperty('x_880077_crossplan.json2'));
 	var CRD_items = response["items"];
+	
 	var count = 0;
 	for (i in CRD_items){
 		if (count >5) break;
@@ -41,21 +42,24 @@ Catalog_Item_Script.writeCatItem_Job = function write_CRD(){
 
 Catalog_Item_Script.createCatItem_Job = function write_CRD(){
 	var catItems = new GlideRecord("x_880077_crossplan_crsdb_catitem");
+	
 	catItems.orderBy('sys_created_on');
 	catItems.query("status","Waiting For Create");
-	CRSLog.debug("Start.");
 	
 	while(catItems.next()){
+		var attr = {
+		"name" : catItems.name.toString(),
+		"sys_id" : catItems.sys_id.toString()
+	};
 		var gr = new GlideRecord("x_880077_crossplan_crs_jobqueue");
 		gr.initialize();
 		gr.state = "Ready";
-		gr.body = catItems.name;
+		gr.body = JSON.stringify(attr);
 		gr.topic = "Create CatItem";
 		gr.retry = 0;
 		gr.insert();	
 		break;
 	}	
-	
 };
 
 Catalog_Item_Script.deleteByID = function deleteByID(id){
@@ -96,10 +100,13 @@ Catalog_Item_Script.deleteByKeyFilter = function deleteByKeyFilter(key,value){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-24 10:36:50</sys_created_on>
         <sys_id>b0ea622c477e19104b6fcc88f36d434c</sys_id>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>Catalog_Item_Script</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_b0ea622c477e19104b6fcc88f36d434c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-01 18:12:26</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_880077_crossplan.json2</name>
+        <read_roles/>
+        <suffix>json2</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-01 15:17:07</sys_created_on>
+        <sys_id>9df7fab1975121108ba1bde3f153afd3</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>x_880077_crossplan.json2</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_properties_9df7fab1975121108ba1bde3f153afd3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-01 17:43:49</sys_updated_on>
+        <type>string</type>
+        <value>{&#13;
+    "items": [&#13;
+        {&#13;
+            "metadata": {&#13;
+                "name": "bucket",&#13;
+                "ownerReferences": [&#13;
+                    {&#13;
+                        "kind": "Provider",&#13;
+                        "name": "aws",&#13;
+                        "apiVersion":"b1"&#13;
+                    }&#13;
+                ]&#13;
+            },&#13;
+            "spec": {&#13;
+                "package": "aws-desc",&#13;
+                "names":{&#13;
+                    "singular":"bucket"&#13;
+                },&#13;
+                "group":"Storage"&#13;
+            }&#13;
+        },&#13;
+        {&#13;
+            "metadata": {&#13;
+                "name": "big data",&#13;
+                "ownerReferences": [&#13;
+                    {&#13;
+                        "kind": "Provider",&#13;
+                        "name": "azure",&#13;
+                        "apiVersion":"b1"&#13;
+                    }&#13;
+                ]&#13;
+            },&#13;
+            "spec": {&#13;
+                "package": "azure-desc",&#13;
+                "names":{&#13;
+                    "singular":"big data"&#13;
+                },&#13;
+                "group":"Storage"&#13;
+            }&#13;
+        }&#13;
+    ]&#13;
+}</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=9df7fab1975121108ba1bde3f153afd3"/>
+</record_update>

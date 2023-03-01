@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_880077_crossplan.CRSDB_Cat</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CRSDB_Cat</name>
+        <script><![CDATA[var CRSDB_Cat = Class.create();
+CRSDB_Cat.prototype = {
+    initialize: function() {},
+
+    type: 'CRSDB_Cat'
+};
+
+CRSDB_Cat.create = function() {
+    var cat = new GlideRecord('x_880077_crossplan_crsdb_category');
+    cat.addQuery('type', 'provider');
+    cat.addQuery('status', 'Waiting for Create');
+    cat.query();
+    while (cat.next()) {
+        var gr = new GlideRecord('x_880077_crossplan_crs_jobqueue');
+        gr.topic = "Create Category";
+        var attributes = {
+            "name": cat.name.toString(),
+			"description" : cat.description.toString(),
+			"parent" : cat.parent.toString(),
+			"status" : cat.status.toString(),
+			"type" : cat.type.toString()
+        };
+        gr.body = JSON.stringify(attributes);
+        gr.state = "Ready";
+// 		CRSLog.info(JSON.stringify(attributes));
+        gr.insert();
+    }
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-26 16:52:09</sys_created_on>
+        <sys_id>4790b730979121108ba1bde3f153af03</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>CRSDB_Cat</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_script_include_4790b730979121108ba1bde3f153af03</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-26 22:19:25</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>07774b41db2f53c47d8cf22ebf961906</instance_id>
+        <instance_name>dev67109</instance_name>
+        <name>sys_script_include_4790b730979121108ba1bde3f153af03</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_880077_crossplan.CRSDB_Cat&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;CRSDB_Cat&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var CRSDB_Cat = Class.create();
+CRSDB_Cat.prototype = {
+    initialize: function() {},
+
+    type: 'CRSDB_Cat'
+};
+
+CRSDB_Cat.create = function() {
+    var cat = new GlideRecord('x_880077_crossplan_crsdb_category');
+    cat.addQuery('type', 'provider');
+    cat.addQuery('status', 'Waiting for Create');
+    cat.query();
+    while (cat.next()) {
+        var gr = new GlideRecord('x_880077_crossplan_crs_jobqueue');
+        gr.topic = "Create Category";
+        var attributes = {
+            "name": cat.name.toString(),
+			"description" : cat.description.toString(),
+			"parent" : cat.parent.toString(),
+			"status" : cat.status.toString(),
+			"type" : cat.type.toString()
+        };
+        gr.body = JSON.stringify(attributes);
+        gr.state = "Ready";
+// 		CRSLog.info(JSON.stringify(attributes));
+        gr.insert();
+    }
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-02-26 16:52:09&lt;/sys_created_on&gt;&lt;sys_id&gt;4790b730979121108ba1bde3f153af03&lt;/sys_id&gt;&lt;sys_mod_count&gt;23&lt;/sys_mod_count&gt;&lt;sys_name&gt;CRSDB_Cat&lt;/sys_name&gt;&lt;sys_package display_value="CrossplaneV2" source="x_880077_crossplan"&gt;bdc0bd6847ba19104b6fcc88f36d43bd&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="CrossplaneV2"&gt;bdc0bd6847ba19104b6fcc88f36d43bd&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_4790b730979121108ba1bde3f153af03&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-02-26 22:19:25&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-240718669</payload_hash>
+        <record_name>CRSDB_Cat</record_name>
+        <reverted_from/>
+        <source>42348397970121108ba1bde3f153af69</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-26 22:19:25</sys_created_on>
+        <sys_id>ecebb0c1979521108ba1bde3f153af94</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1868fcf31290000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-26 22:19:25</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>e4ebb0c19c9521109ed930d9092e7094</update_guid>
+        <update_guid_history>e4ebb0c19c9521109ed930d9092e7094:-240718669,3dab30c1269521103d8b852fd4bc88fb:-62901021,2f3bb481269521106f77a838e2067bf0:-1455188089,1217b7343091211092d1ac3929444c43:-1482468322,17f63b3405912110de19407774f85434:-379301890,dad4b33459912110790779515107f39e:352772149,60c4b334889121108a5d9291160b3c31:-1640834930,ff94b3341e91211067f66203e0b7df2b:352772149,9484b334d591211026d9120780b6b727:108122013,e934fbf0b3912110a11c8e73995008d8:-1283506499,01147bf09791211051784b044d0af362:1326924350,03e37fb066912110dc1d59268b06f5e2:1856780501,0573bfb04191211020eb88b45ea09815:-1685772978,75537fb0469121108608736a4cd52fe7:-967470378,b6237fb006912110e601724763475bbf:2031304971,88b2b7b0ef9121101cd74c89ba973538:1397738059,787233b0b79121105c12bcaf3f921733:1313484550,5d42bb706591211026d616975053ee92:-1442841117,eb22f370e9912110d04881bd2ae8f6d8:976771430,f9e1f770f491211017f739b0e3c69f50:-1439341178,6ba1777072912110daa9bee1de7a5620:-1619205303,73813770bf912110deafb7bbda17f6c8:-1750276362,46513f306d9121106e4aa92f006cf10c:1355645655,eef0bbfc64512110b97730751aa9d578:-364009414</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-28 16:07:33</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>3a2f7f83d2844feaa0c69a491cc02084</sys_id>
+        <sys_metadata>4790b730979121108ba1bde3f153af03</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CRSDB_Cat</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sys_script_include_4790b730979121108ba1bde3f153af03</sys_update_name>
+        <sys_update_version display_value="sys_script_include_4790b730979121108ba1bde3f153af03">ecebb0c1979521108ba1bde3f153af94</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-28 16:07:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
