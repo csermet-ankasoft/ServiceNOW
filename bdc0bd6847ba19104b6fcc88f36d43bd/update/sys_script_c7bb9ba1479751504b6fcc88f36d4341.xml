@@ -64,11 +64,14 @@ function writeCategory(current) {
     var Catalog = new GlideRecord('x_880077_crossplan_crsdb_category');
     var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
     var providerID = CRSDB_Provider.getIDByName(gs.getProperty('x_880077_crossplan.main_provider_title'));
-    CRSLog.warn(current.body);
     var provider = JSON.parse(current.body);
-    CRSLog.warn(provider["metadata"]["name"]);
-    Catalog.name = provider["metadata"]["name"];
-    Catalog.type = "Provider";
+	for(i in provider["metadata"]["ownerReferences"]){
+		var providerItem = provider["metadata"]["ownerReferences"][i];
+		Catalog.name = providerItem["name"];
+		Catalog.type = providerItem["kind"];
+	}
+   
+
     Catalog.status = "Waiting For Create";
     Catalog.catalog = catalogID;
     Catalog.description = provider["spec"]["package"];
@@ -220,7 +223,7 @@ function addCatItemtoCRSDB_CatItem(current) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c7bb9ba1479751504b6fcc88f36d4341</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>71</sys_mod_count>
         <sys_name>CRS_JobProcessing</sys_name>
         <sys_overrides/>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
@@ -228,7 +231,7 @@ function addCatItemtoCRSDB_CatItem(current) {
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_c7bb9ba1479751504b6fcc88f36d4341</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-03-01 18:18:36</sys_updated_on>
+        <sys_updated_on>2023-03-01 21:18:53</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

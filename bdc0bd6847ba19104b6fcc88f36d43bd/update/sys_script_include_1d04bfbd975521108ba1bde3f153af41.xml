@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_880077_crossplan.CRSDB_TableClear</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CRSDB_TableClear</name>
+        <script><![CDATA[var CRSDB_TableClear = Class.create();
+CRSDB_TableClear.prototype = {
+    initialize: function() {},
+
+    type: 'CRSDB_TableClear'
+};
+
+CRSDB_TableClear.jobQueueTableClear = function() {
+    var jobQueueTable = new GlideRecord('x_880077_crossplan_crs_jobqueue');
+    jobQueueTable.query();
+    jobQueueTable.deleteMultiple();
+};
+
+CRSDB_TableClear.categoryTableClear = function() {
+    var categoryTable = new GlideRecord('x_880077_crossplan_crsdb_category');
+    categoryTable.query();
+    categoryTable.deleteMultiple();
+};
+
+CRSDB_TableClear.catItemTableClear = function() {
+    var catalogItemTable = new GlideRecord('x_880077_crossplan_crsdb_catitem');
+    catalogItemTable.query();
+    catalogItemTable.deleteMultiple();
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-01 19:57:56</sys_created_on>
+        <sys_id>1d04bfbd975521108ba1bde3f153af41</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>CRSDB_TableClear</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_script_include_1d04bfbd975521108ba1bde3f153af41</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-01 20:04:56</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_880077_crossplan.CRSDB_CatItemClear</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CRSDB_CatItemClear</name>
+        <script><![CDATA[var CRSDB_CatItemClear = Class.create();
+CRSDB_CatItemClear.prototype = {
+    initialize: function() {},
+
+    type: 'CRSDB_CatItemClear'
+};
+
+CRSDB_CatItemClear.Clear = function() {
+    var catalogItem = new GlideRecord('x_880077_crossplan_crsdb_catitem');
+    catalogItem.addQuery('status', 'Completed');
+    catalogItem.query();
+
+    while (catalogItem.next()) {
+        var catItem = new GlideRecord('sc_cat_item');
+        catItem.addQuery('sys_scope', 'bdc0bd6847ba19104b6fcc88f36d43bd');
+        catItem.addQuery('name', catalogItem.name);
+        catItem.query();
+        if (catItem.next()) {
+            var gr = new GlideRecord('x_880077_crossplan_crs_jobqueue');
+            gr.initialize();
+            gr.state = "Ready";
+            gr.body = catItem.getUniqueValue();
+            gr.topic = "Delete CatItem";
+            gr.retry = 0;
+            gr.insert();
+        }
+    }
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-21 22:10:02</sys_created_on>
+        <sys_id>b399079f978121108ba1bde3f153afee</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>CRSDB_CatItemClear</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_script_include_b399079f978121108ba1bde3f153afee</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-26 15:48:45</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>07774b41db2f53c47d8cf22ebf961906</instance_id>
+        <instance_name>dev67109</instance_name>
+        <name>sys_script_include_b399079f978121108ba1bde3f153afee</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_880077_crossplan.CRSDB_CatItemClear&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;CRSDB_CatItemClear&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var CRSDB_CatItemClear = Class.create();
+CRSDB_CatItemClear.prototype = {
+    initialize: function() {},
+
+    type: 'CRSDB_CatItemClear'
+};
+
+CRSDB_CatItemClear.Clear = function() {
+    var catalogItem = new GlideRecord('x_880077_crossplan_crsdb_catitem');
+    catalogItem.addQuery('status', 'Completed');
+    catalogItem.query();
+
+    while (catalogItem.next()) {
+        var catItem = new GlideRecord('sc_cat_item');
+        catItem.addQuery('sys_scope', 'bdc0bd6847ba19104b6fcc88f36d43bd');
+        catItem.addQuery('name', catalogItem.name);
+        catItem.query();
+        if (catItem.next()) {
+            var gr = new GlideRecord('x_880077_crossplan_crs_jobqueue');
+            gr.initialize();
+            gr.state = "Ready";
+            gr.body = catItem.getUniqueValue();
+            gr.topic = "Delete CatItem";
+            gr.retry = 0;
+            gr.insert();
+        }
+    }
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-02-21 22:10:02&lt;/sys_created_on&gt;&lt;sys_id&gt;b399079f978121108ba1bde3f153afee&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;CRSDB_CatItemClear&lt;/sys_name&gt;&lt;sys_package display_value="CrossplaneV2" source="x_880077_crossplan"&gt;bdc0bd6847ba19104b6fcc88f36d43bd&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="CrossplaneV2"&gt;bdc0bd6847ba19104b6fcc88f36d43bd&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_b399079f978121108ba1bde3f153afee&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-02-26 15:48:45&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1160747877</payload_hash>
+        <record_name>CRSDB_CatItemClear</record_name>
+        <reverted_from/>
+        <source>42348397970121108ba1bde3f153af69</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-26 15:48:45</sys_created_on>
+        <sys_id>3d72e7f0975121108ba1bde3f153af96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1868e6983c00000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-26 15:48:45</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>7572e7f0e65121108a9b9539badc4e96</update_guid>
+        <update_guid_history>7572e7f0e65121108a9b9539badc4e96:-1160747877,d2c9c79f73812110704dd5bccc9b8d65:1087325597</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-01 20:00:55</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>2ced78f79f52441095a16814ef5c9900</sys_id>
+        <sys_metadata>b399079f978121108ba1bde3f153afee</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CRSDB_CatItemClear</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sys_script_include_b399079f978121108ba1bde3f153afee</sys_update_name>
+        <sys_update_version display_value="sys_script_include_b399079f978121108ba1bde3f153afee">3d72e7f0975121108ba1bde3f153af96</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-01 20:00:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

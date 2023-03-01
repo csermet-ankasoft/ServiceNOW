@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_category">
+    <sc_category action="DELETE">
+        <active>true</active>
+        <description>azure-desc</description>
+        <entitlement_script/>
+        <header_icon/>
+        <homepage_image/>
+        <homepage_renderer display_value="Category Items">47ebe8aa3742300054b6a3549dbe5dfa</homepage_renderer>
+        <icon/>
+        <image/>
+        <location/>
+        <mobile_hide_description>false</mobile_hide_description>
+        <mobile_picture/>
+        <mobile_subcategory_render_type>list</mobile_subcategory_render_type>
+        <module/>
+        <order>0</order>
+        <parent display_value="CRS_Provider">4b0bfaf5975121108ba1bde3f153af90</parent>
+        <roles/>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>sc_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-01 21:35:01</sys_created_on>
+        <sys_id>137e404a97d521108ba1bde3f153af0b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>azure</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sc_category_137e404a97d521108ba1bde3f153af0b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-01 21:35:01</sys_updated_on>
+        <title>azure</title>
+    </sc_category>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>07774b41db2f53c47d8cf22ebf961906</instance_id>
+        <instance_name>dev67109</instance_name>
+        <name>sc_category_137e404a97d521108ba1bde3f153af0b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_category"><sc_category action="INSERT_OR_UPDATE"><active>true</active><description>azure-desc</description><entitlement_script/><header_icon/><homepage_image/><homepage_renderer display_value="Category Items">47ebe8aa3742300054b6a3549dbe5dfa</homepage_renderer><icon/><image/><location/><mobile_hide_description>false</mobile_hide_description><mobile_picture/><mobile_subcategory_render_type>list</mobile_subcategory_render_type><module/><order>0</order><parent display_value="CRS_Provider">4b0bfaf5975121108ba1bde3f153af90</parent><roles/><sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog><sys_class_name>sc_category</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-03-01 21:35:01</sys_created_on><sys_id>137e404a97d521108ba1bde3f153af0b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>azure</sys_name><sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package><sys_policy/><sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope><sys_update_name>sc_category_137e404a97d521108ba1bde3f153af0b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-03-01 21:35:01</sys_updated_on><title>azure</title></sc_category></record_update>]]></payload>
+        <payload_hash>-458126698</payload_hash>
+        <record_name>azure</record_name>
+        <reverted_from/>
+        <source>7232a501971121108ba1bde3f153aff6</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2023-02-27 01:06:58</sys_created_on>
+        <sys_id>e0eec44a97d521108ba1bde3f153aff3</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>186906893500000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>Category</type>
+        <update_guid>a0eec44a02d5211085974d3fccdf67f3</update_guid>
+        <update_guid_history>a0eec44a02d5211085974d3fccdf67f3:-458126698</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="azure">64eec44a97d521108ba1bde3f153affc</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-01 21:36:44</sys_created_on>
+        <sys_db_object display_value="" name="sc_category">sc_category</sys_db_object>
+        <sys_id>165af911e5cd4c55830dde9f11afcf59</sys_id>
+        <sys_metadata>137e404a97d521108ba1bde3f153af0b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>azure</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sc_category_137e404a97d521108ba1bde3f153af0b</sys_update_name>
+        <sys_update_version display_value="sc_category_137e404a97d521108ba1bde3f153af0b">e0eec44a97d521108ba1bde3f153aff3</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-01 21:36:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
