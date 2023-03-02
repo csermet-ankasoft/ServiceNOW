@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_category">
+    <sc_category action="DELETE">
+        <active>true</active>
+        <description/>
+        <entitlement_script/>
+        <header_icon/>
+        <homepage_image/>
+        <homepage_renderer display_value="Category Items">47ebe8aa3742300054b6a3549dbe5dfa</homepage_renderer>
+        <icon/>
+        <image/>
+        <location/>
+        <mobile_hide_description>false</mobile_hide_description>
+        <mobile_picture/>
+        <mobile_subcategory_render_type>list</mobile_subcategory_render_type>
+        <module/>
+        <order>0</order>
+        <parent/>
+        <roles/>
+        <sc_catalog/>
+        <sys_class_name>sc_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-02 16:06:21</sys_created_on>
+        <sys_id>21dc40d6975121108ba1bde3f153af38</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>asd</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sc_category_21dc40d6975121108ba1bde3f153af38</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-02 16:06:21</sys_updated_on>
+        <title>asd</title>
+    </sc_category>
+    <sys_translated_text action="DELETE" query="documentkey=21dc40d6975121108ba1bde3f153af38"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>07774b41db2f53c47d8cf22ebf961906</instance_id>
+        <instance_name>dev67109</instance_name>
+        <name>sc_category_21dc40d6975121108ba1bde3f153af38</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_category"><sc_category action="INSERT_OR_UPDATE"><active>true</active><description/><entitlement_script/><header_icon/><homepage_image/><homepage_renderer display_value="Category Items">47ebe8aa3742300054b6a3549dbe5dfa</homepage_renderer><icon/><image/><location/><mobile_hide_description>false</mobile_hide_description><mobile_picture/><mobile_subcategory_render_type>list</mobile_subcategory_render_type><module/><order>0</order><parent/><roles/><sc_catalog/><sys_class_name>sc_category</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-03-02 16:06:21</sys_created_on><sys_id>21dc40d6975121108ba1bde3f153af38</sys_id><sys_mod_count>0</sys_mod_count><sys_name>asd</sys_name><sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package><sys_policy/><sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope><sys_update_name>sc_category_21dc40d6975121108ba1bde3f153af38</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-03-02 16:06:21</sys_updated_on><title>asd</title></sc_category><sys_translated_text action="delete_multiple" query="documentkey=21dc40d6975121108ba1bde3f153af38"/></record_update>]]></payload>
+        <payload_hash>-1655481684</payload_hash>
+        <record_name>asd</record_name>
+        <reverted_from/>
+        <source>42348397970121108ba1bde3f153af69</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-02 16:06:22</sys_created_on>
+        <sys_id>83dc4416975121108ba1bde3f153af10</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>186a31314f80000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-02 16:06:22</sys_updated_on>
+        <type>Category</type>
+        <update_guid>cbdc44168e51211084f78edcc9c4940f</update_guid>
+        <update_guid_history>cbdc44168e51211084f78edcc9c4940f:-1655481684</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="asd">06c79452979121108ba1bde3f153aff1</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-02 16:54:06</sys_created_on>
+        <sys_db_object display_value="" name="sc_category">sc_category</sys_db_object>
+        <sys_id>1bb1ece6d1194910a92ffba0e5f27a40</sys_id>
+        <sys_metadata>21dc40d6975121108ba1bde3f153af38</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>asd</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sc_category_21dc40d6975121108ba1bde3f153af38</sys_update_name>
+        <sys_update_version display_value="sc_category_21dc40d6975121108ba1bde3f153af38">83dc4416975121108ba1bde3f153af10</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-02 16:54:06</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

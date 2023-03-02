@@ -42,6 +42,10 @@
                 this.createCategory(current);
             } else if (current.topic == "Delete Category") {
                 this.deleteCategory(current);
+            } else if (current.topic == "Write Main Category") {
+                this.writeMainCategory(current);
+            } else if (current.topic == "Create Main Category") {
+                this.createMainCategory(current);
             }
             current.state == "Completed";
         } catch (err) {
@@ -58,25 +62,64 @@
 
 })(current, previous);
 
+function writeMainCategory(current) {
+    CRSLog.debug('Run -> Write Main Category JOB');
+
+    var mainCategoryAttr = JSON.parse(current.body);
+    var mainCategory = new GlideRecord('x_880077_crossplan_crsdb_category');
+    mainCategory.status = 'Waiting For Create';
+    mainCategory.catalog = mainCategoryAttr.sc_catalog;
+    mainCategory.name = mainCategoryAttr.name;
+    mainCategory.type = mainCategoryAttr.type;
+    mainCategory.insert();
+    current.state = "Completed";
+}
+
+function createMainCategory(current) {
+    CRSLog.debug("Run -> Create Main Category JOB");
+
+    var mainCategoryAttr = JSON.parse(current.body);
+    var scope = gs.getProperty('x_880077_crossplan.scope_id');
+    var mainCategory = new sn_sc.CatCategory();
+    var attr = {
+        "title": mainCategoryAttr.title,
+        "sc_catalog": mainCategoryAttr.sc_catalog,
+        "sys_scope": scope,
+        "type": mainCategoryAttr.type
+    };
+    mainCategory.setAttributes(attr);
+    var mainCategoryID = mainCategory.create();
+
+    var categoryTable = new GlideRecord('x_880077_crossplan_crsdb_category');
+    categoryTable.addQuery('sys_id', mainCategoryAttr.sys_id);
+    categoryTable.query();
+    if (categoryTable.next()) {
+        categoryTable.status = "Created";
+        categoryTable.id = mainCategoryID;
+        categoryTable.update();
+    }
+
+    current.state = "Completed";
+}
+
 function writeCategory(current) {
     CRSLog.debug('Run -> Write Category JOB');
 
-    var Catalog = new GlideRecord('x_880077_crossplan_crsdb_category');
-    var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
+    var category = new GlideRecord('x_880077_crossplan_crsdb_category');
+    var sc_catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
     var providerID = CRSDB_Provider.getIDByName(gs.getProperty('x_880077_crossplan.main_provider_title'));
     var provider = JSON.parse(current.body);
-	for(i in provider["metadata"]["ownerReferences"]){
-		var providerItem = provider["metadata"]["ownerReferences"][i];
-		Catalog.name = providerItem["name"];
-		Catalog.type = providerItem["kind"];
-	}
-   
+    for (i in provider["metadata"]["ownerReferences"]) {
+        var providerItem = provider["metadata"]["ownerReferences"][i];
+        category.name = providerItem["name"];
+        category.type = providerItem["kind"];
+    }
 
-    Catalog.status = "Waiting For Create";
-    Catalog.catalog = catalogID;
-    Catalog.description = provider["spec"]["package"];
-    Catalog.parent = providerID;
-    Catalog.insert();
+    category.status = "Waiting For Create";
+    category.catalog = sc_catalogID;
+    category.description = provider["spec"]["package"];
+    category.parent = providerID;
+    category.insert();
     current.state = "Completed";
 }
 
@@ -84,26 +127,26 @@ function createCategory(current) {
     CRSLog.debug("Run -> Create Category JOB");
 
     var scope = gs.getProperty('x_880077_crossplan.scope_id');
-    var cat = JSON.parse(current.body);
+    var categoryAttr = JSON.parse(current.body);
 
     var category = new sn_sc.CatCategory();
     var attr = {
-        "title": cat.name,
-        "parent": cat.parent,
+        "title": categoryAttr.name,
+        "parent": categoryAttr.parent,
         "sys_scope": scope,
-        "sc_catalog": cat.catalog,
-        "description": cat.description
+        "sc_catalog": categoryAttr.catalog,
+        "description": categoryAttr.description
     };
     category.setAttributes(attr);
-    var catID = category.create();
+    var categoryID = category.create();
 
-    var catTable = new GlideRecord('x_880077_crossplan_crsdb_category');
-    catTable.addQuery('sys_id', cat.sys_id);
-    catTable.query();
-    if (catTable.next()) {
-        catTable.status = "Created";
-        catTable.id = catID;
-        catTable.update();
+    var categoryTable = new GlideRecord('x_880077_crossplan_crsdb_category');
+    categoryTable.addQuery('sys_id', categoryAttr.sys_id);
+    categoryTable.query();
+    if (categoryTable.next()) {
+        categoryTable.status = "Created";
+        categoryTable.id = categoryID;
+        categoryTable.update();
     }
 
     current.state = "Completed";
@@ -223,7 +266,7 @@ function addCatItemtoCRSDB_CatItem(current) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c7bb9ba1479751504b6fcc88f36d4341</sys_id>
-        <sys_mod_count>71</sys_mod_count>
+        <sys_mod_count>81</sys_mod_count>
         <sys_name>CRS_JobProcessing</sys_name>
         <sys_overrides/>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
@@ -231,7 +274,7 @@ function addCatItemtoCRSDB_CatItem(current) {
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_c7bb9ba1479751504b6fcc88f36d4341</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-03-01 21:18:53</sys_updated_on>
+        <sys_updated_on>2023-03-02 16:54:34</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
