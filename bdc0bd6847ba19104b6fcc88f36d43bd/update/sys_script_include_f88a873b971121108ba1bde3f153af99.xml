@@ -29,18 +29,40 @@ CRSDB_GroupCategory.write = function() {
 		gr.state = "Ready";
 		gr.insert();
     }
+};
+
+CRSDB_GroupCategory.create = function(){
+	var cat = new GlideRecord('x_880077_crossplan_crsdb_category');
+    cat.addQuery('status', 'Waiting For Create');
+    cat.query();
+    while (cat.next()) {
+        var gr = new GlideRecord('x_880077_crossplan_crs_jobqueue');
+        gr.topic = "Create Group Category";
+        var attributes = {
+            "name": cat.name.toString(),
+            "description": cat.description.toString(),
+            "parent": cat.parent.toString(),
+            "status": cat.status.toString(),
+            "type": cat.type.toString(),
+			"catalog" : cat.catalog.toString(),
+            "sys_id": cat.sys_id.toString()
+        };
+        gr.body = JSON.stringify(attributes);
+        gr.state = "Ready";
+        gr.insert();
+    }
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-03-07 21:46:36</sys_created_on>
         <sys_id>f88a873b971121108ba1bde3f153af99</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>CRSDB_GroupCategory</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_f88a873b971121108ba1bde3f153af99</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-03-08 01:04:18</sys_updated_on>
+        <sys_updated_on>2023-03-08 01:10:17</sys_updated_on>
     </sys_script_include>
 </record_update>
