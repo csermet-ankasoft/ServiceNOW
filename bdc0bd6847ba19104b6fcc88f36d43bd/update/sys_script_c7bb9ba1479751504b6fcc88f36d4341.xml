@@ -37,15 +37,17 @@
             } else if (current.topic == "Delete CatItem") {
                 this.deleteCatItem(current);
             } else if (current.topic == "Write Category") {
-                this.writeCategory(current);
+                this.writeProviderCategory(current);
             } else if (current.topic == "Create Category") {
-                this.createCategory(current);
+                this.createProviderCategory(current);
             } else if (current.topic == "Delete Category") {
                 this.deleteCategory(current);
             } else if (current.topic == "Write Main Category") {
                 this.writeMainCategory(current);
             } else if (current.topic == "Create Main Category") {
                 this.createMainCategory(current);
+            } else if (current.topic == "Write Group Category") {
+                this.writeGroupCategory(current);
             }
             current.state == "Completed";
         } catch (err) {
@@ -102,7 +104,7 @@ function createMainCategory(current) {
     current.state = "Completed";
 }
 
-function writeCategory(current) {
+function writeProviderCategory(current) {
     CRSLog.debug('Run -> Write Category JOB');
 
     var category = new GlideRecord('x_880077_crossplan_crsdb_category');
@@ -123,7 +125,7 @@ function writeCategory(current) {
     current.state = "Completed";
 }
 
-function createCategory(current) {
+function createProviderCategory(current) {
     CRSLog.debug("Run -> Create Category JOB");
 
     var scope = gs.getProperty('x_880077_crossplan.scope_id');
@@ -149,6 +151,22 @@ function createCategory(current) {
         categoryTable.update();
     }
 
+    current.state = "Completed";
+}
+
+function writeGroupCategory(current) {
+    CRSLog.debug('Run -> Write Group Category JOB');
+
+    var group = JSON.parse(current.body);
+    var category = new GlideRecord('x_880077_crossplan_crsdb_category');
+    var sc_catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
+    var providerID = CRSDB_Provider.getIDByName(group.providerName);
+    category.name = group.groupName;
+    category.status = "Waiting For Create";
+    category.catalog = sc_catalogID;
+    // 	category.description = group["spec"]["package"];
+    category.parent = providerID;
+    category.insert();
     current.state = "Completed";
 }
 
@@ -266,7 +284,7 @@ function addCatItemtoCRSDB_CatItem(current) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c7bb9ba1479751504b6fcc88f36d4341</sys_id>
-        <sys_mod_count>81</sys_mod_count>
+        <sys_mod_count>87</sys_mod_count>
         <sys_name>CRS_JobProcessing</sys_name>
         <sys_overrides/>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
@@ -274,7 +292,7 @@ function addCatItemtoCRSDB_CatItem(current) {
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_c7bb9ba1479751504b6fcc88f36d4341</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-03-02 16:54:34</sys_updated_on>
+        <sys_updated_on>2023-03-08 00:38:12</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
