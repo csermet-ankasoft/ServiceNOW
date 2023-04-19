@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_880077_crossplan.providers</name>
+        <read_roles/>
+        <suffix>providers</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-04-19 07:10:31</sys_created_on>
+        <sys_id>636e11a9971e211030237ea3f153af57</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_880077_crossplan.providers</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_properties_636e11a9971e211030237ea3f153af57</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-04-19 07:10:31</sys_updated_on>
+        <type>string</type>
+        <value>{&#13;
+    "apiVersion": "pkg.crossplane.io/v1",&#13;
+    "items": [&#13;
+        {&#13;
+            "apiVersion": "pkg.crossplane.io/v1",&#13;
+            "kind": "Provider",&#13;
+            "metadata": {&#13;
+                "creationTimestamp": "2023-03-24T15:43:37Z",&#13;
+                "generation": 1,&#13;
+                "managedFields": [&#13;
+                    {&#13;
+                        "apiVersion": "pkg.crossplane.io/v1",&#13;
+                        "fieldsType": "FieldsV1",&#13;
+                        "fieldsV1": {&#13;
+                            "f:spec": {&#13;
+                                ".": {},&#13;
+                                "f:ignoreCrossplaneConstraints": {},&#13;
+                                "f:package": {},&#13;
+                                "f:packagePullPolicy": {},&#13;
+                                "f:revisionActivationPolicy": {},&#13;
+                                "f:revisionHistoryLimit": {},&#13;
+                                "f:skipDependencyResolution": {}&#13;
+                            }&#13;
+                        },&#13;
+                        "manager": "crossplane",&#13;
+                        "operation": "Update",&#13;
+                        "time": "2023-03-24T15:43:37Z"&#13;
+                    },&#13;
+                    {&#13;
+                        "apiVersion": "pkg.crossplane.io/v1",&#13;
+                        "fieldsType": "FieldsV1",&#13;
+                        "fieldsV1": {&#13;
+                            "f:status": {&#13;
+                                ".": {},&#13;
+                                "f:conditions": {},&#13;
+                                "f:currentIdentifier": {},&#13;
+                                "f:currentRevision": {}&#13;
+                            }&#13;
+                        },&#13;
+                        "manager": "crossplane",&#13;
+                        "operation": "Update",&#13;
+                        "subresource": "status",&#13;
+                        "time": "2023-03-24T15:43:38Z"&#13;
+                    }&#13;
+                ],&#13;
+                "name": "crossplane-provider-aws",&#13;
+                "resourceVersion": "11962460",&#13;
+                "uid": "f9d15608-59ff-498c-a393-01ef8688eb40"&#13;
+            },&#13;
+            "spec": {&#13;
+                "ignoreCrossplaneConstraints": false,&#13;
+                "package": "crossplane/provider-aws:v0.32.0",&#13;
+                "packagePullPolicy": "IfNotPresent",&#13;
+                "revisionActivationPolicy": "Automatic",&#13;
+                "revisionHistoryLimit": 1,&#13;
+                "skipDependencyResolution": false&#13;
+            },&#13;
+            "status": {&#13;
+                "conditions": [&#13;
+                    {&#13;
+                        "lastTransitionTime": "2023-04-07T23:44:54Z",&#13;
+                        "reason": "HealthyPackageRevision",&#13;
+                        "status": "True",&#13;
+                        "type": "Healthy"&#13;
+                    },&#13;
+                    {&#13;
+                        "lastTransitionTime": "2023-03-24T15:43:38Z",&#13;
+                        "reason": "ActivePackageRevision",&#13;
+                        "status": "True",&#13;
+                        "type": "Installed"&#13;
+                    }&#13;
+                ],&#13;
+                "currentIdentifier": "crossplane/provider-aws:v0.32.0",&#13;
+                "currentRevision": "crossplane-provider-aws-245ce7fb587d"&#13;
+            }&#13;
+        },&#13;
+        {&#13;
+            "apiVersion": "pkg.crossplane.io/v1",&#13;
+            "kind": "Provider",&#13;
+            "metadata": {&#13;
+                "creationTimestamp": "2023-03-28T14:02:30Z",&#13;
+                "generation": 1,&#13;
+                "managedFields": [&#13;
+                    {&#13;
+                        "apiVersion": "pkg.crossplane.io/v1",&#13;
+                        "fieldsType": "FieldsV1",&#13;
+                        "fieldsV1": {&#13;
+                            "f:spec": {&#13;
+                                ".": {},&#13;
+                                "f:ignoreCrossplaneConstraints": {},&#13;
+                                "f:package": {},&#13;
+                                "f:packagePullPolicy": {},&#13;
+                                "f:revisionActivationPolicy": {},&#13;
+                                "f:revisionHistoryLimit": {},&#13;
+                                "f:skipDependencyResolution": {}&#13;
+                            }&#13;
+                        },&#13;
+                        "manager": "crossplane",&#13;
+                        "operation": "Update",&#13;
+                        "time": "2023-03-28T14:02:30Z"&#13;
+                    },&#13;
+                    {&#13;
+                        "apiVersion": "pkg.crossplane.io/v1",&#13;
+                        "fieldsType": "FieldsV1",&#13;
+                        "fieldsV1": {&#13;
+                            "f:status": {&#13;
+                                ".": {},&#13;
+                                "f:conditions": {},&#13;
+                                "f:currentIdentifier": {},&#13;
+                                "f:currentRevision": {}&#13;
+                            }&#13;
+                        },&#13;
+                        "manager": "crossplane",&#13;
+                        "operation": "Update",&#13;
+                        "subresource": "status",&#13;
+                        "time": "2023-03-28T14:02:33Z"&#13;
+                    }&#13;
+                ],&#13;
+                "name": "crossplane-provider-azure",&#13;
+                "resourceVersion": "11925103",&#13;
+                "uid": "d63c3976-c221-4d84-8a2e-b2dad4547d17"&#13;
+            },&#13;
+            "spec": {&#13;
+                "ignoreCrossplaneConstraints": false,&#13;
+                "package": "crossplane/provider-azure:v0.19.0",&#13;
+                "packagePullPolicy": "IfNotPresent",&#13;
+                "revisionActivationPolicy": "Automatic",&#13;
+                "revisionHistoryLimit": 1,&#13;
+                "skipDependencyResolution": false&#13;
+            },&#13;
+            "status": {&#13;
+                "conditions": [&#13;
+                    {&#13;
+                        "lastTransitionTime": "2023-04-07T22:40:44Z",&#13;
+                        "reason": "HealthyPackageRevision",&#13;
+                        "status": "True",&#13;
+                        "type": "Healthy"&#13;
+                    },&#13;
+                    {&#13;
+                        "lastTransitionTime": "2023-03-28T14:02:33Z",&#13;
+                        "reason": "ActivePackageRevision",&#13;
+                        "status": "True",&#13;
+                        "type": "Installed"&#13;
+                    }&#13;
+                ],&#13;
+                "currentIdentifier": "crossplane/provider-azure:v0.19.0",&#13;
+                "currentRevision": "crossplane-provider-azure-4e71f9c5dcc1"&#13;
+            }&#13;
+        },&#13;
+        {&#13;
+            "apiVersion": "pkg.crossplane.io/v1",&#13;
+            "kind": "Provider",&#13;
+            "metadata": {&#13;
+                "creationTimestamp": "2023-03-28T14:02:13Z",&#13;
+                "generation": 1,&#13;
+                "managedFields": [&#13;
+                    {&#13;
+                        "apiVersion": "pkg.crossplane.io/v1",&#13;
+                        "fieldsType": "FieldsV1",&#13;
+                        "fieldsV1": {&#13;
+                            "f:spec": {&#13;
+                                ".": {},&#13;
+                                "f:ignoreCrossplaneConstraints": {},&#13;
+                                "f:package": {},&#13;
+                                "f:packagePullPolicy": {},&#13;
+                                "f:revisionActivationPolicy": {},&#13;
+                                "f:revisionHistoryLimit": {},&#13;
+                                "f:skipDependencyResolution": {}&#13;
+                            }&#13;
+                        },&#13;
+                        "manager": "crossplane",&#13;
+                        "operation": "Update",&#13;
+                        "time": "2023-03-28T14:02:13Z"&#13;
+                    },&#13;
+                    {&#13;
+                        "apiVersion": "pkg.crossplane.io/v1",&#13;
+                        "fieldsType": "FieldsV1",&#13;
+                        "fieldsV1": {&#13;
+                            "f:status": {&#13;
+                                ".": {},&#13;
+                                "f:conditions": {},&#13;
+                                "f:currentIdentifier": {},&#13;
+                                "f:currentRevision": {}&#13;
+                            }&#13;
+                        },&#13;
+                        "manager": "crossplane",&#13;
+                        "operation": "Update",&#13;
+                        "subresource": "status",&#13;
+                        "time": "2023-03-28T14:02:13Z"&#13;
+                    }&#13;
+                ],&#13;
+                "name": "crossplane-provider-gcp",&#13;
+                "resourceVersion": "11923203",&#13;
+                "uid": "fd4080e5-41c2-4bdb-959b-aff3ccc6ac6c"&#13;
+            },&#13;
+            "spec": {&#13;
+                "ignoreCrossplaneConstraints": false,&#13;
+                "package": "crossplane/provider-gcp:v0.21.0",&#13;
+                "packagePullPolicy": "IfNotPresent",&#13;
+                "revisionActivationPolicy": "Automatic",&#13;
+                "revisionHistoryLimit": 1,&#13;
+                "skipDependencyResolution": false&#13;
+            },&#13;
+            "status": {&#13;
+                "conditions": [&#13;
+                    {&#13;
+                        "lastTransitionTime": "2023-04-07T22:37:37Z",&#13;
+                        "reason": "HealthyPackageRevision",&#13;
+                        "status": "True",&#13;
+                        "type": "Healthy"&#13;
+                    },&#13;
+                    {&#13;
+                        "lastTransitionTime": "2023-03-28T14:02:13Z",&#13;
+                        "reason": "ActivePackageRevision",&#13;
+                        "status": "True",&#13;
+                        "type": "Installed"&#13;
+                    }&#13;
+                ],&#13;
+                "currentIdentifier": "crossplane/provider-gcp:v0.21.0",&#13;
+                "currentRevision": "crossplane-provider-gcp-897a5469eb94"&#13;
+            }&#13;
+        }&#13;
+    ],&#13;
+    "kind": "ProviderList",&#13;
+    "metadata": {&#13;
+        "continue": "",&#13;
+        "resourceVersion": "20257829"&#13;
+    }&#13;
+}</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=636e11a9971e211030237ea3f153af57"/>
+</record_update>

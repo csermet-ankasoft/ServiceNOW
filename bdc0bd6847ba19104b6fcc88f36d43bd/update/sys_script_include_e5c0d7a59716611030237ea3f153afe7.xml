@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_880077_crossplan.CRSDB_CatItem2</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CRSDB_CatItem2</name>
+        <script><![CDATA[var CRSDB_CatItem2 = Class.create();
+CRSDB_CatItem2.prototype = {
+    initialize: function() {},
+
+    type: 'CRSDB_CatItem2'
+};
+
+CRSDB_CatItem2.write = function() {
+    // 	var Token = gs.getProperty('x_880077_crossplan.Tokens');	
+    // 	var baseurl = gs.getProperty('x_880077_crossplan.base_urls');
+    // 	var endpoint = gs.getProperty('x_880077_crossplan.CRD_endpoint');
+    // 	var url = baseurl + endpoint;
+    // 	var response = CRS_API.requestGetJson(url,Token);
+    var response = JSON.parse(gs.getProperty('x_880077_crossplan.json2'));
+    var catItems = response["items"];
+
+    for (var i in catItems) {
+        var gr = new GlideRecord("x_880077_crossplan_crs_jobqueue");
+        gr.initialize();
+        gr.state = "Ready";
+        gr.body = JSON.stringify(catItems[i]);
+        gr.topic = "Write CatItem";
+        gr.request = catItems[i]["metadata"]["name"];
+        gr.insert();
+    }
+};
+
+CRSDB_CatItem2.create = function() {
+    var catItems = new GlideRecord("x_880077_crossplan_crsdb_catitem");
+    catItems.addQuery('status', 'Waiting For Create');
+    catItems.query();
+
+    while (catItems.next()) {
+        var gr = new GlideRecord('x_880077_crossplan_crs_jobqueue');
+        gr.topic = "Create CatItem";
+        var attributes = {
+            "name": catItems.name.toString(),
+            //"description": catItems.description.toString(),
+            "parent": catItems.category.toString(),
+            "status": catItems.status.toString(),
+            //"type": catItems.type.toString(),
+            "catalogs": catItems.catalogs.toString(),
+            "sys_id": catItems.sys_id.toString()
+        };
+        gr.body = JSON.stringify(attributes);
+        gr.state = "Ready";
+        gr.insert();
+    }
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-04-19 15:29:55</sys_created_on>
+        <sys_id>e5c0d7a59716611030237ea3f153afe7</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>CRSDB_CatItem2</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_script_include_e5c0d7a59716611030237ea3f153afe7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-04-19 18:31:59</sys_updated_on>
+    </sys_script_include>
+</record_update>

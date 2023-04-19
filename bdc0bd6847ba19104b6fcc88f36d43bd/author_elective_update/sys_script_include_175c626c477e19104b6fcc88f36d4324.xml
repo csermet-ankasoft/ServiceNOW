@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_880077_crossplan.Category_Script</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Category_Script</name>
+        <script><![CDATA[var Category_Script = Class.create();
+Category_Script.prototype = {
+    initialize: function() {
+    },
+ 
+    type: 'Category_Script'
+};
+
+Category_Script.write_InitMainCategory = function create() {		
+	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');	
+	var category = {};
+	category.name = gs.getProperty('x_880077_crossplan.main_category_title');
+	category.type = "Init";
+	category.status = "Waiting For Create";
+	category.catalog = catalogID;
+	category.type = "main_category";
+	CRSDB_Category.write(category);	
+	CRSLog.debug("Write Category Init Completed");
+};
+
+Category_Script.write_InitProviderCategory = function create() {		
+	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');	
+	var provider = {};
+	var gr = CRSDB_Category.getByKeyFilter("name",gs.getProperty('x_880077_crossplan.main_category_title'));
+	gr.next();
+	provider.name = gs.getProperty('x_880077_crossplan.main_provider_title');
+	provider.type = "Init";
+	provider.status = "Waiting For Create";
+	provider.catalog = catalogID;
+	provider.type = "main_provider";	
+	provider.parent = gr.id;	
+	CRSLog.debug("Write Category Init Completed");
+};
+
+Category_Script.create = function create(current) {
+    CRSLog.debug("Run -> Category_Script.create");
+	var category = new sn_sc.CatCategory();	
+	var attributes = {
+		"title" : current.name, 
+		"sc_catalog" : current.catalog, 
+		"sys_scope": current.scope,		
+		"description": current.description
+	};
+	if (current.parent) attributes["parent"] = current.parent;
+	category.setAttributes(attributes);
+	current.categoryID = category.create();	
+	CRSLog.debug("Completed -> Category_Script.create");
+	return current.categoryID;
+};
+
+Category_Script.write_provider_category_toDB = function write_provider_category_toDB(){
+	CRSLog.debug("Run -> write_provider_category_toDB");
+	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
+	var providerID = CRSDB_Category.getIDByName(gs.getProperty('x_880077_crossplan.main_provider_title'));
+	var Token = gs.getProperty('x_880077_crossplan.Tokens');	
+	var baseurl = gs.getProperty('x_880077_crossplan.base_urls');
+	var endpoint = gs.getProperty('x_880077_crossplan.provider_endpoint');
+	var url = baseurl + endpoint;
+	var response = CRS_API.requestGetJson(url,Token);		
+	var providers = response["items"];
+	for (i in providers){
+		var current = {};
+		provider = providers[i];
+		current.name = provider["metadata"]["name"];
+		current.type = "Provider";
+		current.status = "Waiting For Create";
+		current.catalog = catalogID;
+		current.description = provider["spec"]["package"];
+		current.parent = providerID;
+		current.type = "provider";
+		CRSDB_Category.write(current);		
+	}
+	CRSLog.debug("Completed -> write_provider_category_toDB");
+};
+
+Category_Script.create_waiting_category = function create_waiting_category(){
+	CRSLog.debug("Run -> create_waiting_provider_category");
+	var scope = gs.getProperty('x_880077_crossplan.scope_id');	
+	var gr = CRSDB_Category.getByKeyFilter("status","Waiting For Create");
+	while(gr.next()){
+		gr.scope = scope;
+		gr.id = Category_Script.create(gr);
+		CRSLog.debug("category created: " + gr.id);
+		gr.status = "Created";
+		gr.update();
+	}		
+	CRSLog.debug("Completed -> create_waiting_provider_category");
+};
+
+Category_Script.deleteByKeyFilter = function deleteByKeyFilter(key,value){
+	CRSLog.debug("Run -> Category_Script.delete");
+	gr = CRSDB_Category.getByKeyFilter(key,value);
+	while(gr.next()){
+		var category = new sn_sc.CatCategory(gr.id);
+		category.deleteRecord();
+		gr.deleteRecord();
+	}		
+	CRSLog.debug("Completed -> Category_Script.delete ");
+};
+
+
+
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-24 11:35:36</sys_created_on>
+        <sys_id>175c626c477e19104b6fcc88f36d4324</sys_id>
+        <sys_name>Category_Script</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_script_include_175c626c477e19104b6fcc88f36d4324</sys_update_name>
+    </sys_script_include>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>84294140db9e68d0b847ac44d4961972</instance_id>
+        <instance_name>dev106547</instance_name>
+        <name>sys_script_include_175c626c477e19104b6fcc88f36d4324</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;
+    &lt;sys_script_include action="INSERT_OR_UPDATE"&gt;
+        &lt;access&gt;package_private&lt;/access&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;api_name&gt;x_880077_crossplan.Category_Script&lt;/api_name&gt;
+        &lt;caller_access/&gt;
+        &lt;client_callable&gt;false&lt;/client_callable&gt;
+        &lt;description/&gt;
+        &lt;name&gt;Category_Script&lt;/name&gt;
+        &lt;script&gt;&lt;![CDATA[var Category_Script = Class.create();
+Category_Script.prototype = {
+    initialize: function() {
+    },
+ 
+    type: 'Category_Script'
+};
+
+Category_Script.write_InitMainCategory = function create() {		
+	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');	
+	var category = {};
+	category.name = gs.getProperty('x_880077_crossplan.main_category_title');
+	category.type = "Init";
+	category.status = "Waiting For Create";
+	category.catalog = catalogID;
+	category.type = "main_category";
+	CRSDB_Category.write(category);	
+	CRSLog.debug("Write Category Init Completed");
+};
+
+Category_Script.write_InitProviderCategory = function create() {		
+	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');	
+	var provider = {};
+	var gr = CRSDB_Category.getByKeyFilter("name",gs.getProperty('x_880077_crossplan.main_category_title'));
+	gr.next();
+	provider.name = gs.getProperty('x_880077_crossplan.main_provider_title');
+	provider.type = "Init";
+	provider.status = "Waiting For Create";
+	provider.catalog = catalogID;
+	provider.type = "main_provider";	
+	provider.parent = gr.id;	
+	CRSLog.debug("Write Category Init Completed");
+};
+
+Category_Script.create = function create(current) {
+    CRSLog.debug("Run -&gt; Category_Script.create");
+	var category = new sn_sc.CatCategory();	
+	var attributes = {
+		"title" : current.name, 
+		"sc_catalog" : current.catalog, 
+		"sys_scope": current.scope,		
+		"description": current.description
+	};
+	if (current.parent) attributes["parent"] = current.parent;
+	category.setAttributes(attributes);
+	current.categoryID = category.create();	
+	CRSLog.debug("Completed -&gt; Category_Script.create");
+	return current.categoryID;
+};
+
+Category_Script.write_provider_category_toDB = function write_provider_category_toDB(){
+	CRSLog.debug("Run -&gt; write_provider_category_toDB");
+	var catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
+	var providerID = CRSDB_Category.getIDByName(gs.getProperty('x_880077_crossplan.main_provider_title'));
+	var Token = gs.getProperty('x_880077_crossplan.Tokens');	
+	var baseurl = gs.getProperty('x_880077_crossplan.base_urls');
+	var endpoint = gs.getProperty('x_880077_crossplan.provider_endpoint');
+	var url = baseurl + endpoint;
+	var response = CRS_API.requestGetJson(url,Token);		
+	var providers = response["items"];
+	for (i in providers){
+		var current = {};
+		provider = providers[i];
+		current.name = provider["metadata"]["name"];
+		current.type = "Provider";
+		current.status = "Waiting For Create";
+		current.catalog = catalogID;
+		current.description = provider["spec"]["package"];
+		current.parent = providerID;
+		current.type = "provider";
+		CRSDB_Category.write(current);		
+	}
+	CRSLog.debug("Completed -&gt; write_provider_category_toDB");
+};
+
+Category_Script.create_waiting_category = function create_waiting_category(){
+	CRSLog.debug("Run -&gt; create_waiting_provider_category");
+	var scope = gs.getProperty('x_880077_crossplan.scope_id');	
+	var gr = CRSDB_Category.getByKeyFilter("status","Waiting For Create");
+	while(gr.next()){
+		gr.scope = scope;
+		gr.id = Category_Script.create(gr);
+		CRSLog.debug("category created: " + gr.id);
+		gr.status = "Created";
+		gr.update();
+	}		
+	CRSLog.debug("Completed -&gt; create_waiting_provider_category");
+};
+
+Category_Script.deleteByKeyFilter = function deleteByKeyFilter(key,value){
+	CRSLog.debug("Run -&gt; Category_Script.delete");
+	gr = CRSDB_Category.getByKeyFilter(key,value);
+	while(gr.next()){
+		var category = new sn_sc.CatCategory(gr.id);
+		category.deleteRecord();
+		gr.deleteRecord();
+	}		
+	CRSLog.debug("Completed -&gt; Category_Script.delete ");
+};
+
+
+
+]]&gt;&lt;/script&gt;
+        &lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2022-10-24 11:35:36&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;175c626c477e19104b6fcc88f36d4324&lt;/sys_id&gt;
+        &lt;sys_name&gt;Category_Script&lt;/sys_name&gt;
+        &lt;sys_package display_value="CrossplaneV2" source="x_880077_crossplan"&gt;bdc0bd6847ba19104b6fcc88f36d43bd&lt;/sys_package&gt;
+        &lt;sys_policy&gt;read&lt;/sys_policy&gt;
+        &lt;sys_scope display_value="CrossplaneV2"&gt;bdc0bd6847ba19104b6fcc88f36d43bd&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_script_include_175c626c477e19104b6fcc88f36d4324&lt;/sys_update_name&gt;
+    &lt;/sys_script_include&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>-907944073</payload_hash>
+        <record_name>Category_Script</record_name>
+        <reverted_from/>
+        <source>811b19a9971e211030237ea3f153af94</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-04-19 06:55:42</sys_created_on>
+        <sys_id>ac2b5da9971e211030237ea3f153af3f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>187984c2e4e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-04-19 06:55:42</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>6c2b5da99a1e211025b75d3cf1cae33f</update_guid>
+        <update_guid_history>6c2b5da99a1e211025b75d3cf1cae33f:-907944073</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-04-19 15:54:08</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>035a1879e2c943c7803e4ccf7bbd56d9</sys_id>
+        <sys_metadata>175c626c477e19104b6fcc88f36d4324</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Category_Script</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sys_script_include_175c626c477e19104b6fcc88f36d4324</sys_update_name>
+        <sys_update_version display_value="sys_script_include_175c626c477e19104b6fcc88f36d4324">ac2b5da9971e211030237ea3f153af3f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-04-19 15:54:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
