@@ -205,33 +205,6 @@ function deleteCategory(current) {
     categoryDelete.deleteRecord();
     current.state = "Completed";
 }
-/*
-function createCatItemJOB(current) {
-    CRSLog.debug("Run -> createCatItem JOB");
-    var catItem = JSON.parse(current.body);
-
-    var catItems = new GlideRecord("x_880077_crossplan_crsdb_catitem");
-    catItems.query("name", catItem.name);
-    catItems.next();
-    
-	var catalogItemID = createCatItem(catItems);
-	
-    if (catalogItemID) {
-        CRSLog.debug("Completed -> Catalog_Item_Script.create");
-        var gr = new GlideRecord('x_880077_crossplan_crsdb_catitem');
-        gr.addQuery('sys_id', catItem.sys_id);
-        gr.query();
-        if (gr.next()) {
-            gr.status = "Created";
-            gr.id = catalogItemID;
-            gr.update();
-        }
-        current.state = "Completed";
-    } else {
-        current.state = "Failed";
-    }
-
-}*/
 
 function writeCatItem(current) {
     CRSLog.debug("Run -> writeCatItem_Job");
@@ -248,39 +221,6 @@ function writeCatItem(current) {
     catItem.category = parentID;
     catItem.insert();
     current.state = "Completed";
-    /*    var catalogID = gs.getProperty('x_880077_crossplan.main_category_title');
-    var provider_name = "";
-    var apiversion = "";
-    var CRD_item = JSON.parse(current.body);
-    var providerIsExist = false;
-    for (j in CRD_item["metadata"]["ownerReferences"]) {
-        var CRD_item_ref = CRD_item["metadata"]["ownerReferences"][j];
-        if (CRD_item_ref["kind"] == "Provider") {
-            provider_name = CRD_item_ref["name"];
-            apiversion = CRD_item_ref["apiVersion"];
-            providerIsExist = true;
-            break;
-        }
-    }
-    if (providerIsExist == true) {
-        -var catItem = new GlideRecord("x_880077_crossplan_crsdb_catitem");
-        -var providerID = CRSDB_Provider.getIDByName(provider_name) + "";
-        -CRSLog.info(providerID + ':::' + provider_name);
-        -var serviceCatalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
-        catItem.initialize();
-        catItem.short_description = CRD_item["metadata"]["name"] + "  " + apiversion;
-        catItem.name = CRD_item["spec"]["names"]["singular"];
-        catItem.type = "CRD_CatItem";
-        catItem.group = CRD_item["spec"]["group"];
-        catItem.status = "Waiting For Create";
-        catItem.catalogs = serviceCatalogID;
-        catItem.category = providerID;
-        catItem.type = "provider";
-        catItem.insert();
-        current.state = "Completed";
-    } else {
-        current.state = "Not a Provider";
-    }*/
 }
 
 function createCatItem(current) {
@@ -309,22 +249,7 @@ function createCatItem(current) {
     }
 
     current.state = "Completed";
-
-    /*
-    var catalogItem = new sn_sc.CatItem();
-    var scope = gs.getProperty('x_880077_crossplan.scope_id');
-    var attributes = {
-        "name": current.name,
-        "sys_scope": scope,
-    };
-    catalogItem.setAttributes(attributes);
-	
-    var catalogItemID = catalogItem.create();
-
-    return catalogItemID;*/
 }
-
-
 
 function deleteCatItem(current) {
     CRSLog.debug("Run -> Delete CatItem JOB");
@@ -345,7 +270,7 @@ function deleteCatItem(current) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c7bb9ba1479751504b6fcc88f36d4341</sys_id>
-        <sys_mod_count>99</sys_mod_count>
+        <sys_mod_count>100</sys_mod_count>
         <sys_name>CRS_JobProcessing</sys_name>
         <sys_overrides/>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
@@ -353,7 +278,7 @@ function deleteCatItem(current) {
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_c7bb9ba1479751504b6fcc88f36d4341</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-04-19 18:41:29</sys_updated_on>
+        <sys_updated_on>2023-04-19 19:03:23</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
