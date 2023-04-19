@@ -17,22 +17,31 @@ CRSDB_GroupCategory.prototype = {
 CRSDB_GroupCategory.write = function() {
     var response = JSON.parse(gs.getProperty('x_880077_crossplan.json2'));
     var groups = response["items"];
-    for (var i in groups) {
+
+    forloop: for (var i in groups) {
+CRSLog.info('asd');
+        var existCat = new GlideRecord('x_880077_crossplan_crs_jobqueue');
+        existCat.query();
+        while (existCat.next()) {
+            if (existCat.body.includes(groups[i]["spec"]["group"]))
+                continue forloop;
+        }
+		CRSLog.warn('asdasd');
         var gr = new GlideRecord('x_880077_crossplan_crs_jobqueue');
         gr.initialize();
         gr.topic = "Write Group Category";
-		var attr={
-			"providerName":groups[i]["metadata"]["ownerReferences"][0]["name"],
-			"groupName":groups[i]["spec"]["group"]
-		};
-		gr.body = JSON.stringify(attr);
-		gr.state = "Ready";
-		gr.insert();
+        var attr = {
+            "providerName": groups[i]["metadata"]["ownerReferences"][1]["name"],
+            "groupName": groups[i]["spec"]["group"]
+        };
+        gr.body = JSON.stringify(attr);
+        gr.state = "Ready";
+        gr.insert();
     }
 };
 
-CRSDB_GroupCategory.create = function(){
-	var cat = new GlideRecord('x_880077_crossplan_crsdb_category');
+CRSDB_GroupCategory.create = function() {
+    var cat = new GlideRecord('x_880077_crossplan_crsdb_category');
     cat.addQuery('status', 'Waiting For Create');
     cat.query();
     while (cat.next()) {
@@ -44,7 +53,7 @@ CRSDB_GroupCategory.create = function(){
             "parent": cat.parent.toString(),
             "status": cat.status.toString(),
             "type": cat.type.toString(),
-			"catalog" : cat.catalog.toString(),
+            "catalog": cat.catalog.toString(),
             "sys_id": cat.sys_id.toString()
         };
         gr.body = JSON.stringify(attributes);
@@ -56,13 +65,13 @@ CRSDB_GroupCategory.create = function(){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-03-07 21:46:36</sys_created_on>
         <sys_id>f88a873b971121108ba1bde3f153af99</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name>CRSDB_GroupCategory</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_f88a873b971121108ba1bde3f153af99</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-03-08 01:10:17</sys_updated_on>
+        <sys_updated_on>2023-04-19 15:17:21</sys_updated_on>
     </sys_script_include>
 </record_update>

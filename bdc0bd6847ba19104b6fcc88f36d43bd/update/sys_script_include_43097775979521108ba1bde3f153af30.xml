@@ -26,8 +26,6 @@ CRSDB_CatItemClear.Clear = function() {
         catItem.addQuery('name', catalogItem.name);
         catItem.query();
         if (catItem.next()) {
-            CRSLog.debug(catItem.name);
-            CRSLog.debug('if içi');
             var gr = new GlideRecord('x_880077_crossplan_crs_jobqueue');
             gr.initialize();
             gr.state = "Ready";
@@ -42,13 +40,13 @@ CRSDB_CatItemClear.Clear = function() {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-03-01 20:03:10</sys_created_on>
         <sys_id>43097775979521108ba1bde3f153af30</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>CRSDB_CatItemClear</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_43097775979521108ba1bde3f153af30</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-03-01 20:03:10</sys_updated_on>
+        <sys_updated_on>2023-04-19 07:41:48</sys_updated_on>
     </sys_script_include>
 </record_update>
