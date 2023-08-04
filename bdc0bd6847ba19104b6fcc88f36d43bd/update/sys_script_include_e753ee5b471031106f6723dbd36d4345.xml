@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_880077_crossplan.CRSDB_Variables</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CRSDB_Variables</name>
+        <script><![CDATA[var CRSDB_Variables = Class.create();
+CRSDB_Variables.prototype = {
+    initialize: function() {},
+
+    type: 'CRSDB_Variables'
+};
+var scope = gs.getProperty('x_880077_crossplan.scope_id');
+var catItemTable = "x_880077_crossplan_crsdb_catitem";
+var jobQueueTable = "x_880077_crossplan_crs_jobqueue";
+
+CRSDB_Variables.write = function() {
+    var catItems = new GlideRecord(catItemTable);
+    catItems.addQuery('status', 'Waiting For Variable');
+    catItems.query();
+
+    while (catItems.next()) {
+		var providerName = catItems.group;
+        if (providerName.includes("aws") || providerName.includes("gcp")) {
+            var catItemVar = JSON.parse(catItems.variable.toString());
+            var varArr = Object.keys(catItemVar);
+            var attr = {
+                "var": varArr,
+                "sys_id": (catItems.id).toString()
+            };
+        } else {
+            var attr = {
+                "sys_id": (catItems.id).toString()
+            };
+        }
+        var gr = new GlideRecord(jobQueueTable);
+		gr.request = catItems.question;
+        gr.topic = "Create CatItemVariable";
+        gr.body = JSON.stringify(attr);
+        gr.state = "Ready";
+        gr.insert();
+    }
+};
+
+CRSDB_Variables.delete = function() {
+    /*var catItemVar = new GlideRecord('item_option_new');
+	catItemVar.addQuery('sys_scope',scope);
+	catItemVar.query();
+	while (catItemVar.next()){
+		var gr = new GlideRecord(jobQueueTable);
+		gr.initialize();
+		gr.topic = "Delete CatItemVariable";
+		gr.id = catItemVar.getUniqueValue();
+		gr.request = catItemVar.name;
+		gr.state = "Ready";
+		gr.insert();
+	}*/
+	
+	/*var gr = new GlideRecord("item_option_new");
+	gr.addQuery('sys_scope',scope);
+	gr.query();
+	if(gr.next()){
+		CRSLog.warn(gr.name);
+		gr.deleteRecord(true);
+		CRSLog.info(gr.name);
+	}*/
+	var gr = new GlideRecord('item_option_new');
+	gr.addQuery('sys_scope',scope);
+	gr.query();
+	if (gr.next()) {
+		CRSlog.info("1");
+		// first remove the variable set from all catalog items
+		var catItemV = new GlideRecord('io_set_item'); // M2M table linking variable set and catalog item
+		catItemV.addQuery('variable', gr.getUniqueValue); // find all catalog items using My Variable Set
+		catItemV.query();
+		while (catItemV.next()) {
+			CRSLog.info("2");
+			var vsetM2M = new sn_sc.CatalogItemVariableM2M(catItemV.getUniqueValue()); // io_set_item M2M record sys_id
+			vsetM2M.deleteRecord(true); // delete M2M record
+			CRSLog.info("3");
+    }
+
+    // then delete the variable set record
+    var varset = new sn_sc.CatalogItemVariable(gr.getUniqueValue()); 
+    varset.deleteRecord(true);
+}
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-02 08:47:29</sys_created_on>
+        <sys_id>e753ee5b471031106f6723dbd36d4345</sys_id>
+        <sys_mod_count>66</sys_mod_count>
+        <sys_name>CRSDB_Variables</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sys_script_include_e753ee5b471031106f6723dbd36d4345</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-04 11:17:19</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -7,10 +7,10 @@
         <element label="id" max_length="40" name="id" type="string"/>
         <element label="name" max_length="40" name="name" type="string"/>
         <element label="price" max_length="100" name="price" type="string"/>
-        <element label="Short_Description" max_length="40" name="short_description" type="string"/>
+        <element label="Short_Description" max_length="200" name="short_description" type="string"/>
         <element label="Status" max_length="40" name="status" type="string"/>
         <element label="type" max_length="40" name="type" type="string"/>
-        <element label="variable" max_length="40" name="variable" type="string"/>
+        <element label="Variable" max_length="10000" name="variable" type="string"/>
         <element label="workflow" max_length="40" name="workflow" type="string"/>
     </element>
 </database>

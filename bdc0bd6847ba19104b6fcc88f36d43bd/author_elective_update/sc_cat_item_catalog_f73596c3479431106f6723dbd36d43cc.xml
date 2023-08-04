@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="DELETE">
+        <sc_cat_item display_value="accesskey">2fd0568f475431106f6723dbd36d430f</sc_cat_item>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-01 13:06:04</sys_created_on>
+        <sys_id>f73596c3479431106f6723dbd36d43cc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Service Catalog.accesskey</sys_name>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_f73596c3479431106f6723dbd36d43cc</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-08-01 13:06:14</sys_updated_on>
+    </sc_cat_item_catalog>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</application>
+        <file_path/>
+        <instance_id>696a6b38db4da154dc3fc59705961919</instance_id>
+        <instance_name>dev148567</instance_name>
+        <name>sc_cat_item_catalog_f73596c3479431106f6723dbd36d43cc</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog"><sc_cat_item_catalog action="INSERT_OR_UPDATE"><sc_cat_item display_value="accesskey">2fd0568f475431106f6723dbd36d430f</sc_cat_item><sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog><sys_class_name>sc_cat_item_catalog</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-08-01 13:06:04</sys_created_on><sys_id>f73596c3479431106f6723dbd36d43cc</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Service Catalog.accesskey</sys_name><sys_package/><sys_policy/><sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope><sys_update_name>sc_cat_item_catalog_f73596c3479431106f6723dbd36d43cc</sys_update_name><sys_updated_by>system</sys_updated_by><sys_updated_on>2023-08-01 13:06:14</sys_updated_on></sc_cat_item_catalog></record_update>]]></payload>
+        <payload_hash>-228246522</payload_hash>
+        <record_name>Service Catalog.accesskey</record_name>
+        <reverted_from/>
+        <source>9e451ac3479431106f6723dbd36d432c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-08-01 13:06:14</sys_created_on>
+        <sys_id>9e451ac3479431106f6723dbd36d4357</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>189b134cb680000001</sys_recorded_at>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-08-01 13:06:14</sys_updated_on>
+        <type>Catalog Items Catalog</type>
+        <update_guid>16451ac32e9431108f59e4e745174457</update_guid>
+        <update_guid_history>16451ac32e9431108f59e4e745174457:-228246522</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Service Catalog.accesskey">8422c7d7479031106f6723dbd36d43ee</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-02 11:00:38</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_catalog">sc_cat_item_catalog</sys_db_object>
+        <sys_id>02995356e1d048cebe91e8a7ea8004e4</sys_id>
+        <sys_metadata>f73596c3479431106f6723dbd36d43cc</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.accesskey</sys_name>
+        <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
+        <sys_parent display_value="">2fd0568f475431106f6723dbd36d430f</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
+        <sys_scope_delete display_value="">60f1e5dc923d462292cb4604cf578041</sys_scope_delete>
+        <sys_update_name>sc_cat_item_catalog_f73596c3479431106f6723dbd36d43cc</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_catalog_f73596c3479431106f6723dbd36d43cc">9e451ac3479431106f6723dbd36d4357</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-02 11:00:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

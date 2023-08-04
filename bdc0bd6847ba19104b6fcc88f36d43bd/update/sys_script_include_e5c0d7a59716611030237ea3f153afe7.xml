@@ -25,9 +25,26 @@ CRSDB_CatItem.write = function() {
 
     for (var i in catItems) {
         var gr = new GlideRecord("x_880077_crossplan_crs_jobqueue");
+        var providerName = catItems[i]["metadata"]["name"];
+        var catItemVars = catItems[i]["spec"]["versions"][0]["schema"]["openAPIV3Schema"]["properties"]["spec"]["properties"]["forProvider"];
+        if (providerName.includes("aws") || providerName.includes("gcp")) {
+            var attr = {
+                "name": catItems[i]["spec"]["names"]["singular"],
+                "group": catItems[i]["spec"]["group"],
+                "vars": catItemVars["properties"],
+				"desc" : catItems[i]["spec"]["versions"][0]["schema"]["openAPIV3Schema"]["description"]
+            };
+        } else {
+			var attr = {
+                "name": catItems[i]["spec"]["names"]["singular"],
+                "group": catItems[i]["spec"]["group"],
+				"desc" : catItems[i]["spec"]["versions"][0]["schema"]["openAPIV3Schema"]["description"]
+			};
+        }
+
         gr.initialize();
         gr.state = "Ready";
-        gr.body = JSON.stringify(catItems[i]);
+        gr.body = JSON.stringify(attr);
         gr.topic = "Write CatItem";
         gr.request = catItems[i]["metadata"]["name"];
         gr.insert();
@@ -55,18 +72,39 @@ CRSDB_CatItem.create = function() {
         gr.state = "Ready";
         gr.insert();
     }
+};
+
+CRSDB_CatItem.delete = function() {
+    var catalogItem = new GlideRecord('x_880077_crossplan_crsdb_catitem');
+    catalogItem.addQuery('status', 'Waiting For Variable');
+    catalogItem.query();
+
+    while (catalogItem.next()) {
+        var catItem = new GlideRecord('sc_cat_item');
+        catItem.addQuery('sys_scope', 'bdc0bd6847ba19104b6fcc88f36d43bd');
+        catItem.addQuery('name', catalogItem.name);
+        catItem.query();
+        if (catItem.next()) {
+            var gr = new GlideRecord('x_880077_crossplan_crs_jobqueue');
+            gr.initialize();
+            gr.state = "Ready";
+            gr.body = catItem.getUniqueValue();
+            gr.topic = "Delete CatItem";
+            gr.insert();
+        }
+    }
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-04-19 15:29:55</sys_created_on>
         <sys_id>e5c0d7a59716611030237ea3f153afe7</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>CRSDB_CatItem</sys_name>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_include_e5c0d7a59716611030237ea3f153afe7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-04-19 19:03:35</sys_updated_on>
+        <sys_updated_on>2023-08-03 08:18:21</sys_updated_on>
     </sys_script_include>
 </record_update>

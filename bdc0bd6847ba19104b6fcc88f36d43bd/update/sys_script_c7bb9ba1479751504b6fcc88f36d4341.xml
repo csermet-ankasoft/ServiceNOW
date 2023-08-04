@@ -50,6 +50,10 @@
                 this.writeGroupCategory(current);
             } else if (current.topic == "Create Group Category") {
                 this.createGroupCategory(current);
+            } else if (current.topic == "Create CatItemVariable") {
+                this.createCatItemVariable(current);
+            } else if (current.topic == "Delete CatItemVariable") {
+                this.deleteCatItemVariable(current);
             }
             current.state == "Completed";
         } catch (err) {
@@ -210,12 +214,14 @@ function writeCatItem(current) {
     CRSLog.debug("Run -> writeCatItem_Job");
     var catItemBody = JSON.parse(current.body);
     var sc_catalogID = gs.getProperty('x_880077_crossplan.serviceCatalogID');
-    var parentID = CRSDB_Provider.getIDByName(catItemBody.spec.group);
-
+    var parentID = CRSDB_Provider.getIDByName(catItemBody.group);
+    var vars = JSON.stringify(catItemBody.vars);
     var catItem = new GlideRecord("x_880077_crossplan_crsdb_catitem");
     catItem.initialize();
-    catItem.name = catItemBody.spec.names.singular;
-    catItem.group = catItemBody.spec.group;
+    catItem.name = catItemBody.name;
+    catItem.group = catItemBody.group;
+    catItem.variable = vars;
+    catItem.short_description = catItemBody.desc;
     catItem.status = "Waiting For Create";
     catItem.catalogs = sc_catalogID;
     catItem.category = parentID;
@@ -241,9 +247,9 @@ function createCatItem(current) {
 
     var catItemTable = new GlideRecord('x_880077_crossplan_crsdb_catitem');
     catItemTable.addQuery('sys_id', catItemAttr.sys_id);
-	catItemTable.query();
+    catItemTable.query();
     if (catItemTable.next()) {
-        catItemTable.status = "Created";
+        catItemTable.status = "Waiting For Variable";
         catItemTable.id = catItemID;
         catItemTable.update();
     }
@@ -263,6 +269,32 @@ function deleteCatItem(current) {
     var catItem = new sn_sc.CatItem(current.body);
     catItem.deleteRecord(true);
     current.state = "Completed";
+}
+
+function createCatItemVariable(current) {
+    var varBody = JSON.parse(current.body);
+    var catItemId = varBody.sys_id;
+    var catItemVar = varBody.var;
+    //CRSLog.info(catItemVar);
+    if (catItemVar) {
+        for (var i in catItemVar) {
+            var gr = new GlideRecord("item_option_new");
+            CRSLog.warn(catItemVar[i]);
+            gr.initialize();
+            gr.cat_item = catItemId;
+            gr.question_text = catItemVar[i];
+            gr.label = catItemVar[i];
+			gr.name = catItemVar[i];
+            //gr.type = variableType;
+            gr.insert();
+        }
+    }
+    current.state = "Completed";
+}
+
+function deleteCatItemVariable(current) {
+	var itemVarId = current.id;
+	itemVarId.deleteRecord(true);
 }]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -270,7 +302,7 @@ function deleteCatItem(current) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c7bb9ba1479751504b6fcc88f36d4341</sys_id>
-        <sys_mod_count>100</sys_mod_count>
+        <sys_mod_count>130</sys_mod_count>
         <sys_name>CRS_JobProcessing</sys_name>
         <sys_overrides/>
         <sys_package display_value="CrossplaneV2" source="x_880077_crossplan">bdc0bd6847ba19104b6fcc88f36d43bd</sys_package>
@@ -278,7 +310,7 @@ function deleteCatItem(current) {
         <sys_scope display_value="CrossplaneV2">bdc0bd6847ba19104b6fcc88f36d43bd</sys_scope>
         <sys_update_name>sys_script_c7bb9ba1479751504b6fcc88f36d4341</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-04-19 19:03:23</sys_updated_on>
+        <sys_updated_on>2023-08-04 10:41:07</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
